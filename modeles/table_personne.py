@@ -52,7 +52,7 @@ class TablePersonne(Table):
             row = cls.selectAttrWhereId('nom', matricule)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour de la date de naissance de {row[0]} {row[1]}:\n{req}\n :")
+                f"Une erreur est surmenu lors de la mise à jour de la date de naissance de {row[0]} :\n{req}\n :")
             print(err)
             return 0
         else:

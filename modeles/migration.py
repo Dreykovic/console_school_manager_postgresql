@@ -1,4 +1,4 @@
-from relations.linker import Linker
+from linker import Linker
 from database import Database
 
 

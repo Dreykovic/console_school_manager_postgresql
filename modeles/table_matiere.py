@@ -18,7 +18,7 @@ class TableMatiere(Table):
             row = cls.selectAttrWhereId('libelle', matricule)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour du libelle de  {row[0]} {row[1]}:\n{req}\n :")
+                f"Une erreur est surmenu lors de la mise à jour du libelle de  {row[0]}:\n{req}\n :")
             print(err)
             return 0
         else:
@@ -37,6 +37,7 @@ if __name__ == '__main__':
     main()
     print('5555')
     pass
+
 
 
 

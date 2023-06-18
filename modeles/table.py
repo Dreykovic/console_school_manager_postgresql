@@ -17,6 +17,8 @@ class Table(object):
                         self.__dict__[attr] = self.key() + 1
                     except TypeError:
                         self.__dict__[attr] = 1
+                print(attr)
+                print(self.__dict__[attr])
                 data += (self.__dict__[attr],)
             self.insert(data)
         except NameError as err:

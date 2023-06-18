@@ -1,8 +1,0 @@
-import relations.table_classe
-import relations.table_eleve
-import relations.table_enseignant
-import relations.table_matiere
-import relations.table_niveau_serie
-import relations.table_programme
-import relations.table_tuteur
-import relations.linker
