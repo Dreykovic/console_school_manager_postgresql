@@ -22,7 +22,7 @@ class TableTuteur(TablePersonne):
 
     @classmethod
     def updateProfession(cls, matricule, profession):
-
+        row = ''
         try:
             req = f"UPDATE  {cls.table} SET profession = '{profession}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
@@ -50,6 +50,7 @@ if __name__ == '__main__':
     main()
     print('5555')
     pass
+
 
 
 

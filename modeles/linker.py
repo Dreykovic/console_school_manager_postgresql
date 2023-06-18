@@ -9,7 +9,7 @@ class Linker(object):
     def __init__(self):
         try:
             self.conn = psycopg2.connect(
-                dbname=env.database, user=env.username)
+                dbname=env.database, user=env.username, password=env.passwd, port = env.port, host = env.host)
         except Exception as err:
             print(
                 f"La connexion avec la base de données a échoué :\nErreur détectée :\n{err}")
