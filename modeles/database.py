@@ -1,10 +1,10 @@
-from modeles.table_classe import TableClasse
-from modeles.table_eleve import TableEleve
-from modeles.table_enseignant import TableEnseignant
-from modeles.table_matiere import TableMatiere
-from modeles.table_niveau_serie import TableNiveauSerie
-from modeles.table_programme import TableProgramme
-from modeles.table_tuteur import TableTuteur
+from relations.table_classe import TableClasse
+from relations.table_eleve import TableEleve
+from relations.table_enseignant import TableEnseignant
+from relations.table_matiere import TableMatiere
+from relations.table_niveau_serie import TableNiveauSerie
+from relations.table_programme import TableProgramme
+from relations.table_tuteur import TableTuteur
 
 
 class Database(object):
@@ -22,3 +22,6 @@ class Database(object):
 
 
 # print(Glob.base)
+
+
+

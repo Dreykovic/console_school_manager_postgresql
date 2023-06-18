@@ -1,10 +1,8 @@
-from linker import Linker
+from relations.linker import Linker
 from database import Database
 
 
 class Migration(object):
-    
-
     @staticmethod
     def createTables(base):
         lk = Linker()
