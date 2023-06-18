@@ -17,7 +17,7 @@ class TablePersonne(Table):
     @classmethod
     def updateNom(cls, matricule, nom):
         try:
-            req = f"UPDATE  {cls.table} SET nom = '{nom}' WHERE matricule = '{matricule}';"
+            req = f"UPDATE  {cls.table} SET nom = '{nom}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
             row = cls.selectAttrWhereId('nom, prenoms', matricule)
         except Exception as err:
@@ -32,7 +32,7 @@ class TablePersonne(Table):
     @classmethod
     def updatePrenoms(cls, matricule, prenoms):
         try:
-            req = f"UPDATE  {cls.table} SET prenom = '{prenoms}' WHERE matricule = '{matricule}';"
+            req = f"UPDATE  {cls.table} SET prenoms = '{prenoms}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
             row = cls.selectAttrWhereId('nom', matricule)
         except Exception as err:
@@ -47,7 +47,7 @@ class TablePersonne(Table):
     @classmethod
     def updateDateNaissance(cls, matricule, date_naissance):
         try:
-            req = f"UPDATE  {cls.table} SET nom = '{date_naissance}' WHERE matricule = '{matricule}';"
+            req = f"UPDATE  {cls.table} SET date_naissance = '{date_naissance}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
             row = cls.selectAttrWhereId('nom', matricule)
         except Exception as err:
@@ -62,7 +62,7 @@ class TablePersonne(Table):
     @classmethod
     def updateContact(cls, matricule, contact):
         try:
-            req = f"UPDATE  {cls.table} SET nom = '{contact}' WHERE matricule = '{matricule}';"
+            req = f"UPDATE  {cls.table} SET contact = '{contact}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
             row = cls.selectAttrWhereId('nom, prenoms', matricule)
         except Exception as err:
@@ -76,7 +76,7 @@ class TablePersonne(Table):
 
     def updateGenre(cls, matricule, genre):
         try:
-            req = f"UPDATE  {cls.table} SET nom = '{genre}' WHERE matricule = '{matricule}';"
+            req = f"UPDATE  {cls.table} SET genre = '{genre}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
             row = cls.selectAttrWhereId('nom, prenoms', matricule)
         except Exception as err:
@@ -91,7 +91,7 @@ class TablePersonne(Table):
     @classmethod
     def updateAdresse(cls, matricule, adresse):
         try:
-            req = f"UPDATE  {cls.table} SET nom = '{adresse}' WHERE matricule = '{matricule}';"
+            req = f"UPDATE  {cls.table} SET adresse = '{adresse}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
             row = cls.selectAttrWhereId('nom, prenoms', matricule)
         except Exception as err:

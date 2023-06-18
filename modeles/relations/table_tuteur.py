@@ -24,7 +24,7 @@ class TableTuteur(TablePersonne):
     def updateProfession(cls, matricule, profession):
 
         try:
-            req = f"UPDATE  {cls.table} SET nom = '{profession}' WHERE matricule = '{matricule}';"
+            req = f"UPDATE  {cls.table} SET profession = '{profession}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
             row = cls.selectAttrWhereId('nom, prenoms', matricule)
         except Exception as err:
