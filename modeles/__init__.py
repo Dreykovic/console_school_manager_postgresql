@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath('.'))
+
 from modeles import table
 from modeles import table_classe
 from modeles import table_eleve

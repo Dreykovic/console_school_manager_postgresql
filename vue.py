@@ -1,4 +1,3 @@
-
 def vue(table):
     print("==========================================================")
     print(f"                      {table.capitalize}                     ")
@@ -24,6 +23,5 @@ def vue(table):
         route_programme(choix)
     elif table == "matiere":
         route_matiere(choix)
-        
     else:
         print("Choix invalide. Veuillez sélectionner une option valide.")

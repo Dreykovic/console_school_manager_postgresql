@@ -1,6 +1,7 @@
 #!/bin/python3
 import datetime
 
+
 def validate_text(text):
     if text.isalpha():
         return 1
@@ -24,19 +25,16 @@ def validate_number(number):
         return 1
     else:
         return 0
+
+
 def validate_date(my_date):
     date_format = "%Y-%m-%d"
-  
+
     try:
         datetime.datetime.strptime(my_date, date_format)
     except ValueError:
         return 0
     return 1
-
- 
-
-
-
 
 
 # print(validate_text("dzz"))

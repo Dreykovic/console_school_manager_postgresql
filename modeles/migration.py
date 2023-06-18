@@ -59,6 +59,7 @@ class Migration(object):
 def main():
     Migration.createTables(Database.tables)
 
+
     # ,{TableNiveauSerie.table: TableNiveauSerie.schema}
     #     TableClasse.table: TableClasse.schema,
     #     TableTuteur.table: TableTuteur.schema,

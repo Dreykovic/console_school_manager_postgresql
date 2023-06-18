@@ -1,3 +1,5 @@
+
+
 def ajouter_eleve():
     nom = input("Nom de l'élève : ")
     prenom = input("Prénom de l'élève : ")
