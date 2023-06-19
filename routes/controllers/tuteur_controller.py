@@ -1,8 +1,7 @@
 from modeles.table_tuteur import TableTuteur as Tuteur
-from controller import Controller
+from personne_controller import PersonneController
 
-
-class TuteurController(Controller):
+class TuteurController(PersonneController):
     model = Tuteur
 
     def __init__(
@@ -62,32 +61,9 @@ class TuteurController(Controller):
                 printer()
                 choix = input("Choisissez une option (1-7)  :       ")
 
-    def editer_nom(self):
-        value = self.write_text("nom")
-        Tuteur.update_nom(self.write_number("matricule"), value)
-
-    def editer_prenom(self):
-        value = self.write_text("prenom")
-        Tuteur.update_prenoms(self.write_number("matricule"), value)
-
-    def editer_date_naissance(self):
-        value = self.write_date("date de naissance")
-        Tuteur.update_date_naissance(self.write_number("matricule"), value)
-
-    def editer_contact(self):
-        value = self.write_phone_number("contact")
-        Tuteur.update_contact(self.write_number("matricule"), value)
-
-    def editer_genre(self):
-        value = Controller.write_gender()
-        Tuteur.update_date_naissance(self.write_number("matricule"), value)
-
-    def editer_adresse(self):
-        value = Controller.write_text("adresse")
-        Tuteur.update_adresse(self.write_number("matricule"), value)
 
     def editer_profession(self):
-        value = Controller.write_text("profession")
+        value = self.write_text("profession")
         Tuteur.update_profession(self.write_number("matricule"), value)
 
 

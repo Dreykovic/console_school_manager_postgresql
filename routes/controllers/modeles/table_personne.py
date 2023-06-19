@@ -78,6 +78,7 @@ class TablePersonne(Table):
         try:
             req = f"UPDATE  {cls.relation} SET contact = '{contact}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
+            print('alleluia')
             row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
@@ -88,7 +89,7 @@ class TablePersonne(Table):
         else:
             cls.lk.commit()
             return 1
-
+    @classmethod
     def update_genre(cls, matricule, genre):
         try:
             req = f"UPDATE  {cls.relation} SET genre = '{genre}' WHERE {cls.primary_key} = '{matricule}';"
