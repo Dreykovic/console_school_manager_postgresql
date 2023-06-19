@@ -21,12 +21,12 @@ class TableTuteur(TablePersonne):
 
 
     @classmethod
-    def updateProfession(cls, matricule, profession):
+    def update_profession(cls, matricule, profession):
         row = ''
         try:
             req = f"UPDATE  {cls.relation} SET profession = '{profession}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.select_attr_where_id(self.INFO_ATTR, matricule)
+            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour de la profession de  {row[0]} {row[1]}:\n{req}\n :")

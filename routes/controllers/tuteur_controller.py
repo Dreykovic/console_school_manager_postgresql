@@ -16,7 +16,7 @@ class TuteurController(Controller):
         # cls.model.matricule = cls.write_number('matricule')
         nom = self.write_text("nom")
         prenoms = self.write_text("prenoms")
-        date_naissance = self.write_date("date_naissance")
+        date_naissance = self.write_date("date de naissance")
         contact = self.write_phone_number("contact")
         genre = Controller.write_gender()
         adresse = self.write_text("adresse")
@@ -43,19 +43,19 @@ class TuteurController(Controller):
                 self.editer_prenom()
                 break
             elif choix == "3":
-                editerEffectif()
+                self.editer_date_naissance()
                 break
             elif choix == "4":
-                editerEffectif()
+                self.editer_contact()
                 break
             elif choix == "5":
-                editerEffectif()
+                self.editer_genre()
                 break
             elif choix == "6":
-                editerEffectif()
+                self.editer_adresse()
                 break
             elif choix == "7":
-                editerEffectif()
+                self.editer_profession()
                 break
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
@@ -65,10 +65,30 @@ class TuteurController(Controller):
     def editer_nom(self):
         value = self.write_text("nom")
         Tuteur.update_nom(self.write_number("matricule"), value)
-    
+
     def editer_prenom(self):
         value = self.write_text("prenom")
         Tuteur.update_prenoms(self.write_number("matricule"), value)
+
+    def editer_date_naissance(self):
+        value = self.write_date("date de naissance")
+        Tuteur.update_date_naissance(self.write_number("matricule"), value)
+
+    def editer_contact(self):
+        value = self.write_phone_number("contact")
+        Tuteur.update_contact(self.write_number("matricule"), value)
+
+    def editer_genre(self):
+        value = Controller.write_gender()
+        Tuteur.update_date_naissance(self.write_number("matricule"), value)
+
+    def editer_adresse(self):
+        value = Controller.write_text("adresse")
+        Tuteur.update_adresse(self.write_number("matricule"), value)
+
+    def editer_profession(self):
+        value = Controller.write_text("profession")
+        Tuteur.update_profession(self.write_number("matricule"), value)
 
 
 t = TuteurController()
