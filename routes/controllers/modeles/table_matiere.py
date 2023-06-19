@@ -15,6 +15,8 @@ class TableMatiere(Table):
 
     @classmethod
     def updateLibelle(cls, matricule, libelle):
+        req = ''
+        row = []
         try:
             req = f"UPDATE  {cls.relation} SET libelle = '{libelle}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)

@@ -18,11 +18,13 @@ class TableClasse(Table):
         self.effectif = effectif
 
     @classmethod
-    def updateNom(cls, matricule, nom):
+    def update_nom(cls, matricule, nom):
+        row = []
+        req = ""
         try:
             req = f"UPDATE  {cls.relation} SET nom = '{nom}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.selectAttrWhereId(self.INFO_ATTR, matricule)
+            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour du libelle de  {row[0]} {row[1]}:\n{req}\n :"
@@ -31,14 +33,17 @@ class TableClasse(Table):
             return 0
         else:
             cls.lk.commit()
+            print("Nom de classe mis à jour avec succès !!!")
             return 1
 
     @classmethod
-    def updateEffectif(cls, matricule, effectif):
+    def update_effectif(cls, matricule, effectif):
+        row = []
+        req = ""
         try:
             req = f"UPDATE  {cls.relation} SET effectif = '{effectif}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.selectAttrWhereId(self.INFO_ATTR, matricule)
+            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour du libelle de  {row[0]} {row[1]}:\n{req}\n :"
@@ -47,7 +52,7 @@ class TableClasse(Table):
             return 0
         else:
             cls.lk.commit()
-            print(f"{cls.relation} mis à jour avec succès !!!")
+            print("Eddectid de classe mis à jour avec succès !!!")
             return 1
 
 

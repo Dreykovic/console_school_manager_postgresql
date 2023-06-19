@@ -75,6 +75,7 @@ class Table(object):
 
     @classmethod
     def select_attr_where_id(cls, attributes, matricule):
+        req = ''
         try:
             sql = f"SELECT {attributes} FROM {cls.relation} WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(sql)
@@ -84,7 +85,11 @@ class Table(object):
             print(err)
             return 0
         else:
-            return row[0]
+            if len (row) == 0:
+                print('!!!   Désolé, aucune correspondance')
+                return 0
+            else:
+                return row[0]
 
     @classmethod
     def select_attr(cls, attributes):
