@@ -1,4 +1,4 @@
-from table import Table
+from .table import Table
 
 
 class TableMatiere(Table):
@@ -14,8 +14,8 @@ class TableMatiere(Table):
         self.libelle = libelle
 
     @classmethod
-    def updateLibelle(cls, matricule, libelle):
-        req = ''
+    def update_libelle(cls, matricule, libelle):
+        req = ""
         row = []
         try:
             req = f"UPDATE  {cls.relation} SET libelle = '{libelle}' WHERE {cls.primary_key} = '{matricule}';"
@@ -29,6 +29,7 @@ class TableMatiere(Table):
             return 0
         else:
             cls.lk.commit()
+            print('UPDATE SUCCESSFULLY')
             return 1
 
 

@@ -12,7 +12,7 @@ class TableClasse(Table):
     ]
     primary_key = "id_classe"
 
-    def __init__(self, nom=None, effectif=None):
+    def __init__(self, nom=None, effectif=0):
         self.id_classe = 0
         self.nom = nom
         self.effectif = effectif
@@ -52,7 +52,7 @@ class TableClasse(Table):
             return 0
         else:
             cls.lk.commit()
-            print("Eddectid de classe mis à jour avec succès !!!")
+            print("Effectid de classe mis à jour avec succès !!!")
             return 1
 
 

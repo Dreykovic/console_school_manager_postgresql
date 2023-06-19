@@ -1,4 +1,4 @@
-from table_personne import TablePersonne
+from .table_personne import TablePersonne
 import datetime as dt
 
 
@@ -32,7 +32,9 @@ class TableEnseignant(TablePersonne):
         self.statut = statut
 
     @classmethod
-    def updateStatut(cls, matricule, statut):
+    def update_statut(cls, matricule, statut):
+        req = ''
+        row = []
         try:
             req = f"UPDATE  {cls.relation} SET statut = '{statut}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
@@ -45,6 +47,7 @@ class TableEnseignant(TablePersonne):
             return 0
         else:
             cls.lk.commit()
+            print("UPDATE SUCCESSPULLY !!!")
             return 1
 
 

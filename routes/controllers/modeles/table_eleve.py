@@ -1,4 +1,4 @@
-from table_personne import TablePersonne
+from .table_personne import TablePersonne
 import datetime as dt
 
 
