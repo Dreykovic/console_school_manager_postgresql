@@ -2,7 +2,7 @@ from table import Table
 
 
 class TableProgramme(Table):
-    table = 'programme'
+    relation = 'programme'
     schema = [("id_programme", "k", "integer", "", ""),
               ("matiere", "rf", "integer", "id_matiere", "matiere"),
               ("prof", "rf", "integer", "matricule", "enseignant"),

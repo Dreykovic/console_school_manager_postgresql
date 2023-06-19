@@ -11,13 +11,13 @@ class Database(object):
     """docstring for Glob"""
 
     tables = {
-        TableNiveauSerie.table: TableNiveauSerie.schema,
-        TableClasse.table: TableClasse.schema,
-        TableTuteur.table: TableTuteur.schema,
-        TableEleve.table: TableEleve.schema,
-        TableEnseignant.table: TableEnseignant.schema,
-        TableMatiere.table: TableMatiere.schema,
-        TableProgramme.table: TableProgramme.schema
+        TableNiveauSerie.relation: TableNiveauSerie.schema,
+        TableClasse.relation: TableClasse.schema,
+        TableTuteur.relation: TableTuteur.schema,
+        TableEleve.relation: TableEleve.schema,
+        TableEnseignant.relation: TableEnseignant.schema,
+        TableMatiere.relation: TableMatiere.schema,
+        TableProgramme.relation: TableProgramme.schema
     }
 
 

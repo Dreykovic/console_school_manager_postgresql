@@ -1,10 +1,9 @@
-# from table import Table
 import datetime as dt
-from table_personne import TablePersonne
+from .table_personne import TablePersonne
 
 
 class TableTuteur(TablePersonne):
-    table = 'tuteur'
+    relation = 'tuteur'
     schema = [("matricule", "k", "serial", "", ""),
               ("nom", "", "varchar", "", ""),
               ("prenoms", "", "varchar", "", ""),
@@ -20,13 +19,14 @@ class TableTuteur(TablePersonne):
             self,  nom, prenom, date_naissance, contact, genre, adresse)
         self.profession = profession
 
+
     @classmethod
     def updateProfession(cls, matricule, profession):
         row = ''
         try:
-            req = f"UPDATE  {cls.table} SET profession = '{profession}' WHERE {cls.primary_key} = '{matricule}';"
+            req = f"UPDATE  {cls.relation} SET profession = '{profession}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.selectAttrWhereId('nom, prenoms', matricule)
+            row = cls.select_attr_where_id(self.INFO_ATTR, matricule)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour de la profession de  {row[0]} {row[1]}:\n{req}\n :")

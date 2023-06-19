@@ -1,7 +1,7 @@
 from table_personne import TablePersonne
 import datetime as dt
 class TableEleve(TablePersonne):
-    table = 'eleve'
+    relation = 'eleve'
     schema = [("matricule", "k", "serial", "", ""),
               ("nom", "", "varchar", "", ""),
               ("prenoms", "", "varchar", "", ""),

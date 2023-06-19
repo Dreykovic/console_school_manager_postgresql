@@ -4,10 +4,9 @@ from database import Database
 
 class Migration(object):
     @staticmethod
-    def createTables(base):
+    def create_tables(base):
         lk = Linker()
         try:
-            # queries = list()
             for table in base:
                 try:
                     req = f"CREATE TABLE {table} ("
@@ -27,12 +26,10 @@ class Migration(object):
                         req += f"{column} {column_type}, "
                     if pk != '':
                         pkey_string += f"CONSTRAINT {pk}_pk_{table} PRIMARY KEY({pk}), "
-                        # print(pkey_string)
-                        # print(column)
+
                     req += pkey_string + reference_string
                     req = req[:-2]+")"
-                    # queries.append(req)
-                    # print(req)
+                   
                     lk.executerReq(req)
                 except Exception as err:
                     print(
@@ -44,7 +41,6 @@ class Migration(object):
                     print(
                         f"        #---------Relalation {table} has been created !!\n \n")
 
-            # return queries
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la création des tables :\n{req}\n :")
@@ -57,7 +53,7 @@ class Migration(object):
 
 
 def main():
-    Migration.createTables(Database.tables)
+    Migration.create_tables(Database.tables)
 
 
     # ,{TableNiveauSerie.table: TableNiveauSerie.schema}

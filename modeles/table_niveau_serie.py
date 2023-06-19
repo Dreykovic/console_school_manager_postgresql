@@ -1,4 +1,4 @@
 class TableNiveauSerie(object):
-    table = 'niveau_serie'
+    relation = 'niveau_serie'
     schema = [("niveau", "", "varchar", "", ""),
               ("serie", "", "varchar", "", "")]

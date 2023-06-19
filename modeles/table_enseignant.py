@@ -3,7 +3,7 @@ import datetime as dt
 
 
 class TableEnseignant(TablePersonne):
-    table = 'enseignant'
+    relation = 'enseignant'
     schema = [("matricule", "k", "serial", "", ""),
               ("nom", "", "varchar", "", ""),
               ("prenoms", "", "varchar", "", ""),
@@ -23,9 +23,9 @@ class TableEnseignant(TablePersonne):
     def updateStatut(cls, matricule, statut):
 
         try:
-            req = f"UPDATE  {cls.table} SET statut = '{statut}' WHERE {cls.primary_key} = '{matricule}';"
+            req = f"UPDATE  {cls.relation} SET statut = '{statut}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.selectAttrWhereId('nom, prenoms', matricule)
+            row = cls.selectAttrWhereId(self.INFO_ATTR, matricule)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour du statut de  {row[0]} {row[1]}:\n{req}\n :")

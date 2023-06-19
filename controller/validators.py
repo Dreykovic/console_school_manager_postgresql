@@ -39,4 +39,3 @@ def validate_date(my_date):
 
 # print(validate_text("dzz"))
 # print(validate_number("5"))
-print(validate_date("2020-12-20"))

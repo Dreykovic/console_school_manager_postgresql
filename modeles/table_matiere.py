@@ -1,6 +1,6 @@
 from table import Table
 class TableMatiere(Table):
-    table = 'matiere'
+    relation = 'matiere'
     schema = [("id_matiere", "k", "serial", "", ""),
               ("libelle", "", "varchar", "", "")]
     primary_key = 'id_matiere'
@@ -13,9 +13,9 @@ class TableMatiere(Table):
     def updateLibelle(cls, matricule, libelle):
 
         try:
-            req = f"UPDATE  {cls.table} SET libelle = '{libelle}' WHERE {cls.primary_key} = '{matricule}';"
+            req = f"UPDATE  {cls.relation} SET libelle = '{libelle}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.selectAttrWhereId('libelle', matricule)
+            row = cls.select_attr_where_id('libelle', matricule)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour du libelle de  {row[0]}:\n{req}\n :")

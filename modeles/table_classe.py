@@ -1,6 +1,7 @@
-from table import Table
+# from .table import Table
+from .table import Table
 class TableClasse( Table):
-    table = 'classe'
+    relation = 'classe'
     schema = [("id_classe", "k", "serial", "", ""),
               ("nom", "", "varchar", "", ""),
               ("effectif", "", "integer", "", "")]
@@ -9,15 +10,16 @@ class TableClasse( Table):
         self.id_classe = 0
         self.nom = nom
         self.effectif = effectif
+        self.INFO_ATTR = 'nom, effectif'
         
 
     @classmethod
     def updateNom(cls, matricule, nom):
 
         try:
-            req = f"UPDATE  {cls.table} SET nom = '{nom}' WHERE {cls.primary_key} = '{matricule}';"
+            req = f"UPDATE  {cls.relation} SET nom = '{nom}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.selectAttrWhereId('nom, effectif', matricule)
+            row = cls.selectAttrWhereId(self.INFO_ATTR, matricule)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour du libelle de  {row[0]} {row[1]}:\n{req}\n :")
@@ -31,9 +33,9 @@ class TableClasse( Table):
     def updateEffectif(cls, matricule, effectif):
 
         try:
-            req = f"UPDATE  {cls.table} SET effectif = '{effectif}' WHERE {cls.primary_key} = '{matricule}';"
+            req = f"UPDATE  {cls.relation} SET effectif = '{effectif}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.selectAttrWhereId('nom, effectif', matricule)
+            row = cls.selectAttrWhereId(self.INFO_ATTR, matricule)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour du libelle de  {row[0]} {row[1]}:\n{req}\n :")
@@ -41,6 +43,7 @@ class TableClasse( Table):
             return 0
         else:
             cls.lk.commit()
+            print(f"{cls.relation} mis à jour avec succès !!!")
             return 1
 
 

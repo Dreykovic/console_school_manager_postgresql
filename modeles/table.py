@@ -1,8 +1,8 @@
-from linker import Linker
+from .linker import Linker
 
 
 class Table(object):
-    table = ''
+    relation = ''
     schema = []
     primary_key = ""
 
@@ -17,13 +17,17 @@ class Table(object):
                         self.__dict__[attr] = self.key() + 1
                     except TypeError:
                         self.__dict__[attr] = 1
-                print(attr)
-                print(self.__dict__[attr])
+                if attr == 'INFO_ATTR':
+                    continue
                 data += (self.__dict__[attr],)
             self.insert(data)
         except NameError as err:
-            print(f"Une erreur est surmenu lors de la création  :\n :")
+            print("Une erreur est surmenu lors de la création  :\n :")
             print(err)
+            
+    @classmethod
+    def get_columns(cls):
+        return [t[0] for t in cls.schema]
 
     @classmethod
     def insert(cls, data):
@@ -38,7 +42,8 @@ class Table(object):
             values += ' %s, '*column_number
             values = values[:-2]+")"
 
-            req = f"INSERT INTO {cls.table} {columns} VALUES {values};"
+            req = f"INSERT INTO {cls.relation} {columns} VALUES {values};"
+            print(data)
             cls.lk.executerReq(req, data)
         except Exception as err:
             print(f"Une erreur est surmenu lors de l'insertion :\n{req}\n :")
@@ -46,6 +51,7 @@ class Table(object):
             return 0
         else:
             cls.lk.commit()
+            print('INSERT SUCCESSFULY !!')
             return 1
 
     @classmethod
@@ -55,7 +61,7 @@ class Table(object):
             for col in cls.schema:
                 if col[1] == 'k':
                     pkey = col[0]
-            req = f"SELECT max({pkey}) From {cls.table};"
+            req = f"SELECT max({pkey}) From {cls.relation};"
             # print(req)
             cls.lk.executerReq(req)
             key = cls.lk.resultatReq()[0][0]
@@ -68,9 +74,9 @@ class Table(object):
             return key
 
     @classmethod
-    def selectAttrWhereId(cls, attributes, matricule):
+    def select_attr_where_id(cls, attributes, matricule):
         try:
-            sql = f"SELECT {attributes} FROM {cls.table} WHERE {cls.primary_key} = '{matricule}';"
+            sql = f"SELECT {attributes} FROM {cls.relation} WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(sql)
             row = cls.lk.resultatReq()
         except Exception as err:
@@ -81,9 +87,37 @@ class Table(object):
             return row[0]
 
     @classmethod
-    def delete(cls, matricule):
+    def select_attr(cls, attributes):
+        req = ''
         try:
-            req = f"DELETE FROM {cls.table} WHERE {cls.primary_key} = '{matricule}';"
+            sql = f"SELECT {attributes} FROM {cls.relation};"
+            cls.lk.executerReq(sql)
+            row = cls.lk.resultatReq()
+        except Exception as err:
+            print(f"Select problem :\n{req}\n :")
+            print(err)
+            return 0
+        else:
+            return row
+    @classmethod
+    def select_all(cls):
+        req = ''
+        try:
+            sql = f"SELECT * FROM {cls.relation};"
+            cls.lk.executerReq(sql)
+            row = cls.lk.resultatReq()
+        except Exception as err:
+            print(f"Select problem :\n{req}\n :")
+            print(err)
+            return 0
+        else:
+            return row
+
+    @classmethod
+    def delete(cls, matricule):
+        req = ''
+        try:
+            req = f"DELETE FROM {cls.relation} WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
         except Exception as err:
             print(
@@ -97,6 +131,7 @@ class Table(object):
 
 def main():
     Table.key()
+
 
     # Table.insert(("2nde C4", 50))
 if __name__ == '__main__':
