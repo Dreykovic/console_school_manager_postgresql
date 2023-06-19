@@ -1,6 +1,6 @@
 from modeles.table_classe import TableClasse as Classe
-from controller.validators import *
-
+from validators import *
+from datetime import datetime
 
 class Controller:
     model = ""
@@ -25,6 +25,61 @@ class Controller:
     @classmethod
     def supprimer(cls):
         cls.model.delete(cls.ask_id())
+    @classmethod
+    def write_text(cls, name):
+        text = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        while not validate_text(text):
+            print("Saisie invalide. Veuillez saisir un text valide.")
+            text = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        return text
+    @classmethod
+    def write_number(cls, name):
+       number = input(f"Ecrire {name} de {cls.model.relation} :       ")
+       while not validate_number(number):
+            print("Saisie invalide. Veuillez saisir un number valide.")
+            number = input(f"Ecrire {name} de {cls.model.relation} :       ")
+       return int(number)
+    @classmethod
+    def write_date(cls, name):
+        date = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        while not validate_date(date):
+            print("Saisie invalide. Veuillez saisir un date valide.")
+            date = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        data = date.split('-')
+        annee = int(data[0])
+        mois = int(data[1])
+        jour = int(data[2])
+        return datetime(annee, mois, jour).date()
+    
+    @staticmethod
+    def write_gender():
+        print("1. Homme")
+        print("2. Femme")
+        choix = input("Choisissez une option (1-2) : pour le genre       ")
+        while True:
+            if choix == "1":
+                gender = "M"
+                break
+            elif choix == "2":
+                gender = "F"
+                break
+            else:
+                print("Choix invalide. Veuillez sélectionner une option valide.")
+                print("Homme")
+                print("Femme")
+                choix = input(
+                    "Choisissez une option (1-9) pour le genre :       "
+                )
+        return gender
+    
+    @classmethod
+    def write_phone_number(cls, name):
+        phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        while not validate_phone_number(phone_number):
+            print("Saisie invalide. Veuillez saisir un phone_number valide.")
+            phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        return int(phone_number)
+
 
     @classmethod
     def afficher(cls):
@@ -36,7 +91,7 @@ class Controller:
             return
 
         columns = cls.model.get_columns()  # Obtient les noms des colonnes de la table
-        column_widths = [20] * len(columns)  # Largeur fixe de chaque colonne (20 caractères)
+        column_widths = [12] * len(columns)  # Largeur fixe de chaque colonne (20 caractères)
 
         print("=" * (sum(column_widths) + 3 * len(columns) + 1))
         print(f"{'Liste des ' + table_name + 's':^{sum(column_widths) + 3 * len(columns) + 1}}")
@@ -56,5 +111,4 @@ class Controller:
             print(row_format.format(*classe))
 
 
-ajouter()
-afficher()
+

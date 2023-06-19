@@ -1,5 +1,5 @@
 from modeles.table_classe import TableClasse as Classe
-from controller.validators import *
+from validators import *
 
 
 def printer():
@@ -155,7 +155,7 @@ def afficher():
         return
 
     columns = Classe.get_columns()  # Obtient les noms des colonnes de la table
-    column_widths = [20] * len(columns)  # Largeur fixe de chaque colonne (20 caractères)
+    column_widths = [10] * len(columns)  # Largeur fixe de chaque colonne (20 caractères)
 
     print("=" * (sum(column_widths) + 3 * len(columns) + 1))
     print(f"{'Liste des ' + table_name + 's':^{sum(column_widths) + 3 * len(columns) + 1}}")
@@ -176,8 +176,10 @@ def afficher():
 
     print(separator)
 
-ajouter()
+# ajouter()
 afficher()
+
+
 
 
 

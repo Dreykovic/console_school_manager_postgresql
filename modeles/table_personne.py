@@ -3,8 +3,17 @@ import datetime as dt
 
 
 class TablePersonne(Table):
+    INFO_ATTR = "nom, prenoms"
 
-    def __init__(self,  nom=None, prenom=None, date_naissance=None, contact=None, genre=None, adresse=None, ):
+    def __init__(
+        self,
+        nom=None,
+        prenom=None,
+        date_naissance=None,
+        contact=None,
+        genre=None,
+        adresse=None,
+    ):
         self.matricule = 0
         self.nom = nom
         self.prenom = prenom
@@ -12,18 +21,20 @@ class TablePersonne(Table):
         self.contact = contact
         self.genre = genre
         self.adresse = adresse
-        self.INFO_ATTR = 'nom, prenoms'
+
         # print(TablePersonne.schema)
 
     @classmethod
-    def updateNom(cls, matricule, nom):
+    def update_nom(cls, matricule, nom):
         try:
             req = f"UPDATE  {cls.relation} SET nom = '{nom}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.select_attr_where_id(self.INFO_ATTR, matricule)
+            print("alleluia")
+            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour du nom de {row[0]} {row[1]} :\n{req}\n :")
+                f"Une erreur est surmenu lors de la mise à jour du nom de {row[0]} {row[1]} :\n{req}\n :"
+            )
             print(err)
             return 0
         else:
@@ -35,10 +46,11 @@ class TablePersonne(Table):
         try:
             req = f"UPDATE  {cls.relation} SET prenoms = '{prenoms}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.select_attr_where_id(self.INFO_ATTR, matricule)
+            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour du prenom de {row[0]} {row[1]}:\n{req}\n :")
+                f"Une erreur est surmenu lors de la mise à jour du prenom de {row[0]} {row[1]}:\n{req}\n :"
+            )
             print(err)
             return 0
         else:
@@ -50,10 +62,11 @@ class TablePersonne(Table):
         try:
             req = f"UPDATE  {cls.relation} SET date_naissance = '{date_naissance}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.select_attr_where_id(self.INFO_ATTR, matricule)
+            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour de la date de naissance de {row[0]} {row[1]}:\n{req}\n :")
+                f"Une erreur est surmenu lors de la mise à jour de la date de naissance de {row[0]} {row[1]}:\n{req}\n :"
+            )
             print(err)
             return 0
         else:
@@ -65,10 +78,11 @@ class TablePersonne(Table):
         try:
             req = f"UPDATE  {cls.relation} SET contact = '{contact}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.select_attr_where_id(self.INFO_ATTR, matricule)
+            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour du contact de {row[0]} {row[1]} :\n{req}\n :")
+                f"Une erreur est surmenu lors de la mise à jour du contact de {row[0]} {row[1]} :\n{req}\n :"
+            )
             print(err)
             return 0
         else:
@@ -79,10 +93,11 @@ class TablePersonne(Table):
         try:
             req = f"UPDATE  {cls.relation} SET genre = '{genre}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.select_attr_where_id(self.INFO_ATTR, matricule)
+            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour du genre de {row[0]} {row[1]} :\n{req}\n :")
+                f"Une erreur est surmenu lors de la mise à jour du genre de {row[0]} {row[1]} :\n{req}\n :"
+            )
             print(err)
             return 0
         else:
@@ -94,10 +109,11 @@ class TablePersonne(Table):
         try:
             req = f"UPDATE  {cls.relation} SET adresse = '{adresse}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            row = cls.select_attr_where_id(self.INFO_ATTR, matricule)
+            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour de l'adresse de {row[0]} {row[1]} :\n{req}\n :")
+                f"Une erreur est surmenu lors de la mise à jour de l'adresse de {row[0]} {row[1]} :\n{req}\n :"
+            )
             print(err)
             return 0
         else:
