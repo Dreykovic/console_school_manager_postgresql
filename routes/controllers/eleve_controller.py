@@ -24,7 +24,7 @@ class EleveController(PersonneController):
         contact = cls.write_phone_number("contact")
         genre = cls.write_gender()
         adresse = cls.write_text("adresse")
-        
+
         eleve = Eleve(
             tuteur, classe, nom, prenoms, date_naissance, contact, genre, adresse
         )
@@ -77,26 +77,31 @@ class EleveController(PersonneController):
 
     @classmethod
     def assigner_classe(cls):
-        cls.afficher(Classe)
+        data = cls.show_attr_of(Classe, ["id_classe", "nom", "effectif"])
+        ids = [t[0] for t in data]
         classe = cls.write_number("id classe ")
-        eff = Classe.select_attr_where_id("effectif", classe)
-        while not eff:
+        while classe not in ids:
             print(f"l'id {classe} ne correspond a aucune classe")
             classe = cls.write_number("id classe ")
-        eff = eff[0]+1
+        eff = list(filter(lambda x: x == classe, [t[2] for t in data]))
+        eff = eff[0] + 1
         Classe.update_effectif(classe, eff)
         return classe
 
     @classmethod
     def assigner_tuteur(cls):
+        data = cls.show_attr_of(
+            Tuteur, ["matricule", "nom", "prenoms", "profession", "contact"]
+        )
+        ids = [t[0] for t in data]
         tuteur = cls.write_number("id tuteur ")
-        while not Tuteur.select_attr_where_id("*", tuteur):
-            print(
-                f"le tuteur d'id {tuteur} n'existe pas, veuilleuz créer un nouveau tueur ou entrer une id valide"
-            )
-            classe = cls.write_number("id tuteur ")
-
+        while tuteur not in ids:
+            print(f"l'id {tuteur} ne correspond a aucun tuteur. veuillez réessayer")
+            tuteur = cls.write_number("id tuteur ")
         return tuteur
 
 
 t = EleveController()
+
+
+
