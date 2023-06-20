@@ -1,4 +1,4 @@
-from .linker import Linker
+from linker import Linker
 
 
 class Table(object):

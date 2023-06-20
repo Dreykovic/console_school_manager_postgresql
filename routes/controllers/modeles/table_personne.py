@@ -1,4 +1,4 @@
-from .table import Table
+from table import Table
 import datetime as dt
 
 

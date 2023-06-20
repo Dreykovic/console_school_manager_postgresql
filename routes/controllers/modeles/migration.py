@@ -1,5 +1,5 @@
-from .linker import Linker
-from .database import Database
+from linker import Linker
+from database import Database
 
 
 class Migration(object):
