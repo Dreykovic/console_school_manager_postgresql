@@ -55,14 +55,10 @@ def main():
         "Dosseh", "OOO", datenaiss, "70546987", "M", "BP 25 Sok", "Soulard"
     )
     tut.create()
-    tut.update( "profession", 2,"Koba")
+    tut.update("profession", 2, "Koba")
 
 
 if __name__ == "__main__":
     main()
     print("5555")
     pass
-
-
-
-
