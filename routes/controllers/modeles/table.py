@@ -133,6 +133,21 @@ class Table(object):
             cls.lk.commit()
             return 1
 
+    @classmethod
+    def update(cls, attribut, matricule, profession):
+        row = ''
+        try:
+            req = f"UPDATE  {cls.relation} SET {attribut} = '{profession}' WHERE {cls.primary_key} = '{matricule}';"
+            cls.lk.executerReq(req)
+        except Exception as err:
+            print(
+                f"Une erreur est surmenu lors de la mise à jour de {attribut} : ID:{matricule}:\n{req}\n :")
+            print(err)
+            return 0
+        else:
+            cls.lk.commit()
+            print("UPDATED SUCCESSFULLY !!!")
+            return 1
 
 def main():
     Table.key()
