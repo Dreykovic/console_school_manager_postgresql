@@ -14,24 +14,6 @@ class TableMatiere(Table):
         self.id_matiere = 0
         self.libelle = libelle
 
-    @classmethod
-    def update_libelle(cls, matricule, libelle):
-        req = ""
-        row = []
-        try:
-            req = f"UPDATE  {cls.relation} SET libelle = '{libelle}' WHERE {cls.primary_key} = '{matricule}';"
-            cls.lk.executerReq(req)
-            row = cls.select_attr_where_id("libelle", matricule)
-        except Exception as err:
-            print(
-                f"Une erreur est surmenu lors de la mise à jour du libelle de  {row[0]}:\n{req}\n :"
-            )
-            print(err)
-            return 0
-        else:
-            cls.lk.commit()
-            print('UPDATE SUCCESSFULLY')
-            return 1
 
 
 def main():

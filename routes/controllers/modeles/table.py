@@ -2,7 +2,7 @@ from .linker import Linker
 
 
 class Table(object):
-    relation = ''
+    relation = ""
     schema = []
     primary_key = ""
 
@@ -17,30 +17,30 @@ class Table(object):
                         self.__dict__[attr] = self.key() + 1
                     except TypeError:
                         self.__dict__[attr] = 1
-                if attr == 'INFO_ATTR':
+                if attr == "INFO_ATTR":
                     continue
                 data += (self.__dict__[attr],)
             self.insert(data)
         except NameError as err:
             print("Une erreur est surmenu lors de la création  :\n :")
             print(err)
-            
+
     @classmethod
     def get_columns(cls):
         return [t[0] for t in cls.schema]
 
     @classmethod
     def insert(cls, data):
-        req = ''
+        req = ""
         try:
-            columns = '('
+            columns = "("
             for col in cls.schema:
-                columns += ' ' + col[0] + ','
-            columns = columns[:-1]+" )"
+                columns += " " + col[0] + ","
+            columns = columns[:-1] + " )"
             column_number = len(cls.schema)
-            values = '('
-            values += ' %s, '*column_number
-            values = values[:-2]+")"
+            values = "("
+            values += " %s, " * column_number
+            values = values[:-2] + ")"
 
             req = f"INSERT INTO {cls.relation} {columns} VALUES {values};"
             print(data)
@@ -51,15 +51,15 @@ class Table(object):
             return 0
         else:
             cls.lk.commit()
-            print('INSERT SUCCESSFULY !!')
+            print("INSERT SUCCESSFULY !!")
             return 1
 
     @classmethod
     def key(cls):
-        req = ''
+        req = ""
         try:
             for col in cls.schema:
-                if col[1] == 'k':
+                if col[1] == "k":
                     pkey = col[0]
             req = f"SELECT max({pkey}) From {cls.relation};"
             # print(req)
@@ -75,7 +75,7 @@ class Table(object):
 
     @classmethod
     def select_attr_where_id(cls, attributes, matricule):
-        req = ''
+        req = ""
         try:
             sql = f"SELECT {attributes} FROM {cls.relation} WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(sql)
@@ -85,15 +85,15 @@ class Table(object):
             print(err)
             return 0
         else:
-            if len (row) == 0:
-                print('!!!   Désolé, aucune correspondance')
+            if len(row) == 0:
+                print("!!!   Désolé, aucune correspondance")
                 return 0
             else:
                 return row[0]
 
     @classmethod
     def select_attr(cls, attributes):
-        req = ''
+        req = ""
         try:
             sql = f"SELECT {attributes} FROM {cls.relation};"
             cls.lk.executerReq(sql)
@@ -104,9 +104,10 @@ class Table(object):
             return 0
         else:
             return row
+
     @classmethod
     def select_all(cls):
-        req = ''
+        req = ""
         try:
             sql = f"SELECT * FROM {cls.relation};"
             cls.lk.executerReq(sql)
@@ -120,28 +121,29 @@ class Table(object):
 
     @classmethod
     def delete(cls, matricule):
-        req = ''
+        req = ""
         try:
             req = f"DELETE FROM {cls.relation} WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
         except Exception as err:
-            print(
-                f"Une erreur est surmenu lors de la suppressiond:\n{req}\n :")
+            print(f"Une erreur est surmenu lors de la suppressiond:\n{req}\n :")
             print(err)
             return 0
         else:
             cls.lk.commit()
+            print("DELETED !!!")
             return 1
 
     @classmethod
     def update(cls, attribut, matricule, profession):
-        row = ''
+        row = ""
         try:
             req = f"UPDATE  {cls.relation} SET {attribut} = '{profession}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour de {attribut} : ID:{matricule}:\n{req}\n :")
+                f"Une erreur est surmenu lors de la mise à jour de {attribut} : ID:{matricule}:\n{req}\n :"
+            )
             print(err)
             return 0
         else:
@@ -149,11 +151,13 @@ class Table(object):
             print("UPDATED SUCCESSFULLY !!!")
             return 1
 
+
 def main():
     Table.key()
 
-
     # Table.insert(("2nde C4", 50))
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     # main()
     pass
