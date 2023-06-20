@@ -4,7 +4,7 @@ from . import env
 
 
 class Linker(object):
-    """docstring for ClassName"""
+    """Linker permet de faire un lien entre python et une SGBDR notamment PostgreSQL"""
 
     def __init__(self):
         try:

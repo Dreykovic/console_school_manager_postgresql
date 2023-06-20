@@ -1,0 +1,875 @@
+[
+    {
+        "label": "modeles",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "modeles",
+        "description": "modeles",
+        "detail": "modeles",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "validators",
+        "description": "validators",
+        "isExtraImport": true,
+        "detail": "validators",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "validators",
+        "description": "validators",
+        "isExtraImport": true,
+        "detail": "validators",
+        "documentation": {}
+    },
+    {
+        "label": "TableClasse",
+        "importPath": "table_classe",
+        "description": "table_classe",
+        "isExtraImport": true,
+        "detail": "table_classe",
+        "documentation": {}
+    },
+    {
+        "label": "TableEleve",
+        "importPath": "table_eleve",
+        "description": "table_eleve",
+        "isExtraImport": true,
+        "detail": "table_eleve",
+        "documentation": {}
+    },
+    {
+        "label": "TableEnseignant",
+        "importPath": "table_enseignant",
+        "description": "table_enseignant",
+        "isExtraImport": true,
+        "detail": "table_enseignant",
+        "documentation": {}
+    },
+    {
+        "label": "TableMatiere",
+        "importPath": "table_matiere",
+        "description": "table_matiere",
+        "isExtraImport": true,
+        "detail": "table_matiere",
+        "documentation": {}
+    },
+    {
+        "label": "TableNiveauSerie",
+        "importPath": "table_niveau_serie",
+        "description": "table_niveau_serie",
+        "isExtraImport": true,
+        "detail": "table_niveau_serie",
+        "documentation": {}
+    },
+    {
+        "label": "TableProgramme",
+        "importPath": "table_programme",
+        "description": "table_programme",
+        "isExtraImport": true,
+        "detail": "table_programme",
+        "documentation": {}
+    },
+    {
+        "label": "TableTuteur",
+        "importPath": "table_tuteur",
+        "description": "table_tuteur",
+        "isExtraImport": true,
+        "detail": "table_tuteur",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "psycopg2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psycopg2",
+        "description": "psycopg2",
+        "detail": "psycopg2",
+        "documentation": {}
+    },
+    {
+        "label": "Linker",
+        "importPath": "linker",
+        "description": "linker",
+        "isExtraImport": true,
+        "detail": "linker",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Table",
+        "importPath": "table",
+        "description": "table",
+        "isExtraImport": true,
+        "detail": "table",
+        "documentation": {}
+    },
+    {
+        "label": "TableClasse",
+        "importPath": "modeles.table_classe",
+        "description": "modeles.table_classe",
+        "isExtraImport": true,
+        "detail": "modeles.table_classe",
+        "documentation": {}
+    },
+    {
+        "label": "TableClasse",
+        "importPath": "modeles.table_classe",
+        "description": "modeles.table_classe",
+        "isExtraImport": true,
+        "detail": "modeles.table_classe",
+        "documentation": {}
+    },
+    {
+        "label": "TableClasse",
+        "importPath": "modeles.table_classe",
+        "description": "modeles.table_classe",
+        "isExtraImport": true,
+        "detail": "modeles.table_classe",
+        "documentation": {}
+    },
+    {
+        "label": "Controller",
+        "importPath": "controller",
+        "description": "controller",
+        "isExtraImport": true,
+        "detail": "controller",
+        "documentation": {}
+    },
+    {
+        "label": "Controller",
+        "importPath": "controller",
+        "description": "controller",
+        "isExtraImport": true,
+        "detail": "controller",
+        "documentation": {}
+    },
+    {
+        "label": "Controller",
+        "importPath": "controller",
+        "description": "controller",
+        "isExtraImport": true,
+        "detail": "controller",
+        "documentation": {}
+    },
+    {
+        "label": "TableEleve",
+        "importPath": "modeles.table_eleve",
+        "description": "modeles.table_eleve",
+        "isExtraImport": true,
+        "detail": "modeles.table_eleve",
+        "documentation": {}
+    },
+    {
+        "label": "TableTuteur",
+        "importPath": "modeles.table_tuteur",
+        "description": "modeles.table_tuteur",
+        "isExtraImport": true,
+        "detail": "modeles.table_tuteur",
+        "documentation": {}
+    },
+    {
+        "label": "TableTuteur",
+        "importPath": "modeles.table_tuteur",
+        "description": "modeles.table_tuteur",
+        "isExtraImport": true,
+        "detail": "modeles.table_tuteur",
+        "documentation": {}
+    },
+    {
+        "label": "PersonneController",
+        "importPath": "personne_controller",
+        "description": "personne_controller",
+        "isExtraImport": true,
+        "detail": "personne_controller",
+        "documentation": {}
+    },
+    {
+        "label": "PersonneController",
+        "importPath": "personne_controller",
+        "description": "personne_controller",
+        "isExtraImport": true,
+        "detail": "personne_controller",
+        "documentation": {}
+    },
+    {
+        "label": "PersonneController",
+        "importPath": "personne_controller",
+        "description": "personne_controller",
+        "isExtraImport": true,
+        "detail": "personne_controller",
+        "documentation": {}
+    },
+    {
+        "label": "TableEnseignant",
+        "importPath": "modeles.table_enseignant",
+        "description": "modeles.table_enseignant",
+        "isExtraImport": true,
+        "detail": "modeles.table_enseignant",
+        "documentation": {}
+    },
+    {
+        "label": "TableMatiere",
+        "importPath": "modeles.table_matiere",
+        "description": "modeles.table_matiere",
+        "isExtraImport": true,
+        "detail": "modeles.table_matiere",
+        "documentation": {}
+    },
+    {
+        "label": "ajouter",
+        "kind": 2,
+        "importPath": "c.classe_controller copy",
+        "description": "c.classe_controller copy",
+        "peekOfCode": "def ajouter():\n    nom = input(\"Choisir : \")\n    while not validate_text(nom):\n        nom = input(\"Nom de l'élève : \")\n    effectif = input(\"Prénom de l'élève : \")\n    while not validate_number(effectif):\n        effectif = input(\"Prénom de l'élève : \")\n    eleve = {\"nom\": nom, \"prénom\": prenom}\n    eleves.append(eleve)\n    print(f\"Élève {prenom} {nom} ajouté avec succès.\")",
+        "detail": "c.classe_controller copy",
+        "documentation": {}
+    },
+    {
+        "label": "printer",
+        "kind": 2,
+        "importPath": "c.classe_controller copy",
+        "description": "c.classe_controller copy",
+        "peekOfCode": "def printer():\n    print(f\"1. 2nde A4\")\n    print(f\"2. Znde D\")\n    print(f\"3. 2nde C4\")\n    print(f\"4. 1ere A4\")\n    print(f\"5. 1ere D\")\n    print(f\"6. 1ere C4\")\n    print(f\"7. Tle A4\")\n    print(f\"8. Tle D\")\n    print(f\"9. Tle C4\")",
+        "detail": "c.classe_controller copy",
+        "documentation": {}
+    },
+    {
+        "label": "ajouter",
+        "kind": 2,
+        "importPath": "c.classe_controller copy",
+        "description": "c.classe_controller copy",
+        "peekOfCode": "def ajouter():\n    printer()    \n    choix = input(\"Choisissez une option (1-9) : pour le nom de la classe\")\n    while True:\n        if choix == \"1\":\n            nom = \"2nde A4\"\n            break\n        elif choix == \"2\":\n            nom = \"2nde D\"\n            break",
+        "detail": "c.classe_controller copy",
+        "documentation": {}
+    },
+    {
+        "label": "supprimer_eleve",
+        "kind": 2,
+        "importPath": "c.classe_controller copy",
+        "description": "c.classe_controller copy",
+        "peekOfCode": "def supprimer_eleve():\n    if len(eleves) == 0:\n        print(\"Aucun élève à supprimer.\")\n        return\n    print(\"Liste des élèves :\")\n    for i, eleve in enumerate(eleves):\n        print(f\"{i+1}. {eleve['prénom']} {eleve['nom']}\")\n    choix = int(input(\"Choisissez le numéro de l'élève à supprimer : \"))\n    if choix < 1 or choix > len(eleves):\n        print(\"Choix invalide.\")",
+        "detail": "c.classe_controller copy",
+        "documentation": {}
+    },
+    {
+        "label": "editer_eleve",
+        "kind": 2,
+        "importPath": "c.classe_controller copy",
+        "description": "c.classe_controller copy",
+        "peekOfCode": "def editer_eleve():\n    if len(eleves) == 0:\n        print(\"Aucun élève à éditer.\")\n        return\n    print(\"Liste des élèves :\")\n    for i, eleve in enumerate(eleves):\n        print(f\"{i+1}. {eleve['prénom']} {eleve['nom']}\")\n    choix = int(input(\"Choisissez le numéro de l'élève à éditer : \"))\n    if choix < 1 or choix > len(eleves):\n        print(\"Choix invalide.\")",
+        "detail": "c.classe_controller copy",
+        "documentation": {}
+    },
+    {
+        "label": "afficher_eleves",
+        "kind": 2,
+        "importPath": "c.classe_controller copy",
+        "description": "c.classe_controller copy",
+        "peekOfCode": "def afficher_eleves():\n    if not eleves:\n        print(\"Aucun élève enregistré.\")\n        return\n    print(\"===================================\")\n    print(\"           Liste des élèves         \")\n    print(\"===================================\")\n    print(\"{:<10} {:<10} {:<15} {:<20} {:<10}\".format(\n        \"Prénom\", \"Nom\", \"Contact\", \"Adresse\", \"Genre\"))\n    print(\"-----------------------------------\")",
+        "detail": "c.classe_controller copy",
+        "documentation": {}
+    },
+    {
+        "label": "ajouter_eleve",
+        "kind": 2,
+        "importPath": "c.classe_controller copy",
+        "description": "c.classe_controller copy",
+        "peekOfCode": "def ajouter_eleve():\n    nom = input(\"Nom de l'élève : \")\n    prenom = input(\"Prénom de l'élève : \")\n    contact = input(\"Contact de l'élève : \")\n    adresse = input(\"Adresse de l'élève : \")\n    genre = input(\"Genre de l'élève : \")\n    eleve = (prenom, nom, contact, adresse, genre)\n    eleves.append(eleve)\n    print(f\"Élève {prenom} {nom} ajouté avec succès.\")\n# Autres fonctions pour supprimer, éditer les élèves...",
+        "detail": "c.classe_controller copy",
+        "documentation": {}
+    },
+    {
+        "label": "eleves",
+        "kind": 5,
+        "importPath": "c.classe_controller copy",
+        "description": "c.classe_controller copy",
+        "peekOfCode": "eleves = []\ndef afficher_eleves():\n    if not eleves:\n        print(\"Aucun élève enregistré.\")\n        return\n    print(\"===================================\")\n    print(\"           Liste des élèves         \")\n    print(\"===================================\")\n    print(\"{:<10} {:<10} {:<15} {:<20} {:<10}\".format(\n        \"Prénom\", \"Nom\", \"Contact\", \"Adresse\", \"Genre\"))",
+        "detail": "c.classe_controller copy",
+        "documentation": {}
+    },
+    {
+        "label": "ajouter_eleve",
+        "kind": 2,
+        "importPath": "c.eleve_controller",
+        "description": "c.eleve_controller",
+        "peekOfCode": "def ajouter_eleve():\n    nom = input(\"Nom de l'élève : \")\n    prenom = input(\"Prénom de l'élève : \")\n    eleve = {\"nom\": nom, \"prénom\": prenom}\n    eleves.append(eleve)\n    print(f\"Élève {prenom} {nom} ajouté avec succès.\")\ndef supprimer_eleve():\n    if len(eleves) == 0:\n        print(\"Aucun élève à supprimer.\")\n        return",
+        "detail": "c.eleve_controller",
+        "documentation": {}
+    },
+    {
+        "label": "supprimer_eleve",
+        "kind": 2,
+        "importPath": "c.eleve_controller",
+        "description": "c.eleve_controller",
+        "peekOfCode": "def supprimer_eleve():\n    if len(eleves) == 0:\n        print(\"Aucun élève à supprimer.\")\n        return\n    print(\"Liste des élèves :\")\n    for i, eleve in enumerate(eleves):\n        print(f\"{i+1}. {eleve['prénom']} {eleve['nom']}\")\n    choix = int(input(\"Choisissez le numéro de l'élève à supprimer : \"))\n    if choix < 1 or choix > len(eleves):\n        print(\"Choix invalide.\")",
+        "detail": "c.eleve_controller",
+        "documentation": {}
+    },
+    {
+        "label": "editer_eleve",
+        "kind": 2,
+        "importPath": "c.eleve_controller",
+        "description": "c.eleve_controller",
+        "peekOfCode": "def editer_eleve():\n    if len(eleves) == 0:\n        print(\"Aucun élève à éditer.\")\n        return\n    print(\"Liste des élèves :\")\n    for i, eleve in enumerate(eleves):\n        print(f\"{i+1}. {eleve['prénom']} {eleve['nom']}\")\n    choix = int(input(\"Choisissez le numéro de l'élève à éditer : \"))\n    if choix < 1 or choix > len(eleves):\n        print(\"Choix invalide.\")",
+        "detail": "c.eleve_controller",
+        "documentation": {}
+    },
+    {
+        "label": "afficher_eleves",
+        "kind": 2,
+        "importPath": "c.eleve_controller",
+        "description": "c.eleve_controller",
+        "peekOfCode": "def afficher_eleves():\n    if not eleves:\n        print(\"Aucun élève enregistré.\")\n        return\n    print(\"===================================\")\n    print(\"           Liste des élèves         \")\n    print(\"===================================\")\n    print(\"{:<10} {:<10} {:<15} {:<20} {:<10}\".format(\"Prénom\", \"Nom\", \"Contact\", \"Adresse\", \"Genre\"))\n    print(\"-----------------------------------\")\n    for eleve in eleves:",
+        "detail": "c.eleve_controller",
+        "documentation": {}
+    },
+    {
+        "label": "ajouter_eleve",
+        "kind": 2,
+        "importPath": "c.eleve_controller",
+        "description": "c.eleve_controller",
+        "peekOfCode": "def ajouter_eleve():\n    nom = input(\"Nom de l'élève : \")\n    prenom = input(\"Prénom de l'élève : \")\n    contact = input(\"Contact de l'élève : \")\n    adresse = input(\"Adresse de l'élève : \")\n    genre = input(\"Genre de l'élève : \")\n    eleve = (prenom, nom, contact, adresse, genre)\n    eleves.append(eleve)\n    print(f\"Élève {prenom} {nom} ajouté avec succès.\")\n# Autres fonctions pour supprimer, éditer les élèves...",
+        "detail": "c.eleve_controller",
+        "documentation": {}
+    },
+    {
+        "label": "eleves",
+        "kind": 5,
+        "importPath": "c.eleve_controller",
+        "description": "c.eleve_controller",
+        "peekOfCode": "eleves = []\ndef afficher_eleves():\n    if not eleves:\n        print(\"Aucun élève enregistré.\")\n        return\n    print(\"===================================\")\n    print(\"           Liste des élèves         \")\n    print(\"===================================\")\n    print(\"{:<10} {:<10} {:<15} {:<20} {:<10}\".format(\"Prénom\", \"Nom\", \"Contact\", \"Adresse\", \"Genre\"))\n    print(\"-----------------------------------\")",
+        "detail": "c.eleve_controller",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.database",
+        "description": "routes.controllers.modeles.database",
+        "peekOfCode": "class Database(object):\n    \"\"\"docstring for Glob\"\"\"\n    tables = {\n        TableNiveauSerie.relation: TableNiveauSerie.schema,\n        TableClasse.relation: TableClasse.schema,\n        TableTuteur.relation: TableTuteur.schema,\n        TableEleve.relation: TableEleve.schema,\n        TableEnseignant.relation: TableEnseignant.schema,\n        TableMatiere.relation: TableMatiere.schema,\n        TableProgramme.relation: TableProgramme.schema",
+        "detail": "routes.controllers.modeles.database",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "kind": 5,
+        "importPath": "routes.controllers.modeles.env",
+        "description": "routes.controllers.modeles.env",
+        "peekOfCode": "database = \"gestion_note\"\nusername = \"audrey\"\npasswd = \"1234\"\nhost = \"127.0.0.1\"\nport = 5432",
+        "detail": "routes.controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "username",
+        "kind": 5,
+        "importPath": "routes.controllers.modeles.env",
+        "description": "routes.controllers.modeles.env",
+        "peekOfCode": "username = \"audrey\"\npasswd = \"1234\"\nhost = \"127.0.0.1\"\nport = 5432",
+        "detail": "routes.controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "passwd",
+        "kind": 5,
+        "importPath": "routes.controllers.modeles.env",
+        "description": "routes.controllers.modeles.env",
+        "peekOfCode": "passwd = \"1234\"\nhost = \"127.0.0.1\"\nport = 5432",
+        "detail": "routes.controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "host",
+        "kind": 5,
+        "importPath": "routes.controllers.modeles.env",
+        "description": "routes.controllers.modeles.env",
+        "peekOfCode": "host = \"127.0.0.1\"\nport = 5432",
+        "detail": "routes.controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "port",
+        "kind": 5,
+        "importPath": "routes.controllers.modeles.env",
+        "description": "routes.controllers.modeles.env",
+        "peekOfCode": "port = 5432",
+        "detail": "routes.controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "Linker",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.linker",
+        "description": "routes.controllers.modeles.linker",
+        "peekOfCode": "class Linker(object):\n    \"\"\"docstring for ClassName\"\"\"\n    def __init__(self):\n        try:\n            self.conn = psycopg2.connect(\n                dbname=env.database, user=env.username, password=env.passwd, port = env.port, host = env.host)\n        except Exception as err:\n            print(\n                f\"La connexion avec la base de données a échoué :\\nErreur détectée :\\n{err}\")\n            self.echec = 1",
+        "detail": "routes.controllers.modeles.linker",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "routes.controllers.modeles.linker",
+        "description": "routes.controllers.modeles.linker",
+        "peekOfCode": "def main():\n    f = Linker()\n    f.createTables(Database.tables)\n    # f.createTables({TableTuteur.table:TableTuteur.schema})\nif __name__ == '__main__':\n    # main()\n    pass",
+        "detail": "routes.controllers.modeles.linker",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.migration",
+        "description": "routes.controllers.modeles.migration",
+        "peekOfCode": "class Migration(object):\n    @staticmethod\n    def create_tables(base):\n        lk = Linker()\n        try:\n            for table in base:\n                try:\n                    req = f\"CREATE TABLE {table} (\"\n                    pk = ''\n                    reference_string = ''",
+        "detail": "routes.controllers.modeles.migration",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "routes.controllers.modeles.migration",
+        "description": "routes.controllers.modeles.migration",
+        "peekOfCode": "def main():\n    Migration.create_tables(Database.tables)\n    # ,{TableNiveauSerie.table: TableNiveauSerie.schema}\n    #     TableClasse.table: TableClasse.schema,\n    #     TableTuteur.table: TableTuteur.schema,\n    #     TableEleve.table: TableEleve.schema,\n    #     TableEnseignant.table: TableEnseignant.schema,\n    #     TableMatiere.table: TableMatiere.schema,\n    #     TableProgramme.table: TableProgramme.schema\nif __name__ == '__main__':",
+        "detail": "routes.controllers.modeles.migration",
+        "documentation": {}
+    },
+    {
+        "label": "Table",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.table",
+        "description": "routes.controllers.modeles.table",
+        "peekOfCode": "class Table(object):\n    relation = ''\n    schema = []\n    primary_key = \"\"\n    lk = Linker()\n    def create(self):\n        data = tuple()\n        try:\n            for attr in self.__dict__:\n                if attr == self.primary_key:",
+        "detail": "routes.controllers.modeles.table",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "routes.controllers.modeles.table",
+        "description": "routes.controllers.modeles.table",
+        "peekOfCode": "def main():\n    Table.key()\n    # Table.insert((\"2nde C4\", 50))\nif __name__ == '__main__':\n    # main()\n    pass",
+        "detail": "routes.controllers.modeles.table",
+        "documentation": {}
+    },
+    {
+        "label": "TableClasse",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.table_classe",
+        "description": "routes.controllers.modeles.table_classe",
+        "peekOfCode": "class TableClasse(Table):\n    INFO_ATTR = \"nom, effectif\"\n    relation = \"classe\"\n    schema = [\n        (\"id_classe\", \"k\", \"serial\", \"\", \"\"),\n        (\"nom\", \"\", \"varchar\", \"\", \"\"),\n        (\"effectif\", \"\", \"integer\", \"\", \"\"),\n    ]\n    primary_key = \"id_classe\"\n    def __init__(self, nom=None, effectif=0):",
+        "detail": "routes.controllers.modeles.table_classe",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "routes.controllers.modeles.table_classe",
+        "description": "routes.controllers.modeles.table_classe",
+        "peekOfCode": "def main():\n    tut = TableClasse(\"Dosseh\")\n    tut.create()\nif __name__ == \"__main__\":\n    main()\n    print(\"5555\")\n    pass",
+        "detail": "routes.controllers.modeles.table_classe",
+        "documentation": {}
+    },
+    {
+        "label": "TableEleve",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.table_eleve",
+        "description": "routes.controllers.modeles.table_eleve",
+        "peekOfCode": "class TableEleve(TablePersonne):\n    relation = \"eleve\"\n    schema = [\n        (\"matricule\", \"k\", \"serial\", \"\", \"\"),\n        (\"nom\", \"\", \"varchar\", \"\", \"\"),\n        (\"prenoms\", \"\", \"varchar\", \"\", \"\"),\n        (\"date_naissance\", \"\", \"date\", \"\", \"\"),\n        (\"contact\", \"\", \"varchar\", \"\", \"\"),\n        (\"genre\", \"\", \"varchar\", \"\", \"\"),\n        (\"adresse\", \"\", \"varchar\", \"\", \"\"),",
+        "detail": "routes.controllers.modeles.table_eleve",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "routes.controllers.modeles.table_eleve",
+        "description": "routes.controllers.modeles.table_eleve",
+        "peekOfCode": "def main():\n    datenaiss = dt.datetime(2003, 1, 2).date()\n    tut = TableEleve(1, 1, \"Dosseh\", \"OOO\", datenaiss, \"70546987\", \"M\", \"BP 25 Sok\")\n    tut.create()\nif __name__ == \"__main__\":\n    main()\n    print(\"5555\")\n    pass",
+        "detail": "routes.controllers.modeles.table_eleve",
+        "documentation": {}
+    },
+    {
+        "label": "TableEnseignant",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.table_enseignant",
+        "description": "routes.controllers.modeles.table_enseignant",
+        "peekOfCode": "class TableEnseignant(TablePersonne):\n    relation = \"enseignant\"\n    schema = [\n        (\"matricule\", \"k\", \"serial\", \"\", \"\"),\n        (\"nom\", \"\", \"varchar\", \"\", \"\"),\n        (\"prenoms\", \"\", \"varchar\", \"\", \"\"),\n        (\"date_naissance\", \"\", \"date\", \"\", \"\"),\n        (\"contact\", \"\", \"varchar\", \"\", \"\"),\n        (\"genre\", \"\", \"varchar\", \"\", \"\"),\n        (\"adresse\", \"\", \"varchar\", \"\", \"\"),",
+        "detail": "routes.controllers.modeles.table_enseignant",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "routes.controllers.modeles.table_enseignant",
+        "description": "routes.controllers.modeles.table_enseignant",
+        "peekOfCode": "def main():\n    datenaiss = dt.datetime(2003, 1, 2).date()\n    tut = TableEnseignant(\n        \"Dosseh\", \"OOO\", datenaiss, \"70546987\", \"M\", \"BP 25 Sok\", \"Soulard\"\n    )\n    tut.create()\n    # tut.updateStatut(2, \"Koba\")\nif __name__ == \"__main__\":\n    main()\n    print(\"5555\")",
+        "detail": "routes.controllers.modeles.table_enseignant",
+        "documentation": {}
+    },
+    {
+        "label": "TableMatiere",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.table_matiere",
+        "description": "routes.controllers.modeles.table_matiere",
+        "peekOfCode": "class TableMatiere(Table):\n    relation = \"matiere\"\n    schema = [(\"id_matiere\", \"k\", \"serial\", \"\", \"\"), (\"libelle\", \"\", \"varchar\", \"\", \"\")]\n    primary_key = \"id_matiere\"\n    def __init__(\n        self,\n        libelle=None,\n    ):\n        self.id_matiere = 0\n        self.libelle = libelle",
+        "detail": "routes.controllers.modeles.table_matiere",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "routes.controllers.modeles.table_matiere",
+        "description": "routes.controllers.modeles.table_matiere",
+        "peekOfCode": "def main():\n    tut = TableMatiere(\"Dosseh\")\n    tut.create()\n    TableMatiere.updateLibelle(1, \"Koba\")\nif __name__ == \"__main__\":\n    main()\n    print(\"5555\")\n    pass",
+        "detail": "routes.controllers.modeles.table_matiere",
+        "documentation": {}
+    },
+    {
+        "label": "TableNiveauSerie",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.table_niveau_serie",
+        "description": "routes.controllers.modeles.table_niveau_serie",
+        "peekOfCode": "class TableNiveauSerie(object):\n    relation = 'niveau_serie'\n    schema = [(\"niveau\", \"\", \"varchar\", \"\", \"\"),\n              (\"serie\", \"\", \"varchar\", \"\", \"\")]",
+        "detail": "routes.controllers.modeles.table_niveau_serie",
+        "documentation": {}
+    },
+    {
+        "label": "TablePersonne",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.table_personne",
+        "description": "routes.controllers.modeles.table_personne",
+        "peekOfCode": "class TablePersonne(Table):\n    INFO_ATTR = \"nom, prenoms\"\n    def __init__(\n        self,\n        nom=None,\n        prenom=None,\n        date_naissance=None,\n        contact=None,\n        genre=None,\n        adresse=None,",
+        "detail": "routes.controllers.modeles.table_personne",
+        "documentation": {}
+    },
+    {
+        "label": "TableProgramme",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.table_programme",
+        "description": "routes.controllers.modeles.table_programme",
+        "peekOfCode": "class TableProgramme(Table):\n    relation = 'programme'\n    schema = [(\"id_programme\", \"k\", \"integer\", \"\", \"\"),\n              (\"matiere\", \"rf\", \"integer\", \"id_matiere\", \"matiere\"),\n              (\"prof\", \"rf\", \"integer\", \"matricule\", \"enseignant\"),\n              (\"classe\", \"rf\", \"integer\", \"id_classe\", \"classe\")]\n    primary_key = 'id_programme'\n    def __init__(self, matiere, prof, classe):\n        self.id_programme = 0\n        self.matiere = matiere",
+        "detail": "routes.controllers.modeles.table_programme",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "routes.controllers.modeles.table_programme",
+        "description": "routes.controllers.modeles.table_programme",
+        "peekOfCode": "def main():\n    tut = TableProgramme(1,1,1)\n    tut.create()\nif __name__ == '__main__':\n    main()\n    print('5555')\n    pass",
+        "detail": "routes.controllers.modeles.table_programme",
+        "documentation": {}
+    },
+    {
+        "label": "TableTuteur",
+        "kind": 6,
+        "importPath": "routes.controllers.modeles.table_tuteur",
+        "description": "routes.controllers.modeles.table_tuteur",
+        "peekOfCode": "class TableTuteur(TablePersonne):\n    relation = 'tuteur'\n    schema = [(\"matricule\", \"k\", \"serial\", \"\", \"\"),\n              (\"nom\", \"\", \"varchar\", \"\", \"\"),\n              (\"prenoms\", \"\", \"varchar\", \"\", \"\"),\n              (\"date_naissance\", \"\", \"date\", \"\", \"\"),\n              (\"contact\", \"\", \"varchar\", \"\", \"\"),\n              (\"genre\", \"\", \"varchar\", \"\", \"\"),\n              (\"adresse\", \"\", \"varchar\", \"\", \"\"),\n              (\"profession\", \"\", \"varchar\", \"\", \"\")]",
+        "detail": "routes.controllers.modeles.table_tuteur",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "routes.controllers.modeles.table_tuteur",
+        "description": "routes.controllers.modeles.table_tuteur",
+        "peekOfCode": "def main():\n    datenaiss = dt.datetime(2003, 1, 2).date()\n    tut = TableTuteur(\"Dosseh\", \"OOO\", datenaiss, \"70546987\",\n                      \"M\", \"BP 25 Sok\", \"Soulard\")\n    tut.create()\n    tut.updateProfession(2, \"Koba\")\nif __name__ == '__main__':\n    main()\n    print('5555')\n    pass",
+        "detail": "routes.controllers.modeles.table_tuteur",
+        "documentation": {}
+    },
+    {
+        "label": "ClasseController",
+        "kind": 6,
+        "importPath": "routes.controllers.classe_controller",
+        "description": "routes.controllers.classe_controller",
+        "peekOfCode": "class ClasseController(Controller):\n    model = Classe\n    def __init__(self):\n        self.ajouter()\n    @staticmethod\n    def printer():\n        print(\"1. 2nde A4\")\n        print(\"2. Znde D\")\n        print(\"3. 2nde C4\")\n        print(\"4. 1ere A4\")",
+        "detail": "routes.controllers.classe_controller",
+        "documentation": {}
+    },
+    {
+        "label": "clazss",
+        "kind": 5,
+        "importPath": "routes.controllers.classe_controller",
+        "description": "routes.controllers.classe_controller",
+        "peekOfCode": "clazss = ClasseController()",
+        "detail": "routes.controllers.classe_controller",
+        "documentation": {}
+    },
+    {
+        "label": "Controller",
+        "kind": 6,
+        "importPath": "routes.controllers.controller",
+        "description": "routes.controllers.controller",
+        "peekOfCode": "class Controller:\n    model = \"\"\n    # def __init__(self, model):    # Constructor of the class\n    #     self.model = model\n    def ajouter(self):  # Abstract method, defined by convention only\n        raise NotImplementedError(\"Le controlleur doit implémenter la méthode\")\n    def editer(self):\n        raise NotImplementedError(\"Le controlleur doit implémenter la méthode\")\n    @classmethod\n    def ask_id(cls):",
+        "detail": "routes.controllers.controller",
+        "documentation": {}
+    },
+    {
+        "label": "EleveController",
+        "kind": 6,
+        "importPath": "routes.controllers.eleve_controller",
+        "description": "routes.controllers.eleve_controller",
+        "peekOfCode": "class EleveController(PersonneController):\n    model = Eleve\n    def __init__(\n        self,\n    ):\n        self.ajouter()\n    @classmethod\n    def ajouter(cls):\n        tuteur = cls.assigner_tuteur()\n        classe = cls.assigner_classe()",
+        "detail": "routes.controllers.eleve_controller",
+        "documentation": {}
+    },
+    {
+        "label": "t",
+        "kind": 5,
+        "importPath": "routes.controllers.eleve_controller",
+        "description": "routes.controllers.eleve_controller",
+        "peekOfCode": "t = EleveController()",
+        "detail": "routes.controllers.eleve_controller",
+        "documentation": {}
+    },
+    {
+        "label": "EnseignantController",
+        "kind": 6,
+        "importPath": "routes.controllers.enseignant_controller",
+        "description": "routes.controllers.enseignant_controller",
+        "peekOfCode": "class EnseignantController(PersonneController):\n    model = Enseignant\n    def __init__(\n        self,\n    ):\n        self.afficher()\n        pass\n    @classmethod\n    def ajouter(cls):\n        # cls.model.matricule = cls.write_number('matricule')",
+        "detail": "routes.controllers.enseignant_controller",
+        "documentation": {}
+    },
+    {
+        "label": "t",
+        "kind": 5,
+        "importPath": "routes.controllers.enseignant_controller",
+        "description": "routes.controllers.enseignant_controller",
+        "peekOfCode": "t = EnseignantController()",
+        "detail": "routes.controllers.enseignant_controller",
+        "documentation": {}
+    },
+    {
+        "label": "MatiereController",
+        "kind": 6,
+        "importPath": "routes.controllers.matiere_controller",
+        "description": "routes.controllers.matiere_controller",
+        "peekOfCode": "class MatiereController(Controller):\n    model = Matiere\n    def __init__(\n        self,\n    ):\n        self.ajouter()\n        pass\n    @classmethod\n    def ajouter(cls):\n        libelle = cls.write_text(\"libelle\")",
+        "detail": "routes.controllers.matiere_controller",
+        "documentation": {}
+    },
+    {
+        "label": "t",
+        "kind": 5,
+        "importPath": "routes.controllers.matiere_controller",
+        "description": "routes.controllers.matiere_controller",
+        "peekOfCode": "t = MatiereController()",
+        "detail": "routes.controllers.matiere_controller",
+        "documentation": {}
+    },
+    {
+        "label": "PersonneController",
+        "kind": 6,
+        "importPath": "routes.controllers.personne_controller",
+        "description": "routes.controllers.personne_controller",
+        "peekOfCode": "class PersonneController(Controller):\n    @classmethod\n    def editer_nom(cls):\n        value = cls.write_text(\"nom\")\n        cls.model.update_nom(cls.write_number(\"matricule\"), value)\n    @classmethod\n    def editer_prenom(cls):\n        value = cls.write_text(\"prenom\")\n        cls.model.update_prenoms(cls.write_number(\"matricule\"), value)\n    @classmethod",
+        "detail": "routes.controllers.personne_controller",
+        "documentation": {}
+    },
+    {
+        "label": "TuteurController",
+        "kind": 6,
+        "importPath": "routes.controllers.tuteur_controller",
+        "description": "routes.controllers.tuteur_controller",
+        "peekOfCode": "class TuteurController(PersonneController):\n    model = Tuteur\n    def __init__(\n        self,\n    ):\n        self.afficher()\n    @classmethod\n    def ajouter(cls):\n        nom = cls.write_text(\"nom\")\n        prenoms = cls.write_text(\"prenoms\")",
+        "detail": "routes.controllers.tuteur_controller",
+        "documentation": {}
+    },
+    {
+        "label": "t",
+        "kind": 5,
+        "importPath": "routes.controllers.tuteur_controller",
+        "description": "routes.controllers.tuteur_controller",
+        "peekOfCode": "t = TuteurController()",
+        "detail": "routes.controllers.tuteur_controller",
+        "documentation": {}
+    },
+    {
+        "label": "validate_text",
+        "kind": 2,
+        "importPath": "routes.controllers.validators",
+        "description": "routes.controllers.validators",
+        "peekOfCode": "def validate_text(text):\n    if text.isalpha():\n        return 1\n    else:\n        return 0\ndef validate_phone_number(phone_number):\n    phone_number = str(phone_number)\n    if len(phone_number) == 8:\n        if phone_number.isdigit():\n            if phone_number[0] in (\"9\", \"7\") and phone_number[1] in (\"0\", \"1\", \"2\", \"3\", \"6\", \"7\", \"8\", \"9\"):",
+        "detail": "routes.controllers.validators",
+        "documentation": {}
+    },
+    {
+        "label": "validate_phone_number",
+        "kind": 2,
+        "importPath": "routes.controllers.validators",
+        "description": "routes.controllers.validators",
+        "peekOfCode": "def validate_phone_number(phone_number):\n    phone_number = str(phone_number)\n    if len(phone_number) == 8:\n        if phone_number.isdigit():\n            if phone_number[0] in (\"9\", \"7\") and phone_number[1] in (\"0\", \"1\", \"2\", \"3\", \"6\", \"7\", \"8\", \"9\"):\n                return 1\n    else:\n        return 0\ndef validate_number(number):\n    number = str(number)",
+        "detail": "routes.controllers.validators",
+        "documentation": {}
+    },
+    {
+        "label": "validate_number",
+        "kind": 2,
+        "importPath": "routes.controllers.validators",
+        "description": "routes.controllers.validators",
+        "peekOfCode": "def validate_number(number):\n    number = str(number)\n    if number.isdigit():\n        return 1\n    else:\n        return 0\ndef validate_date(my_date):\n    date_format = \"%Y-%m-%d\"\n    try:\n        datetime.datetime.strptime(my_date, date_format)",
+        "detail": "routes.controllers.validators",
+        "documentation": {}
+    },
+    {
+        "label": "validate_date",
+        "kind": 2,
+        "importPath": "routes.controllers.validators",
+        "description": "routes.controllers.validators",
+        "peekOfCode": "def validate_date(my_date):\n    date_format = \"%Y-%m-%d\"\n    try:\n        datetime.datetime.strptime(my_date, date_format)\n    except ValueError:\n        return 0\n    return 1\n# print(validate_text(\"dzz\"))\n# print(validate_number(\"5\"))",
+        "detail": "routes.controllers.validators",
+        "documentation": {}
+    },
+    {
+        "label": "route_classe",
+        "kind": 2,
+        "importPath": "routes.classes",
+        "description": "routes.classes",
+        "peekOfCode": "def route_classe(choix):\n    if choix == \"1\":\n        afficher_eleves()\n    elif choix == \"2\":\n        ajouter_eleve()\n    elif choix == \"3\":\n        supprimer_eleve()\n    elif choix == \"4\":\n        editer_eleve()\n    elif choix == \"5\":",
+        "detail": "routes.classes",
+        "documentation": {}
+    },
+    {
+        "label": "route_eleve",
+        "kind": 2,
+        "importPath": "routes.eleves",
+        "description": "routes.eleves",
+        "peekOfCode": "def route_eleve(choix):\n    if choix == \"1\":\n        afficher_eleves()\n    elif choix == \"2\":\n        ajouter_eleve()\n    elif choix == \"3\":\n        supprimer_eleve()\n    elif choix == \"4\":\n        editer_eleve()\n    elif choix == \"5\":",
+        "detail": "routes.eleves",
+        "documentation": {}
+    },
+    {
+        "label": "route_enseignant",
+        "kind": 2,
+        "importPath": "routes.enseignants",
+        "description": "routes.enseignants",
+        "peekOfCode": "def route_enseignant(choix):\n    if choix == \"1\":\n        afficher_eleves()\n    elif choix == \"2\":\n        ajouter_eleve()\n    elif choix == \"3\":\n        supprimer_eleve()\n    elif choix == \"4\":\n        editer_eleve()\n    elif choix == \"5\":",
+        "detail": "routes.enseignants",
+        "documentation": {}
+    },
+    {
+        "label": "route_matiere",
+        "kind": 2,
+        "importPath": "routes.matieres",
+        "description": "routes.matieres",
+        "peekOfCode": "def route_matiere(Choix):\n    if choix == \"1\":\n        afficher_eleves()\n    elif choix == \"2\":\n        ajouter_eleve()\n    elif choix == \"3\":\n        supprimer_eleve()\n    elif choix == \"4\":\n        editer_eleve()\n    elif choix == \"5\":",
+        "detail": "routes.matieres",
+        "documentation": {}
+    },
+    {
+        "label": "route_programme",
+        "kind": 2,
+        "importPath": "routes.programmes",
+        "description": "routes.programmes",
+        "peekOfCode": "def route_programme(Choix):\n    if choix == \"1\":\n        afficher_eleves()\n    elif choix == \"2\":\n        ajouter_eleve()\n    elif choix == \"3\":\n        supprimer_eleve()\n    elif choix == \"4\":\n        editer_eleve()\n    elif choix == \"5\":",
+        "detail": "routes.programmes",
+        "documentation": {}
+    },
+    {
+        "label": "route_tuteur",
+        "kind": 2,
+        "importPath": "routes.tuteur",
+        "description": "routes.tuteur",
+        "peekOfCode": "def route_tuteur(Choix):\n    if choix == \"1\":\n        afficher_eleves()\n    elif choix == \"2\":\n        ajouter_eleve()\n    elif choix == \"3\":\n        supprimer_eleve()\n    elif choix == \"4\":\n        editer_eleve()\n    elif choix == \"5\":",
+        "detail": "routes.tuteur",
+        "documentation": {}
+    },
+    {
+        "label": "route_classe",
+        "kind": 2,
+        "importPath": "route",
+        "description": "route",
+        "peekOfCode": "def route_classe(choix):\n    while True:\n        if choix == \"1\":\n            afficher()\n        elif choix == \"2\":\n            ajouter()\n        elif choix == \"3\":\n            supprimer()\n        elif choix == \"4\":\n            editer()",
+        "detail": "route",
+        "documentation": {}
+    },
+    {
+        "label": "route_eleve",
+        "kind": 2,
+        "importPath": "route",
+        "description": "route",
+        "peekOfCode": "def route_eleve(choix):\n    while True:\n        if choix == \"1\":\n            afficher()\n        elif choix == \"2\":\n            ajouter()\n        elif choix == \"3\":\n            supprimer()\n        elif choix == \"4\":\n            editer()",
+        "detail": "route",
+        "documentation": {}
+    },
+    {
+        "label": "route_enseignant",
+        "kind": 2,
+        "importPath": "route",
+        "description": "route",
+        "peekOfCode": "def route_enseignant(choix):\n    while True:\n        if choix == \"1\":\n            afficher()\n        elif choix == \"2\":\n            ajouter()\n        elif choix == \"3\":\n            supprimer()\n        elif choix == \"4\":\n            editer()",
+        "detail": "route",
+        "documentation": {}
+    },
+    {
+        "label": "route_matiere",
+        "kind": 2,
+        "importPath": "route",
+        "description": "route",
+        "peekOfCode": "def route_matiere(Choix):\n    while True:\n        if choix == \"1\":\n            afficher()\n        elif choix == \"2\":\n            ajouter()\n        elif choix == \"3\":\n            supprimer()\n        elif choix == \"4\":\n            editer()",
+        "detail": "route",
+        "documentation": {}
+    },
+    {
+        "label": "route_programme",
+        "kind": 2,
+        "importPath": "route",
+        "description": "route",
+        "peekOfCode": "def route_programme(Choix):\n    while True:\n        if choix == \"1\":\n            afficher()\n        elif choix == \"2\":\n            ajouter()\n        elif choix == \"3\":\n            supprimer()\n        elif choix == \"4\":\n            editer()",
+        "detail": "route",
+        "documentation": {}
+    },
+    {
+        "label": "route_tuteur",
+        "kind": 2,
+        "importPath": "route",
+        "description": "route",
+        "peekOfCode": "def route_tuteur(Choix):\n    while True:\n        if choix == \"1\":\n            afficher()\n        elif choix == \"2\":\n            ajouter()\n        elif choix == \"3\":\n            supprimer()\n        elif choix == \"4\":\n            editer()",
+        "detail": "route",
+        "documentation": {}
+    },
+    {
+        "label": "vue",
+        "kind": 2,
+        "importPath": "vue",
+        "description": "vue",
+        "peekOfCode": "def vue(table):\n    print(\"==========================================================\")\n    print(f\"                      {table.capitalize}                     \")\n    print(\"==========================================================\")\n    print(f\"1. Afficher les {table}s\")\n    print(f\"2. Ajouter un {table}\")\n    print(f\"3. Supprimer un {table}\")\n    print(f\"4. Éditer un {table}\")\n    print(f\"5. Menu principale\")\n    print(f\"[ctrl+c]. Quitter\")",
+        "detail": "vue",
+        "documentation": {}
+    }
+]

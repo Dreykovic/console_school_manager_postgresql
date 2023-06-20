@@ -1,6 +1,7 @@
 from modeles.table_tuteur import TableTuteur as Tuteur
 from personne_controller import PersonneController
 
+
 class TuteurController(PersonneController):
     model = Tuteur
 
@@ -8,11 +9,9 @@ class TuteurController(PersonneController):
         self,
     ):
         self.afficher()
-        pass
 
     @classmethod
     def ajouter(cls):
-        # cls.model.matricule = cls.write_number('matricule')
         nom = cls.write_text("nom")
         prenoms = cls.write_text("prenoms")
         date_naissance = cls.write_date("date de naissance")
@@ -24,6 +23,7 @@ class TuteurController(PersonneController):
             nom, prenoms, date_naissance, contact, genre, adresse, profession
         )
         tuteur.create()
+
     @classmethod
     def editer(cls):
         print("1. Editer le nom du tuteur ")

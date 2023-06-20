@@ -11,11 +11,9 @@ class EleveController(PersonneController):
         self,
     ):
         self.ajouter()
-        pass
 
     @classmethod
     def ajouter(cls):
-        # cls.model.matricule = cls.write_number('matricule')
         tuteur = cls.assigner_tuteur()
         classe = cls.assigner_classe()
         nom = cls.write_text("nom")
@@ -102,6 +100,8 @@ class EleveController(PersonneController):
 
 
 t = EleveController()
+
+
 
 
 

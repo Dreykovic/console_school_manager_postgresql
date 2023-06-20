@@ -161,3 +161,6 @@ class Controller:
             print(row_format.format(*elt))
         # return  [t[0] for t in data]
         return data
+
+
+print(dir())

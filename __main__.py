@@ -6,20 +6,20 @@ def afficher_menu():
     print("===================================")
     print("          Gestion de l'école        ")
     print("===================================")
-    pprint.pprint({
-        "1": "Manager élèves",
-        "2": "Manager enseignants",
-        "3": "Manager classes",
-        "4": "Manager tuteurs",
-        "5": "Manager matières",
-        "6": "Manager programmes",
-        "7": "Manager notes",
-        "8": "Imprimer",
-        "9": "Quitter"
-    }, indent=4)
-
-
-
+    pprint.pprint(
+        {
+            "1": "Manager élèves",
+            "2": "Manager enseignants",
+            "3": "Manager classes",
+            "4": "Manager tuteurs",
+            "5": "Manager matières",
+            "6": "Manager programmes",
+            "7": "Manager notes",
+            "8": "Imprimer",
+            "9": "Quitter",
+        },
+        indent=4,
+    )
 
 
 # Fonctions similaires pour les autres entités (classes, enseignants, tuteurs, matières, programmes)...
@@ -42,15 +42,12 @@ while True:
         vue("programme")
     elif choix == "7":
         print("Fonctionnalité indisponible")
-        # vue("note")
-        continue
+
     elif choix == "8":
         print("Fonctionnalité indisponible")
-        # vue("impression")
-        continue
+
     elif choix == "9":
         print("Au revoir !")
         break
     else:
         print("Choix invalide. Veuillez sélectionner une option valide.")
-

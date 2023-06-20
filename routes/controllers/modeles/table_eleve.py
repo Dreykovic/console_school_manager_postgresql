@@ -1,5 +1,4 @@
 from .table_personne import TablePersonne
-import datetime as dt
 
 
 class TableEleve(TablePersonne):
@@ -41,6 +40,8 @@ def main():
 
 
 if __name__ == "__main__":
+    import datetime as dt
+
     main()
     print("5555")
     pass
