@@ -5,34 +5,58 @@ import sys
 
 
 class Controller:
-    model = ""
+    model = object()
+    MSG_INVALID_TEXT = "Saisie invalide. Veuillez saisir un text valide."
+    MSG_INVALID_NUMBER = "Saisie invalide. Veuillez saisir un number valide."
+    MSG_INVALID_DATE = "Saisie invalide. Veuillez saisir une date valide."
+    MSG_INVALID_OPTION = "Choix invalide. Veuillez sélectionner une option valide."
+    
 
-    # def __init__(self, model):    # Constructor of the class
-    #     self.model = model
-    def ajouter(self):  # Abstract method, defined by convention only
+    def create(self):
         raise NotImplementedError("Le controlleur doit implémenter la méthode")
 
-    def editer(self):
+    def update(self):
         raise NotImplementedError("Le controlleur doit implémenter la méthode")
-
-    # @classmethod
-    # def ask_id(cls):
-    #     matricule = input(f"Id de {cls.model.relation}:       ")
-    #     while not validate_number(matricule):
-    #         print("Saisie invalide. Veuillez saisir un text valide.")
-    #         matricule = input(f"Id de {cls.model.relation}:       ")
-    #     matricule = int(matricule)
-    #     return matricule
 
     @classmethod
-    def supprimer(cls):
-        cls.model.delete(cls.ask_id())
+    def destroy(cls):
+        message = (
+            f"Etes vous sur de vouloir supprimer les donnée de {cls.model.relation}  :"
+        )
+        attr = cls.model.get_columns()
+        data = cls.show_attr_of(cls.model, attr)
+        matricule = cls.write_number("matricule")
+        print("")
+        print("")
+        print(message)
+        while not cls.show_attr_where_id(cls.model, attr, matricule, data):
+            matricule = cls.write_number("matricule")
+            print(message)
+
+        print("?")
+        print("")
+        print("")
+        print("1. Oui")
+        print("2. Non")
+        choix = input("Choisissez une option (1-2) :       ")
+        while True:
+            if choix == "1":
+                cls.model.delete(matricule)
+                break
+            elif choix == "2":
+                sys.exit(0)
+                return 0
+            else:
+                print(cls.MSG_INVALID_OPTION)
+                print("1. Oui")
+                print("2. Non")
+                choix = input("Choisissez une option (1-2) :       ")
 
     @classmethod
     def write_text(cls, name):
         text = input(f"Ecrire {name} de {cls.model.relation} :       ")
         while not validate_text(text):
-            print("Saisie invalide. Veuillez saisir un text valide.")
+            print(cls.MSG_INVALID_TEXT)
             text = input(f"Ecrire {name} de {cls.model.relation} :       ")
         return text
 
@@ -40,7 +64,7 @@ class Controller:
     def write_number(cls, name):
         number = input(f"Ecrire {name} de {cls.model.relation} :       ")
         while not validate_number(number):
-            print("Saisie invalide. Veuillez saisir un number valide.")
+            print(cls.MSG_INVALID_NUMBER)
             number = input(f"Ecrire {name} de {cls.model.relation} :       ")
         return int(number)
 
@@ -48,7 +72,7 @@ class Controller:
     def write_date(cls, name):
         date = input(f"Ecrire {name} de {cls.model.relation} :       ")
         while not validate_date(date):
-            print("Saisie invalide. Veuillez saisir un date valide.")
+            print(cls.MSG_INVALID_DATE)
             date = input(f"Ecrire {name} de {cls.model.relation} :       ")
         data = date.split("-")
         annee = int(data[0])
@@ -57,10 +81,10 @@ class Controller:
         return datetime(annee, mois, jour).date()
 
     @staticmethod
-    def write_gender():
+    def write_gender(correct=""):
         print("1. Homme")
         print("2. Femme")
-        choix = input("Choisissez une option (1-2) : pour le genre       ")
+        choix = input(f"Choisissez une option (1-2) : pour le genre {correct}    ")
         while True:
             if choix == "1":
                 gender = "M"
@@ -69,7 +93,7 @@ class Controller:
                 gender = "F"
                 break
             else:
-                print("Choix invalide. Veuillez sélectionner une option valide.")
+                print(cls.MSG_INVALID_OPTION)
                 print("Homme")
                 print("Femme")
                 choix = input("Choisissez une option (1-9) pour le genre :       ")
@@ -79,7 +103,7 @@ class Controller:
     def write_phone_number(cls, name):
         phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ")
         while not validate_phone_number(phone_number):
-            print("Saisie invalide. Veuillez saisir un phone_number valide.")
+            print(cls.MSG_INVALID_NUMBER)
             phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ")
         return int(phone_number)
 
@@ -121,7 +145,6 @@ class Controller:
         attributs = ", ".join(colonnes)
         data = model.select_attr(attributs)
         table_name = model.relation.capitalize()
-        print(data)
         if len(data) == 0:
             print(f"Rien de '{table_name}' enregistré")
             return

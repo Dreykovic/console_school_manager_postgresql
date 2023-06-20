@@ -13,7 +13,16 @@ def validate_phone_number(phone_number):
     phone_number = str(phone_number)
     if len(phone_number) == 8:
         if phone_number.isdigit():
-            if phone_number[0] in ("9", "7") and phone_number[1] in ("0", "1", "2", "3", "6", "7", "8", "9"):
+            if phone_number[0] in ("9", "7") and phone_number[1] in (
+                "0",
+                "1",
+                "2",
+                "3",
+                "6",
+                "7",
+                "8",
+                "9",
+            ):
                 return 1
     else:
         return 0
@@ -35,7 +44,3 @@ def validate_date(my_date):
     except ValueError:
         return 0
     return 1
-
-
-# print(validate_text("dzz"))
-# print(validate_number("5"))

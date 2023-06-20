@@ -5,7 +5,6 @@ class Table(object):
     relation = ""
     schema = []
     primary_key = ""
-
     lk = Linker()
 
     def create(self):
@@ -23,7 +22,6 @@ class Table(object):
             self.insert(data)
         except NameError as err:
             print("Une erreur est surmenu lors de la création  :\n :")
-            print(err)
 
     @classmethod
     def get_columns(cls):
@@ -47,7 +45,6 @@ class Table(object):
             cls.lk.executerReq(req, data)
         except Exception as err:
             print(f"Une erreur est surmenu lors de l'insertion :\n{req}\n :")
-            print(err)
             return 0
         else:
             cls.lk.commit()
@@ -67,7 +64,6 @@ class Table(object):
             key = cls.lk.resultatReq()[0][0]
         except Exception as err:
             print(f"Id fetch problem :\n{req}\n :")
-            print(err)
             return 0
         else:
             cls.lk.commit()
@@ -82,7 +78,6 @@ class Table(object):
             row = cls.lk.resultatReq()
         except Exception as err:
             print(f"Select problem :\n{req}\n :")
-            print(err)
             return 0
         else:
             if len(row) == 0:
@@ -100,7 +95,6 @@ class Table(object):
             row = cls.lk.resultatReq()
         except Exception as err:
             print(f"Select problem :\n{req}\n :")
-            print(err)
             return 0
         else:
             return row
@@ -114,7 +108,6 @@ class Table(object):
             row = cls.lk.resultatReq()
         except Exception as err:
             print(f"Select problem :\n{req}\n :")
-            print(err)
             return 0
         else:
             return row
@@ -127,7 +120,6 @@ class Table(object):
             cls.lk.executerReq(req)
         except Exception as err:
             print(f"Une erreur est surmenu lors de la suppressiond:\n{req}\n :")
-            print(err)
             return 0
         else:
             cls.lk.commit()
@@ -135,16 +127,15 @@ class Table(object):
             return 1
 
     @classmethod
-    def update(cls, attribut, matricule, profession):
+    def update(cls, attribut, matricule, value):
         row = ""
         try:
-            req = f"UPDATE  {cls.relation} SET {attribut} = '{profession}' WHERE {cls.primary_key} = '{matricule}';"
+            req = f"UPDATE  {cls.relation} SET {attribut} = '{value}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour de {attribut} : ID:{matricule}:\n{req}\n :"
             )
-            print(err)
             return 0
         else:
             cls.lk.commit()

@@ -4,7 +4,7 @@ from controller import Controller
 
 class ClasseController(Controller):
     model = Classe
-    
+
     def __init__(self):
         self.ajouter()
 
@@ -19,8 +19,9 @@ class ClasseController(Controller):
         print("7. Tle A4")
         print("8. Tle D")
         print("9. Tle C4\n \n")
+
     @classmethod
-    def ajouter(cls):
+    def create(cls):
         ClasseController.printer()
         choix = input("Choisissez une option (1-9) : pour le nom de la classe       ")
         while True:
@@ -57,28 +58,29 @@ class ClasseController(Controller):
                 choix = input(
                     "Choisissez une option (1-9) pour le nom de la classe :       "
                 )
-        # effectif = cls.write_number("effectif")
         uneclasse = Classe(nom)
         uneclasse.create()
+
     @classmethod
-    def editer(cls):
+    def update(cls):
         print("1. Editer le nom de la classe ")
         print("2. Editer l'effectif de la classe\n \n")
         choix = input("Choisissez une option (1-2)  :       ")
         while True:
             if choix == "1":
-                cls.editer_nom()
+                cls.update_nom()
                 break
             elif choix == "2":
-                cls.editer_effectif()
+                cls.update_effectif()
                 break
 
             else:
-                print("Choix invalide. Veuillez sélectionner une option valide.")
+                print(cls.MSG_INVALID_OPTION)
                 cls.printer()
                 choix = input("Choisissez une option (1-2)  :       ")
+
     @classmethod
-    def editer_nom(cls):
+    def update_nom(cls):
         ClasseController.printer()
         choix = input(
             "Choisissez une option (1-9) : pour le nouveau nom de la classe       "
@@ -112,18 +114,18 @@ class ClasseController(Controller):
                 nom = "Tle C4"
                 break
             else:
-                print("Choix invalide. Veuillez sélectionner une option valide.")
+                print(cls.MSG_INVALID_OPTION)
                 ClasseController.printer()
                 choix = input(
                     "Choisissez une option (1-9) pour le nouveau nom de la classe :       "
                 )
 
-        Classe.update_nom(cls.write_number('id'), nom)
+        Classe.update('nom',cls.write_number("id"), nom)
 
     @classmethod
-    def editer_effectif(cls):
-        effectif = cls.write_number('effectif')
-        Classe.update_effectif(cls.write_number('id '), effectif)
+    def update_effectif(cls):
+        Classe.update('effectif',cls.write_number("id "), cls.write_number("effectif"))
 
-if __name__ =='__main__':
-    clazss = ClasseController() 
+
+if __name__ == "__main__":
+    clazss = ClasseController()

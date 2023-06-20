@@ -2,7 +2,6 @@ from .table import Table
 
 
 class TableMatiere(Table):
-    INFO_ATTR = "libelle"
     relation = "matiere"
     schema = [("id_matiere", "k", "serial", "", ""), ("libelle", "", "varchar", "", "")]
     primary_key = "id_matiere"
@@ -13,7 +12,6 @@ class TableMatiere(Table):
     ):
         self.id_matiere = 0
         self.libelle = libelle
-
 
 
 def main():
