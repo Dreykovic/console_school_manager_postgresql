@@ -15,14 +15,14 @@ class Controller:
     def editer(self):
         raise NotImplementedError("Le controlleur doit implémenter la méthode")
 
-    @classmethod
-    def ask_id(cls):
-        matricule = input(f"Id de {cls.model.relation}:       ")
-        while not validate_number(matricule):
-            print("Saisie invalide. Veuillez saisir un text valide.")
-            matricule = input(f"Id de {cls.model.relation}:       ")
-        matricule = int(matricule)
-        return matricule
+    # @classmethod
+    # def ask_id(cls):
+    #     matricule = input(f"Id de {cls.model.relation}:       ")
+    #     while not validate_number(matricule):
+    #         print("Saisie invalide. Veuillez saisir un text valide.")
+    #         matricule = input(f"Id de {cls.model.relation}:       ")
+    #     matricule = int(matricule)
+    #     return matricule
 
     @classmethod
     def supprimer(cls):
@@ -84,7 +84,7 @@ class Controller:
         return int(phone_number)
 
     @classmethod
-    def afficher(cls):
+    def show_all(cls):
         data = cls.model.select_all()
         table_name = cls.model.relation.capitalize()
 
@@ -92,11 +92,9 @@ class Controller:
             print(f"Rien de '{table_name}' enregistré")
             return
 
-        columns = cls.model.get_columns()  # Obtient les noms des colonnes de la table
+        columns = cls.model.get_columns()
         print(columns)
-        column_widths = [12] * len(
-            columns
-        )  # Largeur fixe de chaque colonne (20 caractères)
+        column_widths = [12] * len(columns)
 
         print("=" * (sum(column_widths) + 3 * len(columns) + 1))
         print(
@@ -104,17 +102,14 @@ class Controller:
         )
         print("=" * (sum(column_widths) + 3 * len(columns) + 1))
 
-        # Affichage des en-têtes des colonnes
         header_format = " | ".join(
             ["{{:<{}}}".format(width) for width in column_widths]
         )
         print(header_format.format(*columns))
 
-        # Affichage des séparateurs horizontaux
         separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
         print(separator)
 
-        # Affichage des lignes de données
         for elt in data:
             row_format = " | ".join(
                 ["{{:<{}}}".format(width) for width in column_widths]
@@ -131,12 +126,8 @@ class Controller:
             print(f"Rien de '{table_name}' enregistré")
             return
 
-        # columns = ["matricule","nom", "prenom", "profession", "contact"]
-        # # Obtient les noms des colonnes de la table
         columns = colonnes
-        column_widths = [12] * len(
-            columns
-        )  # Largeur fixe de chaque colonne (20 caractères)
+        column_widths = [12] * len(columns)
 
         print("=" * (sum(column_widths) + 3 * len(columns) + 1))
         print(
@@ -144,23 +135,19 @@ class Controller:
         )
         print("=" * (sum(column_widths) + 3 * len(columns) + 1))
 
-        # Affichage des en-têtes des colonnes
         header_format = " | ".join(
             ["{{:<{}}}".format(width) for width in column_widths]
         )
         print(header_format.format(*columns))
 
-        # Affichage des séparateurs horizontaux
         separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
         print(separator)
 
-        # Affichage des lignes de données
         for elt in data:
             row_format = " | ".join(
                 ["{{:<{}}}".format(width) for width in column_widths]
             )
             print(row_format.format(*elt))
-        # return  [t[0] for t in data]
         return data
 
     @staticmethod
@@ -191,5 +178,6 @@ class Controller:
         print(row_format.format(*data))
         return 1
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     print(dir())

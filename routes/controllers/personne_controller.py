@@ -3,18 +3,24 @@ from controller import Controller
 
 class PersonneController(Controller):
     def editer_profession(cls):
-        data = cls.show_attr_of(Tuteur, ["matricule", "nom", "profession"])
+        attr = ["matricule", "nom","prenoms","adresse","profession"]
+        data = cls.show_attr_of(Tuteur, attr)
         matricule = cls.write_number("matricule")
         print("Etes vous sur de vouloir mettre à jour les donnée du tuteur  :")
-        cls.show_attr_where_id(Tuteur, ["matricule", "nom","prenoms","profession"],matricule)
+        while not cls.show_attr_where_id(Tuteur, attr, matricule, data):
+                matricule = cls.write_number("matricule")
         print("?")
         Tuteur.update_profession(matricule, cls.write_text("profession"))
     @classmethod
     def editer_nom(cls):
-        attr = ["matricule", "nom", "prenom", "adresse"]
-        data = cls.show_attr_of(Tuteur, attr)
-        value = cls.write_text("nom")
-        cls.model.update_nom(cls.write_number("matricule"), value)
+        attr = ["matricule", "nom","prenoms","adresse"]
+        data = cls.show_attr_of(cls.model, attr)
+        matricule = cls.write_number("matricule")
+        print("Etes vous sur de vouloir mettre à jour les donnée du tuteur  :")
+        while not cls.show_attr_where_id(Tuteur, attr, matricule, data):
+                matricule = cls.write_number("matricule")
+        print("?")
+        cls.model.update_nom(matricule, cls.write_text("nom"))
 
     @classmethod
     def editer_prenom(cls):
