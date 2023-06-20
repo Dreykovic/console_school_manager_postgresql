@@ -23,5 +23,4 @@ class Database(object):
 
 # print(Glob.base)
 
-dir()
 

@@ -8,7 +8,7 @@ class TuteurController(PersonneController):
     def __init__(
         self,
     ):
-        self.afficher()
+        self.editer()
 
     @classmethod
     def ajouter(cls):
@@ -61,10 +61,30 @@ class TuteurController(PersonneController):
                 printer()
                 choix = input("Choisissez une option (1-7)  :       ")
 
+    # @classmethod
+    # def editer_profession(cls):
+    #     value = cls.write_text("profession")
+    #     Tuteur.update_profession(cls.write_number("matricule"), value)
     @classmethod
     def editer_profession(cls):
-        value = cls.write_text("profession")
-        Tuteur.update_profession(cls.write_number("matricule"), value)
+        data = cls.show_attr_of(Tuteur, ["matricule", "nom", "profession"])
+        matricule = cls.write_number("matricule")
+        print("Etes vous sur de vouloir mettre à jour les donnée du tuteur  :")
+        cls.show_attr_where_id(Tuteur, ["matricule", "nom","prenoms","profession"],matricule)
+        print("?")
+        Tuteur.update_profession(matricule, cls.write_text("profession"))
+        
+    def g():
+        data = cls.show_attr_of(Classe, ["id_classe", "nom", "effectif"])
+        ids = [t[0] for t in data]
+        classe = cls.write_number("id classe ")
+        while classe not in ids:
+            print(f"l'id {classe} ne correspond a aucune classe")
+            classe = cls.write_number("id classe ")
+        eff = list(filter(lambda x: x == classe, [t[2] for t in data]))
+        eff = eff[0] + 1
+        Classe.update_effectif(classe, eff)
+        return classe
 
 
 t = TuteurController()
