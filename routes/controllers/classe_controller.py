@@ -125,4 +125,5 @@ class ClasseController(Controller):
         effectif = cls.write_number('effectif')
         Classe.update_effectif(cls.write_number('id '), effectif)
 
-clazss = ClasseController() 
+if __name__ =='__main__':
+    clazss = ClasseController() 

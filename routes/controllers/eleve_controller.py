@@ -100,8 +100,3 @@ class EleveController(PersonneController):
 
 
 t = EleveController()
-
-
-
-
-

@@ -1,6 +1,7 @@
 from modeles.table_classe import TableClasse as Classe
 from validators import *
 from datetime import datetime
+import sys
 
 
 class Controller:
@@ -163,48 +164,32 @@ class Controller:
         return data
 
     @staticmethod
-    def show_attr_where_id(model, colonnes, matricule):
-        data = []
-        attributs = ", ".join(colonnes)
-        nuplet = model.select_attr_where_id(attributs, matricule)
+    def show_attr_where_id(model, colonnes, matricule, alldata):
+        ids = [t[0] for t in alldata]
+        while matricule not in ids:
+            print(f"l'id  ne correspond a aucun {model.relation}, Veuillez réessayer")
+            return 0
+        data = tuple(filter(lambda x: x[0] == matricule, [t for t in alldata]))[0]
         table_name = model.relation.capitalize()
 
-        data.append(nuplet)
-        print(data)
-
-        if len(data) == 0:
-            print(f"Ce element de '{table_name}' n'est pas enregistré")
-            return
-
-        # columns = ["matricule","nom", "prenom", "profession", "contact"]
-        # # Obtient les noms des colonnes de la table
         columns = colonnes
-        column_widths = [12] * len(
-            columns
-        )  # Largeur fixe de chaque colonne (20 caractères)
+        column_widths = [12] * len(columns)
 
         print("=" * (sum(column_widths) + 3 * len(columns) + 1))
         print(f"{table_name:^{sum(column_widths) + 3 * len(columns) + 1}}")
         print("=" * (sum(column_widths) + 3 * len(columns) + 1))
 
-        # Affichage des en-têtes des colonnes
         header_format = " | ".join(
             ["{{:<{}}}".format(width) for width in column_widths]
         )
         print(header_format.format(*columns))
 
-        # Affichage des séparateurs horizontaux
         separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
         print(separator)
 
-        # Affichage des lignes de données
-        for elt in data:
-            row_format = " | ".join(
-                ["{{:<{}}}".format(width) for width in column_widths]
-            )
-            print(row_format.format(*elt))
-        # return  [t[0] for t in data]
-        return data
+        row_format = " | ".join(["{{:<{}}}".format(width) for width in column_widths])
+        print(row_format.format(*data))
+        return 1
 
-
-print(dir())
+if __name__ == '__main__':
+    print(dir())
