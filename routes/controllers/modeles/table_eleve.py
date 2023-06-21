@@ -13,6 +13,7 @@ class TableEleve(TablePersonne):
         ("adresse", "", "varchar", "", ""),
         ("tuteur", "rf", "integer", "matricule", "tuteur"),
         ("classe", "rf", "integer", "id_classe", "classe"),
+        
     ]
 
     def __init__(
