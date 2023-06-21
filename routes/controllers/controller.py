@@ -153,7 +153,7 @@ class Controller:
         table_name = model.relation.capitalize()
 
         columns = model.get_columns()
-        column_widths = [12] * len(columns)
+        column_widths = [14] * len(columns)
 
         Controller.print_head(columns, column_widths, table_name)
 
@@ -174,11 +174,16 @@ class Controller:
         separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
         print(separator)
 
-    def recup_value(
+    @classmethod
+    def update(
+        cls,
         attribut,
+        invalid_message_type,
         values=None,
         phone_attribut=None,
     ):
+        data = cls.show(cls.model)
+        matricule = cls.write_number("matricule")
         if values == None:
             if phone_attribut == None:
                 column_type = cls.model.get_colunm_type(attribut)
@@ -191,24 +196,48 @@ class Controller:
             else:
                 result = cls.write_phone_number(phone_attribut)
         else:
-            position = 0
+            position = 1
             for value in values:
-                position += position
-                print(f"{ position}{value}")
-            choix = input(f"Choisissez une option (1-{position}) :        ")
-            while True:
-                for i in range(len(values)):
+                print(f"{ position}. {value}")
+                position = position + 1
+            choix = input(f"Choisissez une option (1-{position-1}) :        ")
+            is_done = 0
+            while not is_done:
+                for i in range(1, len(values) + 1):
+                    print(1)
                     if choix == str(i):
-                        result = values[i]
+                        result = values[i-1]
+                        is_done = 1
                         break
-                    else:
-                        print(invalid_message_type)
-                        position = 0
-                        for value in values:
-                            position += position
-                            print(f"{ position}{value}")
-                        choix = input(f"Choisissez une option (1-{position}) :        ")
-            return result
+                if is_done:
+                    print('true')
+                    continue
+                else:
+                    print("false")
+                    print(invalid_message_type)
+                    position = 1
+                    for value in values:
+                        print(f"{ position}. {value}")
+                        position = position + 1
+                    choix = input(f"Choisissez une option (1-{position-1}) :        ")
+
+        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
+
+        choix = cls.action_confirm(message, matricule, data)
+        print("Ok")
+        print(cls.model.relation)
+        print(attribut)
+        while True:
+            if choix == "1":
+                cls.model.update(attribut, matricule, result)
+                break
+            elif choix == "2":
+                return 0
+            else:
+                print(cls.MSG_INVALID_OPTION)
+                print("1. Oui")
+                print("2. Non")
+                choix = input("Choisissez une option (1-2) :       ")
 
 
 if __name__ == "__main__":

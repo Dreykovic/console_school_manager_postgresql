@@ -8,7 +8,7 @@ class TuteurController(PersonneController):
     def __init__(
         self,
     ):
-        self.destroy()
+        self.update()
 
     @classmethod
     def create(cls):
@@ -36,25 +36,25 @@ class TuteurController(PersonneController):
         choix = input("Choisissez une option (1-7)  :       ")
         while True:
             if choix == "1":
-                super().editer("nom")
+                super().update("nom", cls.MSG_INVALID_TEXT)
                 break
             elif choix == "2":
-                super().editer("prenoms")
+                super().update("prenoms", cls.MSG_INVALID_TEXT)
                 break
             elif choix == "3":
-                super().editer("date_naissance")
+                super().update("date_naissance", cls.MSG_INVALID_DATE)
                 break
             elif choix == "4":
-                super().editer("contact")
+                super().update("contact", cls.MSG_INVALID_NUMBER, None, "contact")
                 break
             elif choix == "5":
-                super().editer("genre")
+                super().update("genre", cls.MSG_INVALID_OPTION, ["M", "F"])
                 break
             elif choix == "6":
-                super().editer("adresse")
+                super().update("adresse", cls.MSG_INVALID_TEXT)
                 break
             elif choix == "7":
-                super().editer("profession")
+                super().update("profession", cls.MSG_INVALID_TEXT)
                 break
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")

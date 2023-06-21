@@ -1,4 +1,4 @@
-from linker import Linker
+from .linker import Linker
 
 
 class Table(object):
@@ -138,6 +138,7 @@ class Table(object):
         try:
             req = f"UPDATE  {cls.relation} SET {attribut} = '{value}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
+            print(req)
         except Exception as err:
             print(
                 f"Une erreur est surmenu lors de la mise à jour de {attribut} : ID:{matricule}:\n{req}\n :"

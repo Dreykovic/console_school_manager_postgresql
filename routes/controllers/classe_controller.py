@@ -88,15 +88,16 @@ class ClasseController(Controller):
         choix = input(
             "Choisissez une option (1-9) : pour le nouveau nom de la classe       "
         )
+        classes_names = ["2nde A4","2nde D","2nde C4",]
         while True:
             if choix == "1":
-                nom = "2nde A4"
+                nom = ""
                 break
             elif choix == "2":
-                nom = "2nde D"
+                nom = ""
                 break
             elif choix == "3":
-                nom = "2nde C4"
+                nom = ""
                 break
             elif choix == "4":
                 nom = "1ere A4"

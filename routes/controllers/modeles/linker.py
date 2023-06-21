@@ -1,6 +1,6 @@
 import sys
 import psycopg2
-import env 
+from . import env 
 
 
 class Linker(object):
