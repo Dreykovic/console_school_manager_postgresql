@@ -21,7 +21,7 @@ class TableClasse(Table):
 
 def main():
     print(TableClasse.schema)
-    a=[t['column_name'] for t in TableClasse.schema]
+    a=[t['type'] for t in TableClasse.schema]
     print(00000)
     print(a)
 
@@ -30,4 +30,5 @@ if __name__ == "__main__":
     main()
     print("5555")
     pass
+
 

@@ -95,8 +95,8 @@ class Table(object):
     @classmethod
     def get_colunm_type(cls, column):
         for elmet in cls.schema:
-            if elmet[0] == column:
-                return elmet[2]
+            if elmet['column_name'] == column:
+                return elmet['type']
 
     def create(self):
         data = tuple()
