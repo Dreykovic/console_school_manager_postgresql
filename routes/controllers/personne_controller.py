@@ -5,8 +5,7 @@ import sys
 class PersonneController(Controller):
     @classmethod
     def editer(cls, attribut):
-        attr = cls.model.get_columns()
-        data = cls.show_attr_of(cls.model, attr)
+        data = cls.show(cls.model)
         if attribut in ["nom", "prenoms", "adresse"]:
             value = cls.write_text(f"nouveau {attribut}")
         elif attribut == "profession":
@@ -24,7 +23,7 @@ class PersonneController(Controller):
                 "Contact",
                 "Date de naissance",
             ]
-            data = cls.show_attr_of(cls.model, attr)
+            data = cls.show(cls.model)
             value = cls.write_date(" nouvelle date de naissance")
         else:
             return 0
@@ -35,7 +34,7 @@ class PersonneController(Controller):
         print(
             f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
         )
-        while not cls.show_attr_where_id(cls.model, attr, matricule, data):
+        while not cls.show_where_id(cls.model, matricule, data):
             matricule = cls.write_number("matricule")
             print(
                 f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"

@@ -8,10 +8,10 @@ class TuteurController(PersonneController):
     def __init__(
         self,
     ):
-        self.supprimer()
+        self.update()
 
     @classmethod
-    def ajouter(cls):
+    def create(cls):
         nom = cls.write_text("nom")
         prenoms = cls.write_text("prenoms")
         date_naissance = cls.write_date("date de naissance")
@@ -25,7 +25,7 @@ class TuteurController(PersonneController):
         tuteur.create()
 
     @classmethod
-    def editer(cls):
+    def update(cls):
         print("1. Editer le nom du tuteur ")
         print("2. Editer le prenom du tuteur")
         print("3. Editer la date de naissance du tuteur ")

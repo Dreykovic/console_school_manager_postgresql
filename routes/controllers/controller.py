@@ -10,7 +10,6 @@ class Controller:
     MSG_INVALID_NUMBER = "Saisie invalide. Veuillez saisir un number valide."
     MSG_INVALID_DATE = "Saisie invalide. Veuillez saisir une date valide."
     MSG_INVALID_OPTION = "Choix invalide. Veuillez sélectionner une option valide."
-    
 
     def create(self):
         raise NotImplementedError("Le controlleur doit implémenter la méthode")
@@ -23,13 +22,12 @@ class Controller:
         message = (
             f"Etes vous sur de vouloir supprimer les donnée de {cls.model.relation}  :"
         )
-        attr = cls.model.get_columns()
-        data = cls.show_attr_of(cls.model, attr)
+        data = cls.show(cls.model)
         matricule = cls.write_number("matricule")
         print("")
         print("")
         print(message)
-        while not cls.show_attr_where_id(cls.model, attr, matricule, data):
+        while not cls.show_where_id(cls.model, matricule, data):
             matricule = cls.write_number("matricule")
             print(message)
 
@@ -107,64 +105,19 @@ class Controller:
             phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ")
         return int(phone_number)
 
-    @classmethod
-    def show_all(cls):
-        data = cls.model.select_all()
-        table_name = cls.model.relation.capitalize()
-
-        if len(data) == 0:
-            print(f"Rien de '{table_name}' enregistré")
-            return
-
-        columns = cls.model.get_columns()
-        print(columns)
-        column_widths = [12] * len(columns)
-
-        print("=" * (sum(column_widths) + 3 * len(columns) + 1))
-        print(
-            f"{'Liste des ' + table_name + 's':^{sum(column_widths) + 3 * len(columns) + 1}}"
-        )
-        print("=" * (sum(column_widths) + 3 * len(columns) + 1))
-
-        header_format = " | ".join(
-            ["{{:<{}}}".format(width) for width in column_widths]
-        )
-        print(header_format.format(*columns))
-
-        separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
-        print(separator)
-
-        for elt in data:
-            row_format = " | ".join(
-                ["{{:<{}}}".format(width) for width in column_widths]
-            )
-            print(row_format.format(*elt))
-
     @staticmethod
-    def show_attr_of(model, colonnes):
-        attributs = ", ".join(colonnes)
-        data = model.select_attr(attributs)
+    def show(model):
+        data = model.select_all()
         table_name = model.relation.capitalize()
+
         if len(data) == 0:
             print(f"Rien de '{table_name}' enregistré")
             return
 
-        columns = colonnes
+        columns = model.get_columns()
         column_widths = [12] * len(columns)
 
-        print("=" * (sum(column_widths) + 3 * len(columns) + 1))
-        print(
-            f"{'Liste des ' + table_name + 's':^{sum(column_widths) + 3 * len(columns) + 1}}"
-        )
-        print("=" * (sum(column_widths) + 3 * len(columns) + 1))
-
-        header_format = " | ".join(
-            ["{{:<{}}}".format(width) for width in column_widths]
-        )
-        print(header_format.format(*columns))
-
-        separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
-        print(separator)
+        Controller.print_head(columns, column_widths, table_name)
 
         for elt in data:
             row_format = " | ".join(
@@ -174,7 +127,7 @@ class Controller:
         return data
 
     @staticmethod
-    def show_attr_where_id(model, colonnes, matricule, alldata):
+    def show_where_id(model, matricule, alldata):
         ids = [t[0] for t in alldata]
         while matricule not in ids:
             print(f"l'id  ne correspond a aucun {model.relation}, Veuillez réessayer")
@@ -182,9 +135,16 @@ class Controller:
         data = tuple(filter(lambda x: x[0] == matricule, [t for t in alldata]))[0]
         table_name = model.relation.capitalize()
 
-        columns = colonnes
+        columns = model.get_columns()
         column_widths = [12] * len(columns)
 
+        Controller.print_head(columns, column_widths, table_name)
+
+        row_format = " | ".join(["{{:<{}}}".format(width) for width in column_widths])
+        print(row_format.format(*data))
+        return 1
+
+    def print_head(columns, column_widths, table_name):
         print("=" * (sum(column_widths) + 3 * len(columns) + 1))
         print(f"{table_name:^{sum(column_widths) + 3 * len(columns) + 1}}")
         print("=" * (sum(column_widths) + 3 * len(columns) + 1))
@@ -196,10 +156,6 @@ class Controller:
 
         separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
         print(separator)
-
-        row_format = " | ".join(["{{:<{}}}".format(width) for width in column_widths])
-        print(row_format.format(*data))
-        return 1
 
 
 if __name__ == "__main__":
