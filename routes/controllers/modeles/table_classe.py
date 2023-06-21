@@ -1,4 +1,5 @@
 from table import Table
+from schema_builder import *
 
 # from linker import linker
 
@@ -6,9 +7,9 @@ from table import Table
 class TableClasse(Table):
     relation = "classe"
     schema = [
-        Table.primary_key("id_classe"),
-        Table.not_null(Table.string("nom")),
-        Table.not_null(Table.integer("effectif")),
+        primary_key("id_classe"),
+        not_null(string("nom")),
+        not_null(integer("effectif")),
     ]
 
     primary_key = "id_classe"
@@ -21,7 +22,7 @@ class TableClasse(Table):
 
 def main():
     print(TableClasse.schema)
-    a=[t['type'] for t in TableClasse.schema]
+    a = [t["type"] for t in TableClasse.schema]
     print(00000)
     print(a)
 
@@ -30,6 +31,3 @@ if __name__ == "__main__":
     main()
     print("5555")
     pass
-
-
-

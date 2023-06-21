@@ -1,24 +1,22 @@
 from table import Table
 import datetime as dt
+from schema_builder import *
 
 
 class TablePersonne(Table):
     schema = [
-        ("matricule", "k", "serial", "", ""),
-        ("nom", "", "varchar", "", ""),
-        ("prenoms", "", "varchar", "", ""),
-        ("date_naissance", "", "date", "", ""),
-        ("contact", "", "varchar", "", ""),
-        ("genre", "", "varchar", "", ""),
-        ("adresse", "", "varchar", "", ""),
-        ("profession", "", "varchar", "", ""),
-        Table.primary_key("matricule"),
-        Table.not_null(Table.string('nom')),
-        Table.not_null(Table.string('nom')),
-        Table.not_null(Table.string('nom')),
+        primary_key("matricule"),
+        not_null(string("nom")),
+        not_null(string("prenom")),
+        not_null(date("date_naissance")),
+        not_null(string("contact")),
+        not_null(string("genre")),
+        not_null(string("adresse")),
+        not_null(string("prenom")),
     ]
 
     primary_key = "matricule"
+
     def __init__(
         self,
         nom=None,
