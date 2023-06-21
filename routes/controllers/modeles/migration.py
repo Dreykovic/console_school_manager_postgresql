@@ -67,6 +67,7 @@ class Migration(object):
         req += primary_key_def
         req += "".join(foreign_def for foreign_def in foreign_keys_definitions)
         req = req[:-2] + ")"
+        
 
 
 def main():
