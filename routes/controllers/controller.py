@@ -115,15 +115,25 @@ class Controller:
             return
 
         columns = model.get_columns()
-        column_widths = [12] * len(columns)
+        column_widths = [14] * len(columns)
 
         Controller.print_head(columns, column_widths, table_name)
 
+        datetime_string_format = "%b %d %Y"
+        uneListe = []
         for elt in data:
+            tuplet = tuple()
+            for value in elt:
+                if type(value) == type(datetime(2000, 1, 1).date()):
+                    value = datetime.strftime(value, datetime_string_format)
+                tuplet += (value,)
+            elt = tuplet
+            uneListe.append(elt)
             row_format = " | ".join(
                 ["{{:<{}}}".format(width) for width in column_widths]
             )
             print(row_format.format(*elt))
+        data = uneListe
         return data
 
     @staticmethod
