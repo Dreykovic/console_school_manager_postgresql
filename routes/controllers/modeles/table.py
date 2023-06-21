@@ -19,6 +19,7 @@ class Table(object):
                 if attr == "INFO_ATTR":
                     continue
                 data += (self.__dict__[attr],)
+                print(data)
             self.insert(data)
         except NameError as err:
             print("Une erreur est surmenu lors de la création  :\n :")
@@ -67,12 +68,13 @@ class Table(object):
             req = f"SELECT max({pkey}) From {cls.relation};"
             # print(req)
             cls.lk.executerReq(req)
+            print(req)
             key = cls.lk.resultatReq()[0][0]
         except Exception as err:
             print(f"Id fetch problem :\n{req}\n :")
             return 0
         else:
-            cls.lk.commit()
+            print(key)
             return key
 
     @classmethod

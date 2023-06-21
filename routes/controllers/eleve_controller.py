@@ -81,9 +81,9 @@ class EleveController(PersonneController):
         for element in data:
             if element[0] == classe:
                 eff = element[2]
-        print(eff)
+    
         print("0000000000000000000000000000000000000000000000000000")
-        Classe.update_effectif(classe, eff)
+        Classe.update("effectif",classe, eff+1)
         return classe
 
     @classmethod

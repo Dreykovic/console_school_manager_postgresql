@@ -3,6 +3,7 @@ import datetime as dt
 
 
 class TablePersonne(Table):
+    primary_key = "matricule"
     def __init__(
         self,
         nom=None,

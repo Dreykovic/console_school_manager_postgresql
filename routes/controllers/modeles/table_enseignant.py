@@ -14,7 +14,6 @@ class TableEnseignant(TablePersonne):
         ("adresse", "", "varchar", "", ""),
         ("statut", "", "varchar", "", ""),
     ]
-    primary_key = "matricule"
 
     def __init__(
         self,
