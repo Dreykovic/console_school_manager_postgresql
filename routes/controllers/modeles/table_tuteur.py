@@ -1,5 +1,5 @@
 import datetime as dt
-from .table_personne import TablePersonne
+from table_personne import TablePersonne
 
 
 class TableTuteur(TablePersonne):
