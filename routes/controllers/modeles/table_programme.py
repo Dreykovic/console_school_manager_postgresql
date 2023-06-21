@@ -8,7 +8,7 @@ class TableProgramme(Table):
         primary_key("id_programme"),
         references(foreign_key(integer("matiere")), "matiere", "id_matiere"),
         references(foreign_key(integer("prof")), "enseignat", "matricule"),
-        references(foreign_key(integer("classe")), "classe", "id_classe"),
+        references(foreign_key(integer("classe")), "classe", "id_classe")
     ]
     primary_key = "id_programme"
 
@@ -20,11 +20,11 @@ class TableProgramme(Table):
 
 
 def main():
-    tut = TableProgramme(1, 1, 1)
-    tut.create()
+    print(TableProgramme.schema)
 
 
 if __name__ == "__main__":
     main()
     print("5555")
     pass
+
