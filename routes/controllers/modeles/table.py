@@ -90,13 +90,13 @@ class Table(object):
 
     @classmethod
     def get_columns(cls):
-        return [t['column_name'] for t in cls.schema]
+        return [t["column_name"] for t in cls.schema]
 
     @classmethod
     def get_colunm_type(cls, column):
         for elmet in cls.schema:
-            if elmet['column_name'] == column:
-                return elmet['type']
+            if elmet["column_name"] == column:
+                return elmet["type"]
 
     def create(self):
         data = tuple()
@@ -121,7 +121,7 @@ class Table(object):
         try:
             columns = "("
             for col in cls.schema:
-                columns += " " + col[0] + ","
+                columns += " " + col["column_name"] + ","
             columns = columns[:-1] + " )"
             column_number = len(cls.schema)
             values = "("
@@ -143,10 +143,7 @@ class Table(object):
     def key(cls):
         req = ""
         try:
-            for col in cls.schema:
-                if col[1] == "k":
-                    pkey = col[0]
-            req = f"SELECT max({pkey}) From {cls.relation};"
+            req = f"SELECT max({cls.primary_key}) From {cls.relation};"
             # print(req)
             cls.lk.executerReq(req)
             print(req)
@@ -236,9 +233,7 @@ class Table(object):
 def main():
     Table.key()
 
-    # Table.insert(("2nde C4", 50))
 
 
 if __name__ == "__main__":
-    # main()
     pass
