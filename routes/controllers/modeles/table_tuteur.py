@@ -31,23 +31,6 @@ class TableTuteur(TablePersonne):
         )
         self.profession = profession
 
-    @classmethod
-    def update_profession(cls, matricule, profession):
-        row = ""
-        try:
-            req = f"UPDATE  {cls.relation} SET profession = '{profession}' WHERE {cls.primary_key} = '{matricule}';"
-            cls.lk.executerReq(req)
-            row = cls.select_attr_where_id(cls.INFO_ATTR, matricule)
-        except Exception as err:
-            print(
-                f"Une erreur est surmenu lors de la mise à jour de la profession de  {row[0]} {row[1]}:\n{req}\n :"
-            )
-            print(err)
-            return 0
-        else:
-            cls.lk.commit()
-            return 1
-
 
 def main():
     datenaiss = dt.datetime(2003, 1, 2).date()

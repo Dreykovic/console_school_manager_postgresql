@@ -31,25 +31,6 @@ class TableEnseignant(TablePersonne):
         )
         self.statut = statut
 
-    @classmethod
-    def update_statut(cls, matricule, statut):
-        req = ''
-        row = []
-        try:
-            req = f"UPDATE  {cls.relation} SET statut = '{statut}' WHERE {cls.primary_key} = '{matricule}';"
-            cls.lk.executerReq(req)
-            row = cls.selectAttrWhereId(self.INFO_ATTR, matricule)
-        except Exception as err:
-            print(
-                f"Une erreur est surmenu lors de la mise à jour du statut de  {row[0]} {row[1]}:\n{req}\n :"
-            )
-            print(err)
-            return 0
-        else:
-            cls.lk.commit()
-            print("UPDATE SUCCESSPULLY !!!")
-            return 1
-
 
 def main():
     datenaiss = dt.datetime(2003, 1, 2).date()
@@ -57,7 +38,6 @@ def main():
         "Dosseh", "OOO", datenaiss, "70546987", "M", "BP 25 Sok", "Soulard"
     )
     tut.create()
-    # tut.updateStatut(2, "Koba")
 
 
 if __name__ == "__main__":

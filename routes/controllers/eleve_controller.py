@@ -10,10 +10,10 @@ class EleveController(PersonneController):
     def __init__(
         self,
     ):
-        self.ajouter()
+        self.create()
 
     @classmethod
-    def ajouter(cls):
+    def create(cls):
         tuteur = cls.assigner_tuteur()
         classe = cls.assigner_classe()
         nom = cls.write_text("nom")
@@ -29,7 +29,7 @@ class EleveController(PersonneController):
         eleve.create()
 
     @classmethod
-    def editer(cls):
+    def update(cls):
         print("1. Editer le nom du tuteur ")
         print("2. Editer le prenom du tuteur")
         print("3. Editer la date de naissance du tuteur ")
@@ -75,7 +75,7 @@ class EleveController(PersonneController):
 
     @classmethod
     def assigner_classe(cls):
-        data = cls.show_attr_of(Classe, ["id_classe", "nom", "effectif"])
+        data = cls.show(Classe)
         ids = [t[0] for t in data]
         classe = cls.write_number("id classe ")
         while classe not in ids:
@@ -83,13 +83,15 @@ class EleveController(PersonneController):
             classe = cls.write_number("id classe ")
         eff = list(filter(lambda x: x == classe, [t[2] for t in data]))
         eff = eff[0] + 1
+        print(eff)
+        print("0000000000000000000000000000000000000000000000000000")
         Classe.update_effectif(classe, eff)
         return classe
 
     @classmethod
     def assigner_tuteur(cls):
-        data = cls.show_attr_of(
-            Tuteur, ["matricule", "nom", "prenoms", "profession", "contact"]
+        data = cls.show(
+            Tuteur
         )
         ids = [t[0] for t in data]
         tuteur = cls.write_number("id tuteur ")

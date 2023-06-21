@@ -2,13 +2,14 @@ from table import Table
 
 
 class TableProgramme(Table):
-    INFO_ATTR = "nom, prenoms"
-    relation = 'programme'
-    schema = [("id_programme", "k", "integer", "", ""),
-              ("matiere", "rf", "integer", "id_matiere", "matiere"),
-              ("prof", "rf", "integer", "matricule", "enseignant"),
-              ("classe", "rf", "integer", "id_classe", "classe")]
-    primary_key = 'id_programme'
+    relation = "programme"
+    schema = [
+        ("id_programme", "k", "integer", "", ""),
+        ("matiere", "rf", "integer", "id_matiere", "matiere"),
+        ("prof", "rf", "integer", "matricule", "enseignant"),
+        ("classe", "rf", "integer", "id_classe", "classe"),
+    ]
+    primary_key = "id_programme"
 
     def __init__(self, matiere, prof, classe):
         self.id_programme = 0
@@ -17,16 +18,12 @@ class TableProgramme(Table):
         self.classe = classe
 
 
-
 def main():
-
-    tut = TableProgramme(1,1,1)
+    tut = TableProgramme(1, 1, 1)
     tut.create()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-    print('5555')
+    print("5555")
     pass
-
-

@@ -1,50 +1,100 @@
 from controller import Controller
+import sys
 
 
 class PersonneController(Controller):
-    def editer_profession(cls):
-        attr = ["matricule", "nom","prenoms","adresse","profession"]
-        data = cls.show_attr_of(Tuteur, attr)
+    
+    @classmethod
+    def editer(cls, attribut, *args):
+        data = cls.show(cls.model)
         matricule = cls.write_number("matricule")
-        print("Etes vous sur de vouloir mettre à jour les donnée du tuteur  :")
-        while not cls.show_attr_where_id(Tuteur, attr, matricule, data):
-                matricule = cls.write_number("matricule")
-        print("?")
-        Tuteur.update_profession(matricule, cls.write_text("profession"))
-    @classmethod
-    def editer_nom(cls):
-        attr = ["matricule", "nom","prenoms","adresse"]
-        data = cls.show_attr_of(cls.model, attr)
-        matricule = cls.write_number("matricule")
-        print("Etes vous sur de vouloir mettre à jour les donnée du tuteur  :")
-        while not cls.show_attr_where_id(Tuteur, attr, matricule, data):
-                matricule = cls.write_number("matricule")
-        print("?")
-        cls.model.update_nom(matricule, cls.write_text("nom"))
+        if attribut in ["nom", "prenoms", "adresse"]:
+            value = cls.write_text(f"nouveau {attribut}")
+        elif attribut == "profession":
+            value = cls.write_text(attribut)
+        elif attribut == "genre":
+            value = Controller.write_gender("correct")
+        elif attribut == "contact":
+            value = cls.write_phone_number(f"nouveau {attribut}")
+        elif attribut == "date_naissance":
+            attr = [
+                "Matricule",
+                "Nom",
+                "Prenoms",
+                "Adresse",
+                "Contact",
+                "Date de naissance",
+            ]
+            data = cls.show(cls.model)
+            value = cls.write_date(" nouvelle date de naissance")
+        else:
+            return 0
+        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
 
-    @classmethod
-    def editer_prenom(cls):
-        value = cls.write_text("prenom")
-        cls.model.update_prenoms(cls.write_number("matricule"), value)
-
-    @classmethod
-    def editer_date_naissance(cls):
-        value = cls.write_date("date de naissance")
-        cls.model.update_date_naissance(cls.write_number("matricule"), value)
-
-    @classmethod
-    def editer_contact(cls):
-        value = cls.write_phone_number("contact")
-        cls.model.update_contact(cls.write_number("matricule"), value)
-
-    @classmethod
-    def editer_genre(cls):
-        value = Controller.write_gender()
-        cls.model.update_genre(cls.write_number("matricule"), value)
-
-    @classmethod
-    def editer_adresse(cls):
-        value = cls.write_text("adresse")
-        cls.model.update_adresse(cls.write_number("matricule"), value)
+        choix = cls.action_confirm(message, matricule, data)
+        while True:
+            if choix == "1":
+                cls.model.update(attribut, matricule, value)
+                break
+            elif choix == "2":
+                return 0
+            else:
+                print(cls.MSG_INVALID_OPTION)
+                print("1. Oui")
+                print("2. Non")
+                choix = input("Choisissez une option (1-2) :       ")
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # @classmethod
+    # def editer(cls, attribut, *args):
+    #     data = cls.show(cls.model)
+    #     matricule = cls.write_number("matricule")
+    #     if attribut in ["nom", "prenoms", "adresse"]:
+    #         value = cls.write_text(f"nouveau {attribut}")
+    #     elif attribut == "profession":
+    #         value = cls.write_text(attribut)
+    #     elif attribut == "genre":
+    #         value = Controller.write_gender("correct")
+    #     elif attribut == "contact":
+    #         value = cls.write_phone_number(f"nouveau {attribut}")
+    #     elif attribut == "date_naissance":
+    #         attr = [
+    #             "Matricule",
+    #             "Nom",
+    #             "Prenoms",
+    #             "Adresse",
+    #             "Contact",
+    #             "Date de naissance",
+    #         ]
+    #         data = cls.show(cls.model)
+    #         value = cls.write_date(" nouvelle date de naissance")
+    #     else:
+    #         return 0
+    #     message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
+
+    #     choix = cls.action_confirm(message, matricule, data)
+    #     while True:
+    #         if choix == "1":
+    #             cls.model.update(attribut, matricule, value)
+    #             break
+    #         elif choix == "2":
+    #             return 0
+    #         else:
+    #             print(cls.MSG_INVALID_OPTION)
+    #             print("1. Oui")
+    #             print("2. Non")
+    #             choix = input("Choisissez une option (1-2) :       ")

@@ -8,10 +8,10 @@ class TuteurController(PersonneController):
     def __init__(
         self,
     ):
-        self.editer()
+        self.destroy()
 
     @classmethod
-    def ajouter(cls):
+    def create(cls):
         nom = cls.write_text("nom")
         prenoms = cls.write_text("prenoms")
         date_naissance = cls.write_date("date de naissance")
@@ -25,7 +25,7 @@ class TuteurController(PersonneController):
         tuteur.create()
 
     @classmethod
-    def editer(cls):
+    def update(cls):
         print("1. Editer le nom du tuteur ")
         print("2. Editer le prenom du tuteur")
         print("3. Editer la date de naissance du tuteur ")
@@ -36,42 +36,31 @@ class TuteurController(PersonneController):
         choix = input("Choisissez une option (1-7)  :       ")
         while True:
             if choix == "1":
-                cls.editer_nom()
+                super().editer("nom")
                 break
             elif choix == "2":
-                cls.editer_prenom()
+                super().editer("prenoms")
                 break
             elif choix == "3":
-                cls.editer_date_naissance()
+                super().editer("date_naissance")
                 break
             elif choix == "4":
-                cls.editer_contact()
+                super().editer("contact")
                 break
             elif choix == "5":
-                cls.editer_genre()
+                super().editer("genre")
                 break
             elif choix == "6":
-                cls.editer_adresse()
+                super().editer("adresse")
                 break
             elif choix == "7":
-                cls.editer_profession()
+                super().editer("profession")
                 break
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
                 printer()
                 choix = input("Choisissez une option (1-7)  :       ")
 
-
-    @classmethod
-    def editer_profession(cls):
-        attr = ["matricule", "nom","prenoms","adresse","profession"]
-        data = cls.show_attr_of(Tuteur, attr)
-        matricule = cls.write_number("matricule")
-        print("Etes vous sur de vouloir mettre à jour les donnée du tuteur  :")
-        while not cls.show_attr_where_id(Tuteur, attr, matricule, data):
-                matricule = cls.write_number("matricule")
-        print("?")
-        Tuteur.update_profession(matricule, cls.write_text("profession"))
 
 if __name__ == "__main__":
     t = TuteurController()

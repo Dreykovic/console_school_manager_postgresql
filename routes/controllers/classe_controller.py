@@ -4,9 +4,9 @@ from controller import Controller
 
 class ClasseController(Controller):
     model = Classe
-    
+
     def __init__(self):
-        self.ajouter()
+        self.create()
 
     @staticmethod
     def printer():
@@ -19,8 +19,9 @@ class ClasseController(Controller):
         print("7. Tle A4")
         print("8. Tle D")
         print("9. Tle C4\n \n")
+
     @classmethod
-    def ajouter(cls):
+    def create(cls):
         ClasseController.printer()
         choix = input("Choisissez une option (1-9) : pour le nom de la classe       ")
         while True:
@@ -57,28 +58,32 @@ class ClasseController(Controller):
                 choix = input(
                     "Choisissez une option (1-9) pour le nom de la classe :       "
                 )
-        # effectif = cls.write_number("effectif")
         uneclasse = Classe(nom)
         uneclasse.create()
+
     @classmethod
-    def editer(cls):
+    def update(cls):
         print("1. Editer le nom de la classe ")
         print("2. Editer l'effectif de la classe\n \n")
         choix = input("Choisissez une option (1-2)  :       ")
         while True:
             if choix == "1":
-                cls.editer_nom()
+                cls.update_nom()
                 break
             elif choix == "2":
-                cls.editer_effectif()
+                cls.update_effectif()
                 break
 
             else:
-                print("Choix invalide. Veuillez sélectionner une option valide.")
+                print(cls.MSG_INVALID_OPTION)
                 cls.printer()
                 choix = input("Choisissez une option (1-2)  :       ")
+
     @classmethod
-    def editer_nom(cls):
+    def update_nom(cls):
+        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
+        data = cls.show(cls.model)
+        matricule = cls.write_number("matricule")
         ClasseController.printer()
         choix = input(
             "Choisissez une option (1-9) : pour le nouveau nom de la classe       "
@@ -112,18 +117,43 @@ class ClasseController(Controller):
                 nom = "Tle C4"
                 break
             else:
-                print("Choix invalide. Veuillez sélectionner une option valide.")
+                print(cls.MSG_INVALID_OPTION)
                 ClasseController.printer()
                 choix = input(
                     "Choisissez une option (1-9) pour le nouveau nom de la classe :       "
                 )
-
-        Classe.update_nom(cls.write_number('id'), nom)
+        choix = cls.action_confirm(message, matricule, data)
+        while True:
+            if choix == "1":
+                Classe.update("nom", matricule, nom)
+                break
+            elif choix == "2":
+                return 0
+            else:
+                print(cls.MSG_INVALID_OPTION)
+                print("1. Oui")
+                print("2. Non")
+                choix = input("Choisissez une option (1-2) :       ")
 
     @classmethod
-    def editer_effectif(cls):
-        effectif = cls.write_number('effectif')
-        Classe.update_effectif(cls.write_number('id '), effectif)
+    def update_effectif(cls):
+        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
+        data = cls.show(cls.model)
+        matricule = cls.write_number("matricule")
+        value = cls.write_number("effectif")
+        choix = cls.action_confirm(message, matricule, data)
+        while True:
+            if choix == "1":
+                Classe.update("effectif", matricule, value)
+                break
+            elif choix == "2":
+                return 0
+            else:
+                print(cls.MSG_INVALID_OPTION)
+                print("1. Oui")
+                print("2. Non")
+                choix = input("Choisissez une option (1-2) :       ")
 
-if __name__ =='__main__':
-    clazss = ClasseController() 
+
+if __name__ == "__main__":
+    clazss = ClasseController()

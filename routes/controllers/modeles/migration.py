@@ -56,14 +56,6 @@ class Migration(object):
 def main():
     Migration.create_tables(Database.tables)
 
-    # ,{TableNiveauSerie.table: TableNiveauSerie.schema}
-    #     TableClasse.table: TableClasse.schema,
-    #     TableTuteur.table: TableTuteur.schema,
-    #     TableEleve.table: TableEleve.schema,
-    #     TableEnseignant.table: TableEnseignant.schema,
-    #     TableMatiere.table: TableMatiere.schema,
-    #     TableProgramme.table: TableProgramme.schema
-
 
 if __name__ == "__main__":
     main()
