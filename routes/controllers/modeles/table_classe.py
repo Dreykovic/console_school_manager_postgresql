@@ -1,37 +1,13 @@
 from table import Table
-from linker import linker
+# from linker import linker
 
 
 class TableClasse(Table):
     relation = "classe"
     schema = [
-        {
-            "column_name": "id_classe",
-            "constraint": "pk",
-            "type": "serial",
-            "reference_col": "",
-            "reference_table": "",
-            "null": 0,
-            "unique": 1,
-        },
-        {
-            "column_name": "nom",
-            "constraint": "",
-            "type": "varchar",
-            "reference_col": "",
-            "reference_table": "",
-            "null": 0,
-            "unique": 1,
-        },
-        {
-            "column_name": "effectif",
-            "constraint": "",
-            "type": "integer",
-            "reference_col": "",
-            "reference_table": "",
-            "null": 0,
-            "unique": 1,
-        },
+        Table.primary_key('id_classe'),
+        Table.not_null( Table.string('nom')),
+        Table.not_null(Table.integer('effectif'))
     ]
 
     primary_key = "id_classe"
@@ -43,11 +19,12 @@ class TableClasse(Table):
 
 
 def main():
-    tut = TableClasse("Dosseh")
-    tut.create()
-
+    print(TableClasse.schema)
 
 if __name__ == "__main__":
     main()
     print("5555")
     pass
+
+
+
