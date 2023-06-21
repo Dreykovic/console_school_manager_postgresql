@@ -6,7 +6,7 @@ class ClasseController(Controller):
     model = Classe
 
     def __init__(self):
-        self.ajouter()
+        self.create()
 
     @staticmethod
     def printer():
@@ -81,6 +81,9 @@ class ClasseController(Controller):
 
     @classmethod
     def update_nom(cls):
+        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
+        data = cls.show(cls.model)
+        matricule = cls.write_number("matricule")
         ClasseController.printer()
         choix = input(
             "Choisissez une option (1-9) : pour le nouveau nom de la classe       "
@@ -119,12 +122,37 @@ class ClasseController(Controller):
                 choix = input(
                     "Choisissez une option (1-9) pour le nouveau nom de la classe :       "
                 )
-
-        Classe.update('nom',cls.write_number("id"), nom)
+        choix = cls.action_confirm(message, matricule, data)
+        while True:
+            if choix == "1":
+                Classe.update("nom", matricule, nom)
+                break
+            elif choix == "2":
+                return 0
+            else:
+                print(cls.MSG_INVALID_OPTION)
+                print("1. Oui")
+                print("2. Non")
+                choix = input("Choisissez une option (1-2) :       ")
 
     @classmethod
     def update_effectif(cls):
-        Classe.update('effectif',cls.write_number("id "), cls.write_number("effectif"))
+        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
+        data = cls.show(cls.model)
+        matricule = cls.write_number("matricule")
+        value = cls.write_number("effectif")
+        choix = cls.action_confirm(message, matricule, data)
+        while True:
+            if choix == "1":
+                Classe.update("effectif", matricule, value)
+                break
+            elif choix == "2":
+                return 0
+            else:
+                print(cls.MSG_INVALID_OPTION)
+                print("1. Oui")
+                print("2. Non")
+                choix = input("Choisissez une option (1-2) :       ")
 
 
 if __name__ == "__main__":

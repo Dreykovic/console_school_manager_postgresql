@@ -24,19 +24,7 @@ class Controller:
         )
         data = cls.show(cls.model)
         matricule = cls.write_number("matricule")
-        print("")
-        print("")
-        print(message)
-        while not cls.show_where_id(cls.model, matricule, data):
-            matricule = cls.write_number("matricule")
-            print(message)
-
-        print("?")
-        print("")
-        print("")
-        print("1. Oui")
-        print("2. Non")
-        choix = input("Choisissez une option (1-2) :       ")
+        choix = cls.action_confirm(message, matricule, data)
         while True:
             if choix == "1":
                 cls.model.delete(matricule)
@@ -49,6 +37,25 @@ class Controller:
                 print("1. Oui")
                 print("2. Non")
                 choix = input("Choisissez une option (1-2) :       ")
+
+    @classmethod
+    def action_confirm(cls, message, matricule, data):
+        print("")
+        print("")
+        print(message)
+        while not cls.show_where_id(cls.model, matricule, data):
+            matricule = cls.write_number("matricule")
+            print("")
+            print("")
+            print(message)
+
+        print("?")
+        print("")
+        print("")
+        print("1. Oui")
+        print("2. Non")
+        choix = input("Choisissez une option (1-2) :       ")
+        return choix
 
     @classmethod
     def write_text(cls, name):
@@ -166,6 +173,38 @@ class Controller:
 
         separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
         print(separator)
+
+    def recup_value(attribut, phone_attribut=None, values=None):
+        if values == None:
+            if phone_attribut == None:
+                column_type = cls.model.get_colunm_type(attribut)
+                if column_type == "integer":
+                    result = cls.write_number(attribut)
+                elif column_type == "varchar":
+                    result = cls.write_text(attribut)
+                elif column_type == "date":
+                    result = cls.write_date(attribut)
+            else:
+                result = cls.write_phone_number(phone_attribut)
+        else:
+            position = 0
+            for value in values:
+                position += position
+                print(f"{ position}{value}")
+            choix = input(f"Choisissez une option (1-{position}) :        ")
+            while True:
+                for i in range(len(values)):
+                    if choix == str(i):
+                        result = values[i]
+                        break
+                    else:
+                        print(invalid_message_type)
+                        position = 0
+                        for value in values:
+                            position += position
+                            print(f"{ position}{value}")
+                        choix = input(f"Choisissez une option (1-{position}) :        ")
+            return result
 
 
 if __name__ == "__main__":

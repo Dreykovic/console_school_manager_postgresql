@@ -28,6 +28,12 @@ class Table(object):
         return [t[0] for t in cls.schema]
 
     @classmethod
+    def get_colunm_type(cls, column):
+        for elmet in cls.schema:
+            if elmet[0] == column:
+                return elmet[2]
+
+    @classmethod
     def insert(cls, data):
         req = ""
         try:

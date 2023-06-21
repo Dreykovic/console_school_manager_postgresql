@@ -8,7 +8,7 @@ class TuteurController(PersonneController):
     def __init__(
         self,
     ):
-        self.update()
+        self.destroy()
 
     @classmethod
     def create(cls):
