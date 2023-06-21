@@ -3,54 +3,70 @@ from database import Database
 
 
 class Migration(object):
+    schema = [
+        {
+            "column_name": "id_classe",
+            "constraint": "pk",
+            "type": "serial",
+            "reference_col": "",
+            "reference_table": "",
+            "null": 0,
+            "unique": 1,
+        },
+        {
+            "column_name": "nom",
+            "constraint": "",
+            "type": "varchar",
+            "reference_col": "",
+            "reference_table": "",
+            "null": 0,
+            "unique": 1,
+        },
+        {
+            "column_name": "effectif",
+            "constraint": "rk",
+            "type": "integer",
+            "reference_col": "go",
+            "reference_table": "class",
+            "null": 0,
+            "unique": 1,
+        },
+    ]
+
     @staticmethod
-    def create_tables(base):
-        lk = Linker()
-        try:
-            for table in base:
-                try:
-                    req = f"CREATE TABLE {table} ("
-                    pk = ""
-                    reference_string = ""
-                    pkey_string = ""
-                    for prop in base[table]:
-                        column = prop[0]
-                        constrainte = prop[1]
-                        column_type = prop[2]
-                        ref_column = prop[3]
-                        ref_table = prop[4]
-                        if constrainte == "k":
-                            pk = column
-                        if constrainte == "rf":
-                            reference_string += f"CONSTRAINT {ref_column}_fk_{ref_table} FOREIGN KEY({column}) REFERENCES {ref_table}({ref_column}), "
-                        req += f"{column} {column_type}, "
-                    if pk != "":
-                        pkey_string += f"CONSTRAINT {pk}_pk_{table} PRIMARY KEY({pk}), "
+    def create_tables(schema):
+        req = ""
+        primary_key_def = ""
+        foreign_keys_definitions = ()
+        foreign = ""
+        relation = "test"
 
-                    req += pkey_string + reference_string
-                    req = req[:-2] + ")"
+        req = f"CREATE TABLE {relation} ("
+        for col in schema:
+            req = (
+                req
+                + col["column_name"]
+                + " "
+                + col["type"]
+                + (" NOT NULL" if not col["null"] else "")
+                + (" UNIQUE ," if col["unique"] else ", ")
+            )
 
-                    lk.executerReq(req)
-                except Exception as err:
-                    print(
-                        f"Une erreur est surmenu lors de la création de la tables {table}:\n{req}\n :"
-                    )
-                    print(err)
-                    return 0
-                else:
-                    lk.commit()
-                    print(
-                        f"        #---------Relalation {table} has been created !!\n \n"
-                    )
+            primary_key_def += (
+                f"CONSTRAINT {col['column_name']}_pk PRIMARY KEY({col['column_name']}), "
+                if col["constraint"] == "pk"
+                else ""
+            )
+            foreign += (
+                f"CONSTRAINT {col['column_name']}_fk FOREIGN KEY ({col['column_name']}) REFERENCES {col['reference_table']} ({col['reference_col']}), "
+                if col["constraint"] == "rk"
+                else ""
+            )
 
-        except Exception as err:
-            print(f"Une erreur est surmenu lors de la création des tables :\n{req}\n :")
-            print(err)
-            return 0
-        else:
-            lk.close()
-            print("        #---------Relations created successfully !!")
-            return 1
+            foreign_keys_definitions += (foreign,)
+        req += primary_key_def
+        req += "".join(foreign_def for foreign_def in foreign_keys_definitions)
+        req = req[:-2] + ")"
 
 
 def main():
