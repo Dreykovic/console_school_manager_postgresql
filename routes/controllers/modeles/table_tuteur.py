@@ -1,19 +1,10 @@
-import datetime as dt
-from table_personne import TablePersonne
+from table_personne import *
 
 
 class TableTuteur(TablePersonne):
     relation = "tuteur"
-    schema = [
-        ("matricule", "k", "serial", "", ""),
-        ("nom", "", "varchar", "", ""),
-        ("prenoms", "", "varchar", "", ""),
-        ("date_naissance", "", "date", "", ""),
-        ("contact", "", "varchar", "", ""),
-        ("genre", "", "varchar", "", ""),
-        ("adresse", "", "varchar", "", ""),
-        ("profession", "", "varchar", "", ""),
-    ]
+    schema = TablePersonne.schema
+    schema.append(not_null(string("profession")))
 
     def __init__(
         self,
@@ -32,12 +23,7 @@ class TableTuteur(TablePersonne):
 
 
 def main():
-    datenaiss = dt.datetime(2003, 1, 2).date()
-    tut = TableTuteur(
-        "Dosseh", "OOO", datenaiss, "70546987", "M", "BP 25 Sok", "Soulard"
-    )
-    tut.create()
-    tut.update("profession", 2, "Koba")
+    print(TableTuteur.schema)
 
 
 if __name__ == "__main__":
