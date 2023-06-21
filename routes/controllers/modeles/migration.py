@@ -2,7 +2,6 @@ from linker import Linker
 from database import tables
 
 
-
 def create_tables(relation, schema):
     req = ""
     primary_key_def = ""
@@ -38,7 +37,8 @@ def create_tables(relation, schema):
 
 
 def main():
-    create_tables
+    for relation in tables:
+        create_tables(relation, tables[relation])
 
 
 if __name__ == "__main__":
