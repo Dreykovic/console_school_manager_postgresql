@@ -174,7 +174,11 @@ class Controller:
         separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
         print(separator)
 
-    def recup_value(attribut, phone_attribut=None, values=None):
+    def recup_value(
+        attribut,
+        values=None,
+        phone_attribut=None,
+    ):
         if values == None:
             if phone_attribut == None:
                 column_type = cls.model.get_colunm_type(attribut)
