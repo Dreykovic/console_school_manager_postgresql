@@ -1,9 +1,14 @@
 from table import Table
+from schema_builder import *
 
 
 class TableMatiere(Table):
     relation = "matiere"
-    schema = [("id_matiere", "k", "serial", "", ""), ("libelle", "", "varchar", "", "")]
+    schema = [
+        primary_key("id_matiere"),
+        unique(not_null(string("libelle"))),
+    ]
+
     primary_key = "id_matiere"
 
     def __init__(
@@ -15,12 +20,11 @@ class TableMatiere(Table):
 
 
 def main():
-    tut = TableMatiere("Dosseh")
-    tut.create()
-    TableMatiere.updateLibelle(1, "Koba")
+    print(TableMatiere.schema)
 
 
 if __name__ == "__main__":
     main()
     print("5555")
     pass
+
