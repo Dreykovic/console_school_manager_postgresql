@@ -1,13 +1,14 @@
 from table import Table
+from schema_builder import *
 
 
 class TableProgramme(Table):
     relation = "programme"
     schema = [
-        ("id_programme", "k", "integer", "", ""),
-        ("matiere", "rf", "integer", "id_matiere", "matiere"),
-        ("prof", "rf", "integer", "matricule", "enseignant"),
-        ("classe", "rf", "integer", "id_classe", "classe"),
+        primary_key("id_programme"),
+        references(foreign_key(integer("matiere")), "matiere", "id_matiere"),
+        references(foreign_key(integer("prof")), "enseignat", "matricule"),
+        references(foreign_key(integer("classe")), "classe", "id_classe"),
     ]
     primary_key = "id_programme"
 
