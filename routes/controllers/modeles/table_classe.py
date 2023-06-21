@@ -1,13 +1,14 @@
 from table import Table
+
 # from linker import linker
 
 
 class TableClasse(Table):
     relation = "classe"
     schema = [
-        Table.primary_key('id_classe'),
-        Table.not_null( Table.string('nom')),
-        Table.not_null(Table.integer('effectif'))
+        Table.primary_key("id_classe"),
+        Table.not_null(Table.string("nom")),
+        Table.not_null(Table.integer("effectif")),
     ]
 
     primary_key = "id_classe"
@@ -20,11 +21,13 @@ class TableClasse(Table):
 
 def main():
     print(TableClasse.schema)
+    a=[t['column_name'] for t in TableClasse.schema]
+    print(00000)
+    print(a)
+
 
 if __name__ == "__main__":
     main()
     print("5555")
     pass
-
-
 

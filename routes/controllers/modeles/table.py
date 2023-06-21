@@ -88,6 +88,16 @@ class Table(object):
         col["null"] = 0
         return col
 
+    @classmethod
+    def get_columns(cls):
+        return [t['column_name'] for t in cls.schema]
+
+    @classmethod
+    def get_colunm_type(cls, column):
+        for elmet in cls.schema:
+            if elmet[0] == column:
+                return elmet[2]
+
     def create(self):
         data = tuple()
         try:
@@ -104,16 +114,6 @@ class Table(object):
             self.insert(data)
         except NameError as err:
             print("Une erreur est surmenu lors de la création  :\n :")
-
-    @classmethod
-    def get_columns(cls):
-        return [t[0] for t in cls.schema]
-
-    @classmethod
-    def get_colunm_type(cls, column):
-        for elmet in cls.schema:
-            if elmet[0] == column:
-                return elmet[2]
 
     @classmethod
     def insert(cls, data):
