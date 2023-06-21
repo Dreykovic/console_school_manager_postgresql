@@ -4,16 +4,8 @@ import datetime as dt
 
 class TableEnseignant(TablePersonne):
     relation = "enseignant"
-    schema = [
-        ("matricule", "k", "serial", "", ""),
-        ("nom", "", "varchar", "", ""),
-        ("prenoms", "", "varchar", "", ""),
-        ("date_naissance", "", "date", "", ""),
-        ("contact", "", "varchar", "", ""),
-        ("genre", "", "varchar", "", ""),
-        ("adresse", "", "varchar", "", ""),
-        ("statut", "", "varchar", "", ""),
-    ]
+    schema = TablePersonne.schema
+    schema.append(not_null(string("statut")))
 
     def __init__(
         self,
@@ -32,7 +24,6 @@ class TableEnseignant(TablePersonne):
 
 
 def main():
-    datenaiss = dt.datetime(2003, 1, 2).date()
     tut = TableEnseignant(
         "Dosseh", "OOO", datenaiss, "70546987", "M", "BP 25 Sok", "Soulard"
     )
