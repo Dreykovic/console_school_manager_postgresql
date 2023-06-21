@@ -30,45 +30,42 @@ class EleveController(PersonneController):
 
     @classmethod
     def update(cls):
-        print("1. Editer le nom du tuteur ")
-        print("2. Editer le prenom du tuteur")
-        print("3. Editer la date de naissance du tuteur ")
-        print("4. Editer le contact du tuteur")
-        print("5. Editer le genre du tuteur")
-        print("6. Editer l'adresse du tuteur")
-        print("7. Editer la profession du tuteur\n \n")
+        print("1. Editer le nom de l'eleve ")
+        print("2. Editer le prenom de l'eleve")
+        print("3. Editer la date de naissance de l'eleve ")
+        print("4. Editer le contact de l'eleve")
+        print("5. Editer le genre de l'eleve")
+        print("6. Editer l'adresse de l'eleve")
+        print("7. Editer la profession de l'eleve\n \n")
         choix = input("Choisissez une option (1-7)  :       ")
         while True:
             if choix == "1":
-                cls.editer_nom()
+                super().update("nom", cls.MSG_INVALID_TEXT)
                 break
             elif choix == "2":
-                cls.editer_prenom()
+                super().update("prenoms", cls.MSG_INVALID_TEXT)
                 break
             elif choix == "3":
-                cls.editer_date_naissance()
+                super().update("date_naissance", cls.MSG_INVALID_DATE)
                 break
             elif choix == "4":
-                cls.editer_contact()
+                super().update("contact", cls.MSG_INVALID_NUMBER, None, "contact")
                 break
             elif choix == "5":
-                cls.editer_genre()
+                super().update("genre", cls.MSG_INVALID_OPTION, ["M", "F"])
                 break
             elif choix == "6":
-                cls.editer_adresse()
+                super().update("adresse", cls.MSG_INVALID_TEXT)
                 break
             elif choix == "7":
-                cls.editer_profession()
+                super().update("profession", cls.MSG_INVALID_TEXT)
                 break
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
                 printer()
                 choix = input("Choisissez une option (1-7)  :       ")
 
-    @classmethod
-    def editer_profession(cls):
-        value = cls.write_text("profession")
-        Tuteur.update_profession(cls.write_number("matricule"), value)
+
 
     def validate_classe(id_classe):
         pass
@@ -81,8 +78,9 @@ class EleveController(PersonneController):
         while classe not in ids:
             print(f"l'id {classe} ne correspond a aucune classe")
             classe = cls.write_number("id classe ")
-        eff = list(filter(lambda x: x == classe, [t[2] for t in data]))
-        eff = eff[0] + 1
+        for element in data:
+            if element[0] == classe:
+                eff = element[2]
         print(eff)
         print("0000000000000000000000000000000000000000000000000000")
         Classe.update_effectif(classe, eff)
