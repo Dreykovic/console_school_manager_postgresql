@@ -3,18 +3,10 @@ from table_personne import TablePersonne
 
 class TableEleve(TablePersonne):
     relation = "eleve"
-    schema = [
-        ("matricule", "k", "serial", "", ""),
-        ("nom", "", "varchar", "", ""),
-        ("prenoms", "", "varchar", "", ""),
-        ("date_naissance", "", "date", "", ""),
-        ("contact", "", "varchar", "", ""),
-        ("genre", "", "varchar", "", ""),
-        ("adresse", "", "varchar", "", ""),
-        ("tuteur", "rf", "integer", "matricule", "tuteur"),
-        ("classe", "rf", "integer", "id_classe", "classe"),
-        
-    ]
+
+    schema = TablePersonne.schema
+    schema.append(references(foreign_key(integer("tuteur")), "tuteur", "matricule"))
+    schema.append(references(foreign_key(integer("classe")), "classe", "id_classe"))
 
     def __init__(
         self,
