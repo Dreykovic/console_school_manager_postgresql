@@ -1,13 +1,9 @@
 from table import Table
+from linker import linker
 
 
 class TableClasse(Table):
     relation = "classe"
-    schema = [
-        ("id_classe", "k", "serial", "", ""),
-        ("nom", "", "varchar", "", ""),
-        ("effectif", "", "integer", "", ""),
-    ]
     schema = [
         {
             "column_name": "id_classe",
