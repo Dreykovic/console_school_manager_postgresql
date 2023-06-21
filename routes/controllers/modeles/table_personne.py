@@ -3,6 +3,21 @@ import datetime as dt
 
 
 class TablePersonne(Table):
+    schema = [
+        ("matricule", "k", "serial", "", ""),
+        ("nom", "", "varchar", "", ""),
+        ("prenoms", "", "varchar", "", ""),
+        ("date_naissance", "", "date", "", ""),
+        ("contact", "", "varchar", "", ""),
+        ("genre", "", "varchar", "", ""),
+        ("adresse", "", "varchar", "", ""),
+        ("profession", "", "varchar", "", ""),
+        Table.primary_key("matricule"),
+        Table.not_null(Table.string('nom')),
+        Table.not_null(Table.string('nom')),
+        Table.not_null(Table.string('nom')),
+    ]
+
     primary_key = "matricule"
     def __init__(
         self,
