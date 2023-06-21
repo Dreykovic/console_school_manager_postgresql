@@ -10,7 +10,7 @@ class EleveController(PersonneController):
     def __init__(
         self,
     ):
-        self.create()
+        self.update()
 
     @classmethod
     def create(cls):
@@ -58,7 +58,10 @@ class EleveController(PersonneController):
                 super().update("adresse", cls.MSG_INVALID_TEXT)
                 break
             elif choix == "7":
-                super().update("profession", cls.MSG_INVALID_TEXT)
+                super().update("tuteur", cls.MSG_INVALID_TEXT)
+                break
+            elif choix == "7":
+                super().update("classe", cls.MSG_INVALID_TEXT)
                 break
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
