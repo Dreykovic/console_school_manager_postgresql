@@ -69,7 +69,6 @@ class Table(object):
             print(f"❌ »»»» Id fetch problem :\n{req}\n :")
             return 0
         else:
-            print(key)
             return key
 
     @classmethod
