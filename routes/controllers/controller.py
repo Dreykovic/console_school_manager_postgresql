@@ -85,25 +85,6 @@ class Controller:
         jour = int(data[2])
         return datetime(annee, mois, jour).date()
 
-    @staticmethod
-    def write_gender(correct=""):
-        print("1. Homme")
-        print("2. Femme")
-        choix = input(f"Choisissez une option (1-2) : pour le genre {correct}    ")
-        while True:
-            if choix == "1":
-                gender = "M"
-                break
-            elif choix == "2":
-                gender = "F"
-                break
-            else:
-                print(cls.MSG_INVALID_OPTION)
-                print("Homme")
-                print("Femme")
-                choix = input("Choisissez une option (1-9) pour le genre :       ")
-        return gender
-
     @classmethod
     def write_phone_number(cls, name):
         phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ")
@@ -206,11 +187,11 @@ class Controller:
                 for i in range(1, len(values) + 1):
                     print(1)
                     if choix == str(i):
-                        result = values[i-1]
+                        result = values[i - 1]
                         is_done = 1
                         break
                 if is_done:
-                    print('true')
+                    print("true")
                     continue
                 else:
                     print("false")
