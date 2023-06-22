@@ -1,8 +1,8 @@
 from modeles.table_enseignant import TableEnseignant as Enseignant
-from personne_controller import PersonneController
+from controller import Controller
 
 
-class EnseignantController(PersonneController):
+class EnseignantController(Controller):
     model = Enseignant
 
     def __init__(
@@ -12,8 +12,7 @@ class EnseignantController(PersonneController):
         pass
 
     @classmethod
-    def ajouter(cls):
-        # cls.model.matricule = cls.write_number('matricule')
+    def create(cls):
         nom = cls.read("nom")
         prenoms = cls.read("prenoms")
         date_naissance = cls.read("date_naissance")
@@ -25,7 +24,7 @@ class EnseignantController(PersonneController):
         prof.create()
 
     @classmethod
-    def editer(cls):
+    def update(cls):
         print("1. Editer le nom de l'enseignant ")
         print("2. Editer le prenom de l'enseignant")
         print("3. Editer la date de naissance de l'enseignant ")
@@ -36,35 +35,39 @@ class EnseignantController(PersonneController):
         choix = input("Choisissez une option (1-7)  :       ")
         while True:
             if choix == "1":
-                cls.editer_nom()
+                nom = cls.read("nom")
+                super().update(nom)
                 break
             elif choix == "2":
-                cls.editer_prenom()
+                prenoms = cls.read("prenom")
+                super().update(prenoms)
                 break
             elif choix == "3":
-                cls.editer_date_naissance()
+                date = cls.read("date_naissance")
+                super().update(date)
                 break
             elif choix == "4":
-                cls.editer_contact()
+                contact = cls.read("contact", True)
+                super().update(contact)
                 break
             elif choix == "5":
-                cls.editer_genre()
+                genre = cls.read("genre", False, ["M", "F"])
+                super().update(genre)
                 break
             elif choix == "6":
-                cls.editer_adresse()
+                adresse = cls.read("adresse")
+                super().update(adresse)
                 break
             elif choix == "7":
-                cls.editer_statut()
+                statut = cls.read("statut")
+                super().update(statut)
                 break
+
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
                 printer()
                 choix = input("Choisissez une option (1-7)  :       ")
 
-    @classmethod
-    def editer_statut(cls):
-        value = cls.write_text("statut")
-        Enseignant.update_statut(cls.write_number("matricule"), value)
 
-
-t = EnseignantController()
+if __name__ == "__main__":
+    t = EnseignantController()

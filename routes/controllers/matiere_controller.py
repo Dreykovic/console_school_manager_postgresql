@@ -1,29 +1,27 @@
 from modeles.table_matiere import TableMatiere as Matiere
 from controller import Controller
 
+
 class MatiereController(Controller):
     model = Matiere
 
     def __init__(
         self,
     ):
-        self.ajouter()
+        self.create()
         pass
 
     @classmethod
-    def ajouter(cls):
-        libelle = cls.write_text("libelle")
-        matiere = Matiere(
-            libelle
-        )
+    def create(cls):
+        libelle = cls.read("libelle")
+        matiere = Matiere(libelle)
         matiere.create()
+
     @classmethod
-    def editer(cls):
-        value = cls.write_text("libelle")
-        Matiere.update_libelle(cls.write_number("matricule"), value)
+    def update(cls):
+        value = cls.read("libelle")
+        super().update(value)
 
 
-
-
-
-t = MatiereController()
+if __name__ == "__main__":
+    t = MatiereController()

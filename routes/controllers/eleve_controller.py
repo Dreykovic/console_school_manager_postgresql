@@ -1,10 +1,9 @@
 from modeles.table_eleve import TableEleve as Eleve
 from modeles.table_classe import TableClasse as Classe
 from modeles.table_tuteur import TableTuteur as Tuteur
-from personne_controller import PersonneController
+from controller import Controller
 
-
-class EleveController(PersonneController):
+class EleveController(Controller):
     model = Eleve
 
     def __init__(

@@ -1,8 +1,8 @@
 from modeles.table_tuteur import TableTuteur as Tuteur
-from personne_controller import PersonneController
+from controller import Controller
 
 
-class TuteurController(PersonneController):
+class TuteurController(Controller):
     model = Tuteur
 
     def __init__(
@@ -26,36 +26,44 @@ class TuteurController(PersonneController):
 
     @classmethod
     def update(cls):
-        print("1. Editer le nom du tuteur ")
-        print("2. Editer le prenom du tuteur")
-        print("3. Editer la date de naissance du tuteur ")
-        print("4. Editer le contact du tuteur")
-        print("5. Editer le genre du tuteur")
-        print("6. Editer l'adresse du tuteur")
-        print("7. Editer la profession du tuteur\n \n")
+        print("1. Editer le nom de l'enseignant ")
+        print("2. Editer le prenom de l'enseignant")
+        print("3. Editer la date de naissance de l'enseignant ")
+        print("4. Editer le contact de l'enseignant")
+        print("5. Editer le genre de l'enseignant")
+        print("6. Editer l'adresse de l'enseignant")
+        print("7. Editer le statut de l'enseignant\n \n")
         choix = input("Choisissez une option (1-7)  :       ")
         while True:
             if choix == "1":
-                super().update("nom", cls.MSG_INVALID_TEXT)
+                nom = cls.read("nom")
+                super().update(nom)
                 break
             elif choix == "2":
-                super().update("prenoms", cls.MSG_INVALID_TEXT)
+                prenoms = cls.read("prenom")
+                super().update(prenoms)
                 break
             elif choix == "3":
-                super().update("date_naissance", cls.MSG_INVALID_DATE)
+                date = cls.read("date_naissance")
+                super().update(date)
                 break
             elif choix == "4":
-                super().update("contact", cls.MSG_INVALID_NUMBER, None, "contact")
+                contact = cls.read("contact", True)
+                super().update(contact)
                 break
             elif choix == "5":
-                super().update("genre", cls.MSG_INVALID_OPTION, ["M", "F"])
+                genre = cls.read("genre", False, ["M", "F"])
+                super().update(genre)
                 break
             elif choix == "6":
-                super().update("adresse", cls.MSG_INVALID_TEXT)
+                adresse = cls.read("adresse")
+                super().update(adresse)
                 break
             elif choix == "7":
-                super().update("profession", cls.MSG_INVALID_TEXT)
+                profession = cls.read("profession")
+                super().update(profession)
                 break
+
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
                 printer()
