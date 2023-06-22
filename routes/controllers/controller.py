@@ -185,16 +185,13 @@ class Controller:
             is_done = 0
             while not is_done:
                 for i in range(1, len(values) + 1):
-                    print(1)
                     if choix == str(i):
                         result = values[i - 1]
                         is_done = 1
                         break
                 if is_done:
-                    print("true")
                     continue
                 else:
-                    print("false")
                     print(invalid_message_type)
                     position = 1
                     for value in values:
@@ -205,9 +202,6 @@ class Controller:
         message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
 
         choix = cls.action_confirm(message, matricule, data)
-        print("Ok")
-        print(cls.model.relation)
-        print(attribut)
         while True:
             if choix == "1":
                 cls.model.update(attribut, matricule, result)
