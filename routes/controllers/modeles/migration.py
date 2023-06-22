@@ -5,9 +5,8 @@ from database import tables
 def create_tables(relation, schema):
     req = ""
     primary_key_def = ""
-    foreign_keys_definitions = ()
     foreign = ""
-
+    count = 1
     req = f"CREATE TABLE {relation} ("
     for col in schema:
         req = (
@@ -20,25 +19,34 @@ def create_tables(relation, schema):
         )
 
         primary_key_def += (
-            f"CONSTRAINT {col['column_name']}_pk PRIMARY KEY({col['column_name']}), "
+            f"CONSTRAINT {relation}_pk_{col['column_name']} PRIMARY KEY({col['column_name']}), "
             if col["constraint"] == "pk"
             else ""
         )
         foreign += (
-            f"CONSTRAINT {col['column_name']}_fk FOREIGN KEY ({col['column_name']}) REFERENCES {col['reference_table']} ({col['reference_col']}), "
+            f"CONSTRAINT {relation}_fk_{col['column_name']}_{count} FOREIGN KEY ({col['column_name']}) REFERENCES {col['reference_table']} ({col['reference_col']}), "
             if col["constraint"] == "rk"
             else ""
         )
+        count += 1
 
-        foreign_keys_definitions += (foreign,)
     req += primary_key_def
-    req += "".join(foreign_def for foreign_def in foreign_keys_definitions)
+    req += foreign
     req = req[:-2] + ")"
+    lk = Linker()
+    lk.executerReq(req)
+    lk.commit()
+    lk.close()
+    print(
+        f"»»»»» Relation {relation.capitalize()} created successfully !!! ✔️   «««««\n\n"
+    )
 
 
 def main():
     for relation in tables:
         create_tables(relation, tables[relation])
+        # print(relation)
+        # print(tables[relation])   ûîðæþç789~~~###ðæ±þß
 
 
 if __name__ == "__main__":

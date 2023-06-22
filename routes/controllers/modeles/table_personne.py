@@ -4,16 +4,6 @@ from schema_builder import *
 
 
 class TablePersonne(Table):
-    schema = [
-        primary_key("matricule"),
-        not_null(string("nom")),
-        not_null(string("prenom")),
-        not_null(date("date_naissance")),
-        not_null(string("contact")),
-        not_null(string("genre")),
-        not_null(string("adresse")),
-        not_null(string("prenom")),
-    ]
 
     primary_key = "matricule"
 

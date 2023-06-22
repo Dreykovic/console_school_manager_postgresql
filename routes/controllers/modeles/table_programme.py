@@ -7,7 +7,7 @@ class TableProgramme(Table):
     schema = [
         primary_key("id_programme"),
         references(foreign_key(integer("matiere")), "matiere", "id_matiere"),
-        references(foreign_key(integer("prof")), "enseignat", "matricule"),
+        references(foreign_key(integer("prof")), "enseignant", "matricule"),
         references(foreign_key(integer("classe")), "classe", "id_classe")
     ]
     primary_key = "id_programme"

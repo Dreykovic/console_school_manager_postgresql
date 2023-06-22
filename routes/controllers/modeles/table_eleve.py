@@ -1,12 +1,20 @@
-from table_personne import TablePersonne
+from table_personne import *
 
 
 class TableEleve(TablePersonne):
     relation = "eleve"
 
-    schema = TablePersonne.schema
-    schema.append(references(foreign_key(integer("tuteur")), "tuteur", "matricule"))
-    schema.append(references(foreign_key(integer("classe")), "classe", "id_classe"))
+    schema = [
+        primary_key("matricule"),
+        not_null(string("nom")),
+        not_null(string("prenom")),
+        not_null(date("date_naissance")),
+        not_null(string("contact")),
+        not_null(string("genre")),
+        not_null(string("adresse")),
+        references(foreign_key(integer("tuteur")), "tuteur", "matricule"),
+        references(foreign_key(integer("classe")), "classe", "id_classe"),
+    ]
 
     def __init__(
         self,

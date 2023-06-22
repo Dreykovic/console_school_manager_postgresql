@@ -38,7 +38,7 @@ def date(name):
     return {
         "column_name": name,
         "constraint": "",
-        "type": "varchar",
+        "type": "date",
         "reference_col": "",
         "reference_table": "",
         "null": 1,

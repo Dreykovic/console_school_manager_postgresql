@@ -3,8 +3,16 @@ from table_personne import *
 
 class TableTuteur(TablePersonne):
     relation = "tuteur"
-    schema = TablePersonne.schema
-    schema.append(not_null(string("profession")))
+    schema = [
+        primary_key("matricule"),
+        not_null(string("nom")),
+        not_null(string("prenom")),
+        not_null(date("date_naissance")),
+        not_null(string("contact")),
+        not_null(string("genre")),
+        not_null(string("adresse")),
+        not_null(string("profession")),
+    ]
 
     def __init__(
         self,

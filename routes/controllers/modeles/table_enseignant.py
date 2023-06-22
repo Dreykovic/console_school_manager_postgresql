@@ -1,11 +1,19 @@
-from table_personne import TablePersonne
+from table_personne import *
 import datetime as dt
 
 
 class TableEnseignant(TablePersonne):
     relation = "enseignant"
-    schema = TablePersonne.schema
-    schema.append(not_null(string("statut")))
+    schema = [
+        primary_key("matricule"),
+        not_null(string("nom")),
+        not_null(string("prenom")),
+        not_null(date("date_naissance")),
+        not_null(string("contact")),
+        not_null(string("genre")),
+        not_null(string("adresse")),
+        not_null(string("statut")),
+    ]
 
     def __init__(
         self,
