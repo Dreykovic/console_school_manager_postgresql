@@ -29,10 +29,10 @@ class Table(object):
                 if attr == "INFO_ATTR":
                     continue
                 data += (self.__dict__[attr],)
-                print(data)
+            print(data)
             self.insert(data)
         except NameError as err:
-            print("Une erreur est surmenu lors de la création  :\n :")
+            print("❌ »»»» Une erreur est surmenu lors de la création  :\n :")
 
     @classmethod
     def insert(cls, data):
@@ -48,10 +48,9 @@ class Table(object):
             values = values[:-2] + ")"
 
             req = f"INSERT INTO {cls.relation} {columns} VALUES {values};"
-            print(data)
             cls.lk.executerReq(req, data)
         except Exception as err:
-            print(f"Une erreur est surmenu lors de l'insertion :\n{req}\n :")
+            print(f"❌ »»»» Une erreur est surmenu lors de l'insertion :\n{req}\n :")
             return 0
         else:
             cls.lk.commit()
@@ -65,10 +64,9 @@ class Table(object):
             req = f"SELECT max({cls.primary_key}) From {cls.relation};"
             # print(req)
             cls.lk.executerReq(req)
-            print(req)
             key = cls.lk.resultatReq()[0][0]
         except Exception as err:
-            print(f"Id fetch problem :\n{req}\n :")
+            print(f"❌ »»»» Id fetch problem :\n{req}\n :")
             return 0
         else:
             print(key)
@@ -82,11 +80,11 @@ class Table(object):
             cls.lk.executerReq(sql)
             row = cls.lk.resultatReq()
         except Exception as err:
-            print(f"Select problem :\n{req}\n :")
+            print(f"❌ »»»» Select problem :\n{req}\n :")
             return 0
         else:
             if len(row) == 0:
-                print("!!!   Désolé, aucune correspondance")
+                print("!!! ❌ »»»»   Désolé, aucune correspondance")
                 return 0
             else:
                 return row[0]
@@ -99,7 +97,7 @@ class Table(object):
             cls.lk.executerReq(sql)
             row = cls.lk.resultatReq()
         except Exception as err:
-            print(f"Select problem :\n{req}\n :")
+            print(f"❌ »»»»  Select problem :\n{req}\n :")
             return 0
         else:
             return row
@@ -112,7 +110,7 @@ class Table(object):
             cls.lk.executerReq(sql)
             row = cls.lk.resultatReq()
         except Exception as err:
-            print(f"Select problem :\n{req}\n :")
+            print(f"❌ »»»»  Select problem :\n{req}\n :")
             return 0
         else:
             return row
@@ -124,11 +122,11 @@ class Table(object):
             req = f"DELETE FROM {cls.relation} WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
         except Exception as err:
-            print(f"Une erreur est surmenu lors de la suppressiond:\n{req}\n :")
+            print(f"❌ »»»»  Une erreur est surmenu lors de la suppressiond:\n{req}\n :")
             return 0
         else:
             cls.lk.commit()
-            print("DELETED !!!")
+            print("DELETED !!!✔️ ")
             return 1
 
     @classmethod
@@ -137,16 +135,12 @@ class Table(object):
         try:
             req = f"UPDATE  {cls.relation} SET {attribut} = '{value}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)
-            print(req)
         except Exception as err:
             print(
-                f"Une erreur est surmenu lors de la mise à jour de {attribut} : ID:{matricule}:\n{req}\n :"
+                f"❌ »»»» Une erreur est surmenu lors de la mise à jour de {attribut} : ID:{matricule}:\n{req}\n :"
             )
             return 0
         else:
             cls.lk.commit()
-            print("UPDATED SUCCESSFULLY !!!")
+            print("UPDATED SUCCESSFULLY !!!✔️ ")
             return 1
-
-
-
