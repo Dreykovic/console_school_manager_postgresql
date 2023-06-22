@@ -1,6 +1,7 @@
 from modeles.table_enseignant import TableEnseignant as Enseignant
 from personne_controller import PersonneController
 
+
 class EnseignantController(PersonneController):
     model = Enseignant
 
@@ -13,17 +14,16 @@ class EnseignantController(PersonneController):
     @classmethod
     def ajouter(cls):
         # cls.model.matricule = cls.write_number('matricule')
-        nom = cls.write_text("nom")
-        prenoms = cls.write_text("prenoms")
-        date_naissance = cls.write_date("date de naissance")
-        contact = cls.write_phone_number("contact")
-        genre = cls.write_gender()
-        adresse = cls.write_text("adresse")
-        statut = cls.write_text("statut")
-        prof = Enseignant(
-            nom, prenoms, date_naissance, contact, genre, adresse, statut
-        )
+        nom = cls.read("nom")
+        prenoms = cls.read("prenoms")
+        date_naissance = cls.read("date_naissance")
+        contact = cls.read("contact", True)
+        genre = cls.read("genre", False, ["M", "F"])
+        adresse = cls.read("adresse")
+        statut = cls.read("statut")
+        prof = Enseignant(nom, prenoms, date_naissance, contact, genre, adresse, statut)
         prof.create()
+
     @classmethod
     def editer(cls):
         print("1. Editer le nom de l'enseignant ")
@@ -32,7 +32,7 @@ class EnseignantController(PersonneController):
         print("4. Editer le contact de l'enseignant")
         print("5. Editer le genre de l'enseignant")
         print("6. Editer l'adresse de l'enseignant")
-        print("7. Editer la profession de l'enseignant\n \n")
+        print("7. Editer le statut de l'enseignant\n \n")
         choix = input("Choisissez une option (1-7)  :       ")
         while True:
             if choix == "1":

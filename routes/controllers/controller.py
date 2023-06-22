@@ -156,26 +156,47 @@ class Controller:
         print(separator)
 
     @classmethod
-    def update(
+    def update(cls, result):
+        data = cls.show(cls.model)
+        matricule = cls.write_number(cls.model.primary_key)
+        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
+
+        choix = cls.action_confirm(message, matricule, data)
+        while True:
+            if choix == "1":
+                cls.model.update(attribut, matricule, result)
+                break
+            elif choix == "2":
+                return 0
+            else:
+                print(cls.MSG_INVALID_OPTION)
+                print("1. Oui")
+                print("2. Non")
+                choix = input("Choisissez une option (1-2) :       ")
+
+    @classmethod
+    def read(
         cls,
         attribut,
-        invalid_message_type,
+        phone_attribut=False,
         values=None,
-        phone_attribut=None,
     ):
-        data = cls.show(cls.model)
-        matricule = cls.write_number("matricule")
+        invalid_message_type = cls.MSG_INVALID_OPTION
         if values == None:
-            if phone_attribut == None:
+            if not phone_attribut:
                 column_type = cls.model.get_colunm_type(attribut)
                 if column_type == "integer":
                     result = cls.write_number(attribut)
+                    invalid_message_type = cls.MSG_INVALID_NUMBER
                 elif column_type == "varchar":
                     result = cls.write_text(attribut)
+                    invalid_message_type = cls.MSG_INVALID_TEXT
                 elif column_type == "date":
                     result = cls.write_date(attribut)
+                    invalid_message_type = cls.MSG_INVALID_DATE
             else:
-                result = cls.write_phone_number(phone_attribut)
+                result = cls.write_phone_number(attribut)
+                invalid_message_type = cls.MSG_INVALID_NUMBER
         else:
             position = 1
             for value in values:
@@ -199,20 +220,7 @@ class Controller:
                         position = position + 1
                     choix = input(f"Choisissez une option (1-{position-1}) :        ")
 
-        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
-
-        choix = cls.action_confirm(message, matricule, data)
-        while True:
-            if choix == "1":
-                cls.model.update(attribut, matricule, result)
-                break
-            elif choix == "2":
-                return 0
-            else:
-                print(cls.MSG_INVALID_OPTION)
-                print("1. Oui")
-                print("2. Non")
-                choix = input("Choisissez une option (1-2) :       ")
+        return result
 
 
 if __name__ == "__main__":

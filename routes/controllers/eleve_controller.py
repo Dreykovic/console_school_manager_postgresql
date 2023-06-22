@@ -12,18 +12,16 @@ class EleveController(PersonneController):
     ):
         self.create()
 
-    
-
     @classmethod
     def create(cls):
+        nom = cls.read("nom")
+        prenoms = cls.read("prenoms")
+        date_naissance = cls.read("date_naissance")
+        contact = cls.read("contact", True)
+        genre = cls.read("genre", False, ["M", "F"])
+        adresse = cls.read("adresse")
         tuteur = cls.assigner_tuteur()
         classe = cls.assigner_classe()
-        nom = cls.write_text("nom")
-        prenoms = cls.write_text("prenoms")
-        date_naissance = cls.write_date("date de naissance")
-        contact = cls.write_phone_number("contact")
-        genre = cls.write_gender()
-        adresse = cls.write_text("adresse")
 
         eleve = Eleve(
             tuteur, classe, nom, prenoms, date_naissance, contact, genre, adresse
@@ -43,35 +41,41 @@ class EleveController(PersonneController):
         choix = input("Choisissez une option (1-8)  :       ")
         while True:
             if choix == "1":
-                super().update("nom", cls.MSG_INVALID_TEXT)
+                nom = cls.read("nom")
+                super().update(nom)
                 break
             elif choix == "2":
-                super().update("prenoms", cls.MSG_INVALID_TEXT)
+                prenoms = cls.read("prenom")
+                super().update(prenoms)
                 break
             elif choix == "3":
-                super().update("date_naissance", cls.MSG_INVALID_DATE)
+                date = cls.read("date_naissance")
+                super().update(date)
                 break
             elif choix == "4":
-                super().update("contact", cls.MSG_INVALID_NUMBER, None, "contact")
+                contact = cls.read("contact", True)
+                super().update(contact)
                 break
             elif choix == "5":
-                super().update("genre", cls.MSG_INVALID_OPTION, ["M", "F"])
+                genre = cls.read("genre", False, ["M", "F"])
+                super().update(genre)
                 break
             elif choix == "6":
-                super().update("adresse", cls.MSG_INVALID_TEXT)
+                adresse = cls.read("adresse")
+                super().update(adresse)
                 break
             elif choix == "7":
-                super().update("tuteur", cls.MSG_INVALID_NUMBER)
+                tuteur = cls.read("tuteur")
+                super().update(tuteur)
                 break
             elif choix == "8":
-                super().update("classe", cls.MSG_INVALID_NUMBER)
+                classe = cls.read("classe")
+                super().update(classe)
                 break
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
                 printer()
                 choix = input("Choisissez une option (1-7)  :       ")
-
-
 
     def validate_classe(id_classe):
         pass
@@ -87,16 +91,13 @@ class EleveController(PersonneController):
         for element in data:
             if element[0] == classe:
                 eff = element[2]
-    
-        print("0000000000000000000000000000000000000000000000000000")
-        Classe.update("effectif",classe, eff+1)
+
+        Classe.update("effectif", classe, eff + 1)
         return classe
 
     @classmethod
     def assigner_tuteur(cls):
-        data = cls.show(
-            Tuteur
-        )
+        data = cls.show(Tuteur)
         ids = [t[0] for t in data]
         tuteur = cls.write_number("id tuteur ")
         while tuteur not in ids:
