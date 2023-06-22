@@ -182,7 +182,7 @@ class Controller:
         values=None,
     ):
         invalid_message_type = cls.MSG_INVALID_OPTION
-        if values == None:
+        if values is None:
             if not phone_attribut:
                 column_type = cls.model.get_colunm_type(attribut)
                 if column_type == "integer":
@@ -198,10 +198,8 @@ class Controller:
                 result = cls.write_phone_number(attribut)
                 invalid_message_type = cls.MSG_INVALID_NUMBER
         else:
-            position = 1
-            for value in values:
-                print(f"{ position}. {value}")
-                position = position + 1
+            for position, value in enumerate(values, start=1):
+                print(f"{position}. {value}")
             choix = input(f"Choisissez une option (1-{position-1}) :        ")
             is_done = 0
             while not is_done:

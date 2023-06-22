@@ -12,13 +12,13 @@ class TuteurController(Controller):
 
     @classmethod
     def create(cls):
-        nom = cls.write_text("nom")
-        prenoms = cls.write_text("prenoms")
-        date_naissance = cls.write_date("date de naissance")
-        contact = cls.write_phone_number("contact")
-        genre = cls.write_gender()
-        adresse = cls.write_text("adresse")
-        profession = cls.write_text("profession")
+        nom = cls.read("nom")
+        prenoms = cls.read("prenoms")
+        date_naissance = cls.read("date_naissance")
+        contact = cls.read("contact", True)
+        genre = cls.read("genre", False, ["M", "F"])
+        adresse = cls.read("adresse")
+        profession = cls.read("profession")
         tuteur = Tuteur(
             nom, prenoms, date_naissance, contact, genre, adresse, profession
         )
