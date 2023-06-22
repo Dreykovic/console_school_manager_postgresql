@@ -14,9 +14,7 @@ class Controller:
     def create(self):
         raise NotImplementedError("Le controlleur doit implémenter la méthode")
 
-    def update(self):
-        raise NotImplementedError("Le controlleur doit implémenter la méthode")
-
+    
     @classmethod
     def destroy(cls):
         message = (

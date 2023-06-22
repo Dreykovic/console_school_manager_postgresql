@@ -8,7 +8,7 @@ class TuteurController(Controller):
     def __init__(
         self,
     ):
-        self.create()
+        self.update()
 
     @classmethod
     def create(cls):
@@ -32,7 +32,7 @@ class TuteurController(Controller):
         print("4. Editer le contact de l'enseignant")
         print("5. Editer le genre de l'enseignant")
         print("6. Editer l'adresse de l'enseignant")
-        print("7. Editer le statut de l'enseignant\n \n")
+        print("7. Editer le profession de l'enseignant\n \n")
         choix = input("Choisissez une option (1-7)  :       ")
         while True:
             if choix == "1":

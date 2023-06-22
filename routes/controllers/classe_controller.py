@@ -17,7 +17,7 @@ class ClasseController(Controller):
             "Tle D",
             "Tle C4",
         ]
-        self.create()
+        self.show(Classe)
 
     @classmethod
     def create(cls):
