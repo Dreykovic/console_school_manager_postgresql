@@ -75,7 +75,7 @@ class Controller:
 
     @classmethod
     def write_date(cls, name):
-        date = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        date = input(f"Ecrire {name} de {cls.model.relation} :  aaaa-mm-dd     ")
         while not validate_date(date):
             print(cls.MSG_INVALID_DATE)
             date = input(f"Ecrire {name} de {cls.model.relation} :       ")
