@@ -19,8 +19,10 @@ class EleveController(Controller):
         contact = cls.read("contact", True)
         genre = cls.read("genre", False, ["M", "F"])
         adresse = cls.read("adresse")
-        tuteur = cls.assigner_tuteur()
-        classe = cls.assigner_classe()
+        tuteur = cls.assign(Tuteur)
+        classe = cls.assign(Classe)
+        eff = next(element[2] for element in data if element[0] == classe)
+        Classe.update("effectif", classe, eff + 1)
 
         eleve = Eleve(
             tuteur, classe, nom, prenoms, date_naissance, contact, genre, adresse
@@ -79,30 +81,6 @@ class EleveController(Controller):
     def validate_classe(id_classe):
         pass
 
-    @classmethod
-    def assigner_classe(cls):
-        data = cls.show(Classe)
-        ids = [t[0] for t in data]
-        classe = cls.write_number("id classe ")
-        while classe not in ids:
-            print(f"l'id {classe} ne correspond a aucune classe")
-            classe = cls.write_number("id classe ")
-        for element in data:
-            if element[0] == classe:
-                eff = element[2]
-
-        Classe.update("effectif", classe, eff + 1)
-        return classe
-
-    @classmethod
-    def assigner_tuteur(cls):
-        data = cls.show(Tuteur)
-        ids = [t[0] for t in data]
-        tuteur = cls.write_number("id tuteur ")
-        while tuteur not in ids:
-            print(f"l'id {tuteur} ne correspond a aucun tuteur. veuillez réessayer")
-            tuteur = cls.write_number("id tuteur ")
-        return tuteur
 
 
 t = EleveController()
