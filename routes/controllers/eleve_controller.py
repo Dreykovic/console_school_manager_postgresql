@@ -12,6 +12,8 @@ class EleveController(PersonneController):
     ):
         self.create()
 
+    
+
     @classmethod
     def create(cls):
         tuteur = cls.assigner_tuteur()

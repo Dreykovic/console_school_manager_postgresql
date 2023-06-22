@@ -7,10 +7,21 @@ class ClasseController(Controller):
 
     def __init__(self):
         self.create()
- 
+    @staticmethod
+    def printer():
+        print("1. 2nde A4")
+        print("2. Znde D")
+        print("3. 2nde C4")
+        print("4. 1ere A4")
+        print("5. 1ere D")
+        print("6. 1ere C4")
+        print("7. Tle A4")
+        print("8. Tle D")
+        print("9. Tle C4\n \n")
 
     @classmethod
     def create(cls):
+        ClasseController.printer()
         choix = input("Choisissez une option (1-9) : pour le nom de la classe       ")
         while True:
             if choix == "1":
@@ -42,6 +53,7 @@ class ClasseController(Controller):
                 break
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
+                ClasseController.printer()
                 choix = input(
                     "Choisissez une option (1-9) pour le nom de la classe :       "
                 )
