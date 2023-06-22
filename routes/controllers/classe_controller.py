@@ -6,12 +6,11 @@ class ClasseController(Controller):
     model = Classe
 
     def __init__(self):
-        self.show(self.model)
+        self.create()
  
 
     @classmethod
     def create(cls):
-        ClasseController.printer()
         choix = input("Choisissez une option (1-9) : pour le nom de la classe       ")
         while True:
             if choix == "1":
@@ -43,7 +42,6 @@ class ClasseController(Controller):
                 break
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
-                ClasseController.printer()
                 choix = input(
                     "Choisissez une option (1-9) pour le nom de la classe :       "
                 )
