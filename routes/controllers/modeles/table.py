@@ -29,7 +29,6 @@ class Table(object):
                 if attr == "INFO_ATTR":
                     continue
                 data += (self.__dict__[attr],)
-            print(data)
             self.insert(data)
         except NameError as err:
             print("❌ »»»» Une erreur est surmenu lors de la création  :\n :")
