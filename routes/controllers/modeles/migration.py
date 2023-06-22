@@ -1,5 +1,5 @@
-from .linker import Linker
-from .database import tables
+from linker import Linker
+from database import tables
 
 
 def create_tables(relation, schema):

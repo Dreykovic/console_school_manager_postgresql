@@ -1,4 +1,4 @@
-from .table_personne import *
+from table_personne import *
 
 
 class TableEleve(TablePersonne):

@@ -1,5 +1,5 @@
-from .table import Table
-from .schema_builder import *
+from table import Table
+from schema_builder import *
 
 
 class TablePersonne(Table):
