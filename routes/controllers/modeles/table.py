@@ -1,4 +1,4 @@
-from linker import Linker
+from .linker import Linker
 
 
 class Table(object):
@@ -149,9 +149,4 @@ class Table(object):
             return 1
 
 
-def main():
-    Table.key()
 
-
-if __name__ == "__main__":
-    pass

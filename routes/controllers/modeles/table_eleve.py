@@ -1,4 +1,4 @@
-from table_personne import *
+from .table_personne import *
 
 
 class TableEleve(TablePersonne):
@@ -34,15 +34,4 @@ class TableEleve(TablePersonne):
         self.classe = classe
 
 
-def main():
-    datenaiss = dt.datetime(2003, 1, 2).date()
-    tut = TableEleve(1, 1, "Dosseh", "OOO", datenaiss, "70546987", "M", "BP 25 Sok")
-    tut.create()
 
-
-if __name__ == "__main__":
-    import datetime as dt
-
-    main()
-    print("5555")
-    pass

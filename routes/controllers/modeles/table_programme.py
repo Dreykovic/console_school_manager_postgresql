@@ -1,5 +1,5 @@
-from table import Table
-from schema_builder import *
+from .table import Table
+from .schema_builder import *
 
 
 class TableProgramme(Table):
@@ -19,11 +19,4 @@ class TableProgramme(Table):
         self.classe = classe
 
 
-def main():
-    print(TableProgramme.schema)
 
-
-if __name__ == "__main__":
-    main()
-    print("5555")
-    pass

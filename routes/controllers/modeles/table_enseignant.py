@@ -1,5 +1,4 @@
-from table_personne import *
-import datetime as dt
+from .table_personne import *
 
 
 class TableEnseignant(TablePersonne):
@@ -32,14 +31,3 @@ class TableEnseignant(TablePersonne):
         self.statut = statut
 
 
-def main():
-    tut = TableEnseignant(
-        "Dosseh", "OOO", datenaiss, "70546987", "M", "BP 25 Sok", "Soulard"
-    )
-    tut.create()
-
-
-if __name__ == "__main__":
-    main()
-    print("5555")
-    pass

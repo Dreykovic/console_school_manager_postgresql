@@ -1,4 +1,4 @@
-from table_personne import *
+from .table_personne import *
 
 
 class TableTuteur(TablePersonne):
@@ -30,11 +30,3 @@ class TableTuteur(TablePersonne):
         self.profession = profession
 
 
-def main():
-    print(TableTuteur.schema)
-
-
-if __name__ == "__main__":
-    main()
-    print("5555")
-    pass

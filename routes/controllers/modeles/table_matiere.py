@@ -1,5 +1,5 @@
-from table import Table
-from schema_builder import *
+from .table import Table
+from .schema_builder import *
 
 
 class TableMatiere(Table):
@@ -19,12 +19,4 @@ class TableMatiere(Table):
         self.libelle = libelle
 
 
-def main():
-    print(TableMatiere.schema)
-
-
-if __name__ == "__main__":
-    main()
-    print("5555")
-    pass
 
