@@ -6,13 +6,13 @@ class TableEnseignant(TablePersonne):
     relation = "enseignant"
     schema = [
         PrimaryKey('matricule').build(),
-        String('nom').not_null.build(),
-        String('prenoms').not_null.build(),
-        Date('date_naissance').not_null.build(),
-        String('contact').not_null.build(),
-        String('genre').not_null.build(),
-        String('adresse').not_null.build(),
-        String('statut').not_null.build(),
+        String('nom').not_null().build(),
+        String('prenoms').not_null().build(),
+        Date('date_naissance').not_null().build(),
+        String('contact').not_null().build(),
+        String('genre').not_null().build(),
+        String('adresse').not_null().build(),
+        String('statut').not_null().build(),
 
     ]
 

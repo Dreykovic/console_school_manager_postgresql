@@ -2,8 +2,6 @@ __all__ = ["PrimaryKey", "String", "Integer", "Date"]
 
 
 class SchemaBuilder:
-    col = dict()
-
     def unique(self):
         self.col["unique"] = 1
         return self
@@ -26,65 +24,52 @@ class SchemaBuilder:
 
 
 class String(SchemaBuilder):
-    col = {
-        "column_name": "",
-        "constraint": "",
-        "type": "varchar",
-        "reference_col": "",
-        "reference_table": "",
-        "null": 1,
-        "unique": 0,
-    }
-
     def __init__(self, name):
-        self.col["column_name"] = name
-
-
+        self.col = {
+            "column_name": name,
+            "constraint": "",
+            "type": "varchar",
+            "reference_col": "",
+            "reference_table": "",
+            "null": 1,
+            "unique": 0,
+        }
 
 
 class PrimaryKey(SchemaBuilder):
-    col = {
-        "column_name": "",
-        "constraint": "pk",
-        "type": "serial",
-        "reference_col": "",
-        "reference_table": "",
-        "null": 0,
-        "unique": 1,
-    }
-
     def __init__(self, name):
-        self.col["column_name"] = name
+        self.col = {
+            "column_name": name,
+            "constraint": "pk",
+            "type": "serial",
+            "reference_col": "",
+            "reference_table": "",
+            "null": 0,
+            "unique": 1,
+        }
 
 
 class Integer(SchemaBuilder):
-    col = {
-        "column_name": "",
-        "constraint": "",
-        "type": "integer",
-        "reference_col": "",
-        "reference_table": "",
-        "null": 1,
-        "unique": 0,
-    }
-
     def __init__(self, name):
-        self.col["column_name"] = name
-
-
-
+        self.col = {
+            "column_name": name,
+            "constraint": "",
+            "type": "integer",
+            "reference_col": "",
+            "reference_table": "",
+            "null": 1,
+            "unique": 0,
+        }
 
 
 class Date(SchemaBuilder):
-    col = {
-        "column_name": "",
-        "constraint": "",
-        "type": "date",
-        "reference_col": "",
-        "reference_table": "",
-        "null": 1,
-        "unique": 0,
-    }
-
     def __init__(self, name):
-        self.col["column_name"] = name
+        self.col = {
+            "column_name": name,
+            "constraint": "",
+            "type": "date",
+            "reference_col": "",
+            "reference_table": "",
+            "null": 1,
+            "unique": 0,
+        }
