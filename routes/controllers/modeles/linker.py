@@ -1,6 +1,6 @@
 import sys
 import psycopg2
-from . import env 
+from . import env
 
 
 class Linker(object):
@@ -9,10 +9,16 @@ class Linker(object):
     def __init__(self):
         try:
             self.conn = psycopg2.connect(
-                dbname=env.database, user=env.username, password=env.passwd, port = env.port, host = env.host)
+                dbname=env.database,
+                user=env.username,
+                password=env.passwd,
+                port=env.port,
+                host=env.host,
+            )
         except Exception as err:
             print(
-                f"La connexion avec la base de données a échoué :\nErreur détectée :\n{err}")
+                f"La connexion avec la base de données a échoué :\nErreur détectée :\n{err}"
+            )
             self.echec = 1
         else:
             self.cur = self.conn.cursor()
@@ -27,9 +33,6 @@ class Linker(object):
             return 0
         else:
             return 1
-        
-        
-        
 
     def resultatReq(self):
         return self.cur.fetchall()
@@ -48,6 +51,8 @@ def main():
     f.createTables(Database.tables)
 
     # f.createTables({TableTuteur.table:TableTuteur.schema})
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     # main()
     pass
