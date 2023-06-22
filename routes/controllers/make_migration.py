@@ -6,6 +6,7 @@ from modeles.table_programme import TableProgramme
 from modeles.table_tuteur import TableTuteur
 from datetime import datetime as dt
 from modeles.migration import *
+from modeles.database import tables
 
 for relation in tables:
     create_tables(relation, tables[relation])
