@@ -8,7 +8,7 @@ class TuteurController(Controller):
     def __init__(
         self,
     ):
-        self.update()
+        self.create()
 
     @classmethod
     def create(cls):

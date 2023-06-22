@@ -23,7 +23,7 @@ class EleveController(Controller):
         classe = cls.assign(Classe)
         eff = next(element[2] for element in data if element[0] == classe)
         Classe.update("effectif", classe, eff + 1)
-
+        print("Goal")
         eleve = Eleve(
             tuteur, classe, nom, prenoms, date_naissance, contact, genre, adresse
         )
@@ -82,5 +82,5 @@ class EleveController(Controller):
         pass
 
 
-
-t = EleveController()
+if __name__ =="__main__":
+    t = EleveController()

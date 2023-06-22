@@ -219,6 +219,7 @@ class Controller:
                     choix = input(f"Choisissez une option (1-{position-1}) :        ")
 
         return result
+
     @classmethod
     def assign(cls, reference):
         data = cls.show(reference)
@@ -228,6 +229,7 @@ class Controller:
             print(f"l'id {identifiant} ne correspond a aucune {reference.relation}")
             identifiant = cls.write_number(f"id {reference.relation} ")
         return identifiant
+
 
 if __name__ == "__main__":
     print(dir())
