@@ -24,82 +24,18 @@ class ProgrammeController(Controller):
         )
         eleve.create()
 
-    @classmethod
-    def update(cls):
-        print("1. Editer le nom de l'eleve ")
-        print("2. Editer le prenom de l'eleve")
-        print("3. Editer la date de naissance de l'eleve ")
-        print("4. Editer le contact de l'eleve")
-        print("5. Modifier le genre de l'eleve")
-        print("6. Editer l'adresse de l'eleve")
-        print("7. Changer le tueur de l'eleve")
-        print("8. Changer la classe de l'eleve\n \n")
-        choix = input("Choisissez une option (1-8)  :       ")
-        while True:
-            if choix == "1":
-                nom = cls.read("nom")
-                super().update(nom)
-                break
-            elif choix == "2":
-                prenoms = cls.read("prenom")
-                super().update(prenoms)
-                break
-            elif choix == "3":
-                date = cls.read("date_naissance")
-                super().update(date)
-                break
-            elif choix == "4":
-                contact = cls.read("contact", True)
-                super().update(contact)
-                break
-            elif choix == "5":
-                genre = cls.read("genre", False, ["M", "F"])
-                super().update(genre)
-                break
-            elif choix == "6":
-                adresse = cls.read("adresse")
-                super().update(adresse)
-                break
-            elif choix == "7":
-                tuteur = cls.read("tuteur")
-                super().update(tuteur)
-                break
-            elif choix == "8":
-                classe = cls.read("classe")
-                super().update(classe)
-                break
-            else:
-                print("Choix invalide. Veuillez sélectionner une option valide.")
-                printer()
-                choix = input("Choisissez une option (1-7)  :       ")
 
-    def validate_classe(id_classe):
-        pass
 
     @classmethod
-    def assigner_classe(cls):
-        data = cls.show(Classe)
+    def assigner(cls, reference):
+        data = cls.show(Matiere)
         ids = [t[0] for t in data]
-        classe = cls.write_number("id classe ")
-        while classe not in ids:
-            print(f"l'id {classe} ne correspond a aucune classe")
-            classe = cls.write_number("id classe ")
-        for element in data:
-            if element[0] == classe:
-                eff = element[2]
+        identifiant = cls.write_number(f"id {reference.relation} ")
+        while identifiant not in ids:
+            print(f"l'id {identifiant} ne correspond a aucune {reference.relation}")
+            identifiant = cls.write_number(f"id {reference.relation} ")
+        return identifiant
 
-        Classe.update("effectif", classe, eff + 1)
-        return classe
-
-    @classmethod
-    def assigner_tuteur(cls):
-        data = cls.show(Tuteur)
-        ids = [t[0] for t in data]
-        tuteur = cls.write_number("id tuteur ")
-        while tuteur not in ids:
-            print(f"l'id {tuteur} ne correspond a aucun tuteur. veuillez réessayer")
-            tuteur = cls.write_number("id tuteur ")
-        return tuteur
 
 
 t = EleveController()
