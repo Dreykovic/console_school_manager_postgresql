@@ -7,9 +7,9 @@ from schema_builder import *
 class TableClasse(Table):
     relation = "classe"
     schema = [
-        primary_key("id_classe"),
-        not_null(string("nom")),
-        not_null(integer("effectif")),
+        PrimaryKey("id_classe").build(),
+        String("nom").not_null().build(),
+        Integer("effectif").build(),
     ]
 
     primary_key = "id_classe"
@@ -22,12 +22,14 @@ class TableClasse(Table):
 
 def main():
     print(TableClasse.schema)
-    a = [t["type"] for t in TableClasse.schema]
-    print(00000)
-    print(a)
+    
 
 
 if __name__ == "__main__":
     main()
-    print("5555")
+    print(dir())
     pass
+
+
+
+

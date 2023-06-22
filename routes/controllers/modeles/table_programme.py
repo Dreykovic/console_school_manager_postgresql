@@ -5,10 +5,10 @@ from schema_builder import *
 class TableProgramme(Table):
     relation = "programme"
     schema = [
-        primary_key("id_programme"),
-        references(foreign_key(integer("matiere")), "matiere", "id_matiere"),
-        references(foreign_key(integer("prof")), "enseignant", "matricule"),
-        references(foreign_key(integer("classe")), "classe", "id_classe")
+        PrimaryKey("id_programme").build(),
+        Integer("matiere").foreign_key().references("matiere", "id_matiere").build(),
+        Integer("prof").foreign_key().references("enseignant", "matricule").build(),
+        Integer("classe").foreign_key().references("classe", "id_classe").build(),
     ]
     primary_key = "id_programme"
 
@@ -27,4 +27,3 @@ if __name__ == "__main__":
     main()
     print("5555")
     pass
-
