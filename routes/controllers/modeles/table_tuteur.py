@@ -28,5 +28,3 @@ class TableTuteur(TablePersonne):
             self, nom, prenom, date_naissance, contact, genre, adresse
         )
         self.profession = profession
-
-

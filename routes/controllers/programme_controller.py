@@ -15,12 +15,7 @@ class ProgrammeController(Controller):
 
     @classmethod
     def create(cls):
-        nom = cls.read("nom")
-        prenoms = cls.read("prenoms")
-        date_naissance = cls.read("date_naissance")
-        contact = cls.read("contact", True)
-        genre = cls.read("genre", False, ["M", "F"])
-        adresse = cls.read("adresse")
+        coef = cls.read("coeficient", False, ["1", "2", "3", "4", "5"])
         tuteur = cls.assigner_tuteur()
         classe = cls.assigner_classe()
 
