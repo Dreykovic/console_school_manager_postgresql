@@ -53,7 +53,7 @@ class Table(object):
             return 0
         else:
             cls.lk.commit()
-            print("INSERT SUCCESSFULY !!")
+            print("INSERT SUCCESSFULY !!!✔️")
             return 1
 
     @classmethod
