@@ -5,15 +5,15 @@ class TableEleve(TablePersonne):
     relation = "eleve"
 
     schema = [
-        primary_key("matricule"),
-        not_null(string("nom")),
-        not_null(string("prenom")),
-        not_null(date("date_naissance")),
-        not_null(string("contact")),
-        not_null(string("genre")),
-        not_null(string("adresse")),
-        references(foreign_key(integer("tuteur")), "tuteur", "matricule"),
-        references(foreign_key(integer("classe")), "classe", "id_classe"),
+        PrimaryKey('matricule').build(),
+        String('nom').not_null.build(),
+        String('prenoms').not_null.build(),
+        Date('date_naissance').not_null.build(),
+        String('contact').not_null.build(),
+        String('genre').not_null.build(),
+        String('adresse').not_null.build(),
+        Integer('tuteur').foreign_key().references('tuteur','matricule').build(),
+        Integer('classe').foreign_key().references('classe','id_classe').build(),
     ]
 
     def __init__(

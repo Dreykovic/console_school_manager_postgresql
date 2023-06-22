@@ -5,8 +5,8 @@ from schema_builder import *
 class TableMatiere(Table):
     relation = "matiere"
     schema = [
-        primary_key("id_matiere"),
-        unique(not_null(string("libelle"))),
+        PrimaryKey('id_matiere').build(),
+        String('libelle').not_null().unique().build()
     ]
 
     primary_key = "id_matiere"

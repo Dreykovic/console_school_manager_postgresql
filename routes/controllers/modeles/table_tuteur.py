@@ -4,14 +4,14 @@ from table_personne import *
 class TableTuteur(TablePersonne):
     relation = "tuteur"
     schema = [
-        primary_key("matricule"),
-        not_null(string("nom")),
-        not_null(string("prenom")),
-        not_null(date("date_naissance")),
-        not_null(string("contact")),
-        not_null(string("genre")),
-        not_null(string("adresse")),
-        not_null(string("profession")),
+        PrimaryKey("matricule").build(),
+        String("nom").not_null.build(),
+        String("prenoms").not_null.build(),
+        Date("date_naissance").not_null.build(),
+        String("contact").not_null.build(),
+        String("genre").not_null.build(),
+        String("adresse").not_null.build(),
+        String("profession").not_null.build(),
     ]
 
     def __init__(
