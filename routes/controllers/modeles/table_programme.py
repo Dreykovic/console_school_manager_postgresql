@@ -13,8 +13,9 @@ class TableProgramme(Table):
     ]
     primary_key = "id_programme"
 
-    def __init__(self, matiere, prof, classe):
+    def __init__(self,coeficient, matiere, prof, classe):
         self.id_programme = 0
+        self.coeficient = coeficient
         self.matiere = matiere
         self.prof = prof
         self.classe = classe

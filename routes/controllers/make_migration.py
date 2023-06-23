@@ -26,7 +26,7 @@ TableTuteur(
     "H",
     "AKAMADE",
     "AAstronaute",
-)
+).create()
 TableTuteur(
     "FUjustsi",
     "Ferdinand",
@@ -35,7 +35,7 @@ TableTuteur(
     "H",
     "AKAMADE",
     "AAstronaute",
-)
+).create()
 TableTuteur(
     "ATALAKPOU",
     "Ferdinand",
@@ -44,7 +44,7 @@ TableTuteur(
     "H",
     "AKAMADE",
     "AAstronaute",
-)
+).create()
 TableTuteur(
     "ATALAKPOU",
     "Ferdinand",
@@ -53,7 +53,7 @@ TableTuteur(
     "H",
     "AKAMADE",
     "AAstronaute",
-)
+).create()
 TableEnseignant(
     "ATALAKPOU",
     "Ferdinand",
@@ -62,7 +62,7 @@ TableEnseignant(
     "H",
     "AKAMADE",
     "AAstronaute",
-)
+).create()
 TableEnseignant(
     "ATALAKPOU",
     "Ferdinand",
@@ -71,7 +71,7 @@ TableEnseignant(
     "H",
     "AKAMADE",
     "AAstronaute",
-)
+).create()
 TableEnseignant(
     "ATALAKPOU",
     "Ferdinand",
@@ -80,16 +80,17 @@ TableEnseignant(
     "H",
     "AKAMADE",
     "AAstronaute",
-)
+).create()
 TableEleve(
     2, 2, "ATALAKPOU", "Ferdinand", dt(2001, 1, 1).date(), "90546875", "H", "AKAMADE"
-)
+).create()
 TableEleve(
     2, 1, "ATALAKPOU", "Ferdinand", dt(2001, 1, 1).date(), "90546875", "H", "AKAMADE"
-)
+).create()
 TableEleve(
     2, 2, "ATALAKPOU", "Ferdinand", dt(2001, 1, 1).date(), "90546875", "H", "AKAMADE"
-)
-TableMatiere("MAth")
-TableMatiere("PC")
-TableMatiere("HG")
+).create()
+TableMatiere("MAth").create()
+TableMatiere("PC").create()
+TableMatiere("HG").create()
+TableProgramme(5,1,1,1).create()
