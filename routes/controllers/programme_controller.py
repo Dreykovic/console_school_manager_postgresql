@@ -36,15 +36,15 @@ class ProgrammeController(Controller):
                 super().update("coeficient", coef)
                 break
             elif choix == "2":
-                matiere = cls.read("matiere")
+                matiere = cls.assign(Matiere)
                 super().update("matiere", matiere)
                 break
             elif choix == "3":
-                classe = cls.read("classe")
+                classe = cls.assign(Classe)
                 super().update("classe", classe)
                 break
             elif choix == "4":
-                prof = cls.read("prof")
+                prof = cls.assign(Enseignant)
                 super().update("prof", prof)
                 break
 

@@ -66,11 +66,11 @@ class EleveController(Controller):
                 super().update("adresse",adresse)
                 break
             elif choix == "7":
-                tuteur = cls.read("tuteur")
+                tuteur = cls.assign(Tuteur)
                 super().update("tuteurs",tuteur)
                 break
             elif choix == "8":
-                classe = cls.read("classe")
+                classe = cls.assign(Classe)
                 super().update("classe",classe)
                 break
             else:
