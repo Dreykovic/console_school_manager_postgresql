@@ -36,31 +36,31 @@ class EnseignantController(Controller):
         while True:
             if choix == "1":
                 nom = cls.read("nom")
-                super().update(nom)
+                super().update("nom",nom)
                 break
             elif choix == "2":
                 prenoms = cls.read("prenom")
-                super().update(prenoms)
+                super().update("prenom",prenoms)
                 break
             elif choix == "3":
                 date = cls.read("date_naissance")
-                super().update(date)
+                super().update("date_naissance",date)
                 break
             elif choix == "4":
                 contact = cls.read("contact", True)
-                super().update(contact)
+                super().update("contact",contact)
                 break
             elif choix == "5":
                 genre = cls.read("genre", False, ["M", "F"])
-                super().update(genre)
+                super().update("genre",genre)
                 break
             elif choix == "6":
                 adresse = cls.read("adresse")
-                super().update(adresse)
+                super().update("adresse",adresse)
                 break
             elif choix == "7":
                 statut = cls.read("statut")
-                super().update(statut)
+                super().update("statut",statut)
                 break
 
             else:

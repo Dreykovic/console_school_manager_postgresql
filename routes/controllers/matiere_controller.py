@@ -20,7 +20,7 @@ class MatiereController(Controller):
     @classmethod
     def update(cls):
         value = cls.read("libelle")
-        super().update(value)
+        super().update("libelle",value)
 
 
 if __name__ == "__main__":

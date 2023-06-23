@@ -154,7 +154,7 @@ class Controller:
         print(separator)
 
     @classmethod
-    def update(cls, result):
+    def update(cls,attribut, result):
         data = cls.show(cls.model)
         matricule = cls.write_number(cls.model.primary_key)
         message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"

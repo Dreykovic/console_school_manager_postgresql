@@ -32,13 +32,12 @@ class ClasseController(Controller):
         choix = input("Choisissez une option (1-2)  :       ")
         while True:
             if choix == "1":
-                super().update("nom", cls.MSG_INVALID_TEXT)
+                nom = cls.read("nom")
+                super().update("nom", nom)
                 break
             elif choix == "2":
-                super().update(
-                    "effectif",
-                    cls.MSG_INVALID_NUMBER,
-                )
+                eff = cls.read("effectif")
+                super().update("effectif", eff)
                 break
 
             else:
