@@ -1,5 +1,5 @@
-from modeles.table_enseignant import TableEnseignant as Enseignant
-from controller import Controller
+from .modeles.table_enseignant import TableEnseignant as Enseignant
+from .controller import Controller
 
 
 class EnseignantController(Controller):
