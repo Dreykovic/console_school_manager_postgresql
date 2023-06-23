@@ -1,5 +1,5 @@
-from modeles.table_matiere import TableMatiere as Matiere
-from controller import Controller
+from .modeles.table_matiere import TableMatiere as Matiere
+from .controller import Controller
 
 
 class MatiereController(Controller):

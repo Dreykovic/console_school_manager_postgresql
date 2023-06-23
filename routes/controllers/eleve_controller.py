@@ -1,7 +1,7 @@
-from modeles.table_eleve import TableEleve as Eleve
-from modeles.table_classe import TableClasse as Classe
-from modeles.table_tuteur import TableTuteur as Tuteur
-from controller import Controller
+from .modeles.table_eleve import TableEleve as Eleve
+from .modeles.table_classe import TableClasse as Classe
+from .modeles.table_tuteur import TableTuteur as Tuteur
+from .controller import Controller
 
 class EleveController(Controller):
     model = Eleve

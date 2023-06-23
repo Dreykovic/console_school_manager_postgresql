@@ -1,5 +1,4 @@
-
-
+from controllers import *
 def route_classe(choix):
     if choix == "1":
         show()
@@ -11,6 +10,7 @@ def route_classe(choix):
         editer_eleve()
     elif choix == "5":
         print("Au revoir !")
-        break
     else:
         print("Choix invalide. Veuillez sélectionner une option valide.")
+
+print(dir())

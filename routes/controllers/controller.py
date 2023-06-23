@@ -1,5 +1,4 @@
-from modeles.table_classe import TableClasse as Classe
-from validators import *
+from .validators import *
 from datetime import datetime
 import sys
 

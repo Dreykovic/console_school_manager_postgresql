@@ -1,12 +1,12 @@
-from modeles.table_classe import TableClasse
-from modeles.table_eleve import TableEleve
-from modeles.table_enseignant import TableEnseignant
-from modeles.table_matiere import TableMatiere
-from modeles.table_programme import TableProgramme
-from modeles.table_tuteur import TableTuteur
-from datetime import datetime as dt
-from modeles.migration import *
-from modeles.database import tables
+from .modeles.table_classe import TableClasse
+from .modeles.table_eleve import TableEleve
+from .modeles.table_enseignant import TableEnseignant
+from .modeles.table_matiere import TableMatiere
+from .modeles.table_programme import TableProgramme
+from .modeles.table_tuteur import TableTuteur
+from .datetime import datetime as dt
+from .modeles.migration import *
+from .modeles.database import tables
 
 for relation in tables:
     create_tables(relation, tables[relation])

@@ -1,5 +1,5 @@
-from modeles.table_tuteur import TableTuteur as Tuteur
-from controller import Controller
+from .modeles.table_tuteur import TableTuteur as Tuteur
+from .controller import Controller
 
 
 class TuteurController(Controller):

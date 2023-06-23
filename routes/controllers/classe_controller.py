@@ -1,5 +1,5 @@
-from modeles.table_classe import TableClasse as Classe
-from controller import Controller
+from .modeles.table_classe import TableClasse as Classe
+from .controller import Controller
 
 
 class ClasseController(Controller):
