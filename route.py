@@ -1,102 +1,17 @@
-
+from controllers import *
 
 def route_classe(choix):
-    while True:
-        if choix == "1":
-            show()
-        elif choix == "2":
-            create()
-        elif choix == "3":
-            supprimer()
-        elif choix == "4":
-            editer()
-        elif choix == "5":
-            print("Au revoir !")
-            break
-        else:
-            print("Choix invalide. Veuillez sélectionner une option valide.")
+    if choix == "1":
+        ClasseController.show()
+    elif choix == "2":
+        ClasseController.create()
+    elif choix == "3":
+        ClasseController.destroy()
+    elif choix == "4":
+        ClasseController.update()
+    elif choix == "5":
+        print("Au revoir !")
+    else:
+        print("Choix invalide. Veuillez sélectionner une option valide.")
+    return choix
 
-
-def route_eleve(choix):
-    while True:
-        if choix == "1":
-            show()
-        elif choix == "2":
-            create()
-        elif choix == "3":
-            supprimer()
-        elif choix == "4":
-            editer()
-        elif choix == "5":
-            print("Au revoir !")
-            break
-        else:
-            print("Choix invalide. Veuillez sélectionner une option valide.")
-
-
-def route_enseignant(choix):
-    while True:
-        if choix == "1":
-            show()
-        elif choix == "2":
-            create()
-        elif choix == "3":
-            supprimer()
-        elif choix == "4":
-            editer()
-        elif choix == "5":
-            print("Au revoir !")
-            break
-        else:
-            print("Choix invalide. Veuillez sélectionner une option valide.")
-
-
-def route_matiere(Choix):
-    while True:
-        if choix == "1":
-            show()
-        elif choix == "2":
-            create()
-        elif choix == "3":
-            supprimer()
-        elif choix == "4":
-            editer()
-        elif choix == "5":
-            print("Au revoir !")
-            break
-        else:
-            print("Choix invalide. Veuillez sélectionner une option valide.")
-
-
-def route_programme(Choix):
-    while True:
-        if choix == "1":
-            show()
-        elif choix == "2":
-            create()
-        elif choix == "3":
-            supprimer()
-        elif choix == "4":
-            editer()
-        elif choix == "5":
-            print("Au revoir !")
-            break
-        else:
-            print("Choix invalide. Veuillez sélectionner une option valide.")
-
-
-def route_tuteur(Choix):
-    while True:
-        if choix == "1":
-            show()
-        elif choix == "2":
-            create()
-        elif choix == "3":
-            supprimer()
-        elif choix == "4":
-            editer()
-        elif choix == "5":
-            print("Au revoir !")
-            break
-        else:
-            print("Choix invalide. Veuillez sélectionner une option valide.")
