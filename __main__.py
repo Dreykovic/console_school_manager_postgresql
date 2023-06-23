@@ -2,6 +2,7 @@ import pprint
 from .vue import vue
 
 
+
 def afficher_menu():
     print("===================================")
     print("          Gestion de l'école        ")
