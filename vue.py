@@ -1,4 +1,4 @@
-from call import *
+from .call import *
 def vue(table):
     action = ""
     while action is not "5":

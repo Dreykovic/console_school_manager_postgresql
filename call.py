@@ -1,4 +1,4 @@
-from controllers import *
+from .controllers import *
 
 def call_classe(choix):
     if choix == "1":
