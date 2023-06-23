@@ -25,3 +25,8 @@ def vue(table):
         route_matiere(choix)
     else:
         print("Choix invalide. Veuillez sélectionner une option valide.")
+        
+import routes
+
+print(dir())
+

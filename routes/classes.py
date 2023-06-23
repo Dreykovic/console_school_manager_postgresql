@@ -2,7 +2,7 @@
 
 def route_classe(choix):
     if choix == "1":
-        afficher_eleves()
+        show()
     elif choix == "2":
         ajouter_eleve()
     elif choix == "3":
