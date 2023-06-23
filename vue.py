@@ -1,3 +1,4 @@
+from call import *
 def vue(table):
     action = ""
     while action is not "5":
@@ -14,22 +15,22 @@ def vue(table):
         choix = input("Choisissez une option (1-5) : ")
         action = ""
         if table == "élève":
-            action = route_eleve(choix)
+            action = call_eleve(choix)
             break
         elif table == "enseignant":
-            action = route_enseignant(choix)
+            action = call_enseignant(choix)
             break
         elif table == "classe":
-            action = route_classe(choix)
+            action = call_classe(choix)
             break
         elif table == "tuteur":
-            action = route_tuteur()
+            action = call_tuteur(choix)
             break
         elif table == "programme":
-            action = route_programme(choix)
+            action = call_programme(choix)
             break
         elif table == "matiere":
-            action = route_matiere(choix)
+            action = call_matiere(choix)
             break
         else:
             print("\nChoix invalide. Veuillez sélectionner une option valide.\n ")
