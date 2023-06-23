@@ -1,4 +1,5 @@
 from .linker import Linker
+import sys
 
 
 class Table(object):
@@ -32,6 +33,7 @@ class Table(object):
             self.insert(data)
         except NameError as err:
             print("❌ »»»» Une erreur est surmenu lors de la création  :\n :")
+            sys.exit(0)
 
     @classmethod
     def insert(cls, data):
@@ -50,7 +52,7 @@ class Table(object):
             cls.lk.executerReq(req, data)
         except Exception as err:
             print(f"❌ »»»» Une erreur est surmenu lors de l'insertion :\n{req}\n :")
-            return 0
+            sys.exit(0)
         else:
             cls.lk.commit()
             print("INSERT SUCCESSFULY !!!✔️")
@@ -66,7 +68,7 @@ class Table(object):
             key = cls.lk.resultatReq()[0][0]
         except Exception as err:
             print(f"❌ »»»» Id fetch problem :\n{req}\n :")
-            return 0
+            sys.exit(0)
         else:
             return key
 
@@ -79,7 +81,7 @@ class Table(object):
             row = cls.lk.resultatReq()
         except Exception as err:
             print(f"❌ »»»» Select problem :\n{req}\n :")
-            return 0
+            sys.exit(0)
         else:
             if len(row) == 0:
                 print("!!! ❌ »»»»   Désolé, aucune correspondance")
@@ -96,7 +98,7 @@ class Table(object):
             row = cls.lk.resultatReq()
         except Exception as err:
             print(f"❌ »»»»  Select problem :\n{req}\n :")
-            return 0
+            sys.exit(0)
         else:
             return row
 
@@ -109,7 +111,7 @@ class Table(object):
             row = cls.lk.resultatReq()
         except Exception as err:
             print(f"❌ »»»»  Select problem :\n{req}\n :")
-            return 0
+            sys.exit(0)
         else:
             return row
 
@@ -121,7 +123,7 @@ class Table(object):
             cls.lk.executerReq(req)
         except Exception as err:
             print(f"❌ »»»»  Une erreur est surmenu lors de la suppressiond:\n{req}\n :")
-            return 0
+            sys.exit(0)
         else:
             cls.lk.commit()
             print("DELETED !!!✔️ ")
@@ -137,7 +139,7 @@ class Table(object):
             print(
                 f"❌ »»»» Une erreur est surmenu lors de la mise à jour de {attribut} : ID:{matricule}:\n{req}\n :"
             )
-            return 0
+            sys.exit(0)
         else:
             cls.lk.commit()
             print("UPDATED SUCCESSFULLY !!!✔️ ")
