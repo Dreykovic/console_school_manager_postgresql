@@ -15,10 +15,11 @@ class ProgrammeController(Controller):
 
     @classmethod
     def create(cls):
+        matiere = cls.assign(Matiere)[0]
+        print("CHOISIR COEFICIENT")
         coef = cls.read("coeficient", False, ["1", "2", "3", "4", "5"])
-        matiere = cls.assign(Matiere)
-        classe = cls.assign(Classe)
-        prof = cls.assign(Enseignant)
+        classe = cls.assign(Classe)[0]
+        prof = cls.assign(Enseignant)[0]
         programme = Programme(coef, matiere, prof, classe)
         programme.create()
 
@@ -36,15 +37,15 @@ class ProgrammeController(Controller):
                 super().update("coeficient", coef)
                 break
             elif choix == "2":
-                matiere = cls.assign(Matiere)
+                matiere = cls.assign(Matiere)[0]
                 super().update("matiere", matiere)
                 break
             elif choix == "3":
-                classe = cls.assign(Classe)
+                classe = cls.assign(Classe)[0]
                 super().update("classe", classe)
                 break
             elif choix == "4":
-                prof = cls.assign(Enseignant)
+                prof = cls.assign(Enseignant)[0]
                 super().update("prof", prof)
                 break
 

@@ -1,5 +1,5 @@
 import pprint
-from .vue import vue
+from vue import vue
 
 
 def afficher_menu():

@@ -1,9 +1,9 @@
-from .call import *
+from call import *
 def vue(table):
     action = ""
     while action is not "5":
         print("==========================================================")
-        print(f"                      {table.capitalize}                     ")
+        print(f"                      {table.capitalize()}                     ")
         print("==========================================================")
         print(f"1. Afficher les {table}s")
         print(f"2. Ajouter un {table}")

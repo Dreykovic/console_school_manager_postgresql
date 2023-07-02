@@ -20,7 +20,7 @@ class EleveController(Controller):
         genre = cls.read("genre", False, ["M", "F"])
         adresse = cls.read("adresse")
         tuteur = cls.assign(Tuteur)[0]
-        classeInfo = cls.assign(Classe)[0]
+        classeInfo = cls.assign(Classe)
         classe = classeInfo[0]
         data = classeInfo[1]
         eff = next(element[2] for element in data if element[0] == classe)
