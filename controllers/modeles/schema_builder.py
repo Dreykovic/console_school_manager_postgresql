@@ -2,6 +2,7 @@ __all__ = ["PrimaryKey", "String", "Integer", "Date"]
 
 
 class SchemaBuilder:
+    col = dict()
     def unique(self):
         self.col["unique"] = 1
         return self

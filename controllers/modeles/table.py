@@ -132,6 +132,7 @@ class Table(object):
     @classmethod
     def update(cls, attribut, matricule, value):
         row = ""
+        req = ""
         try:
             req = f"UPDATE  {cls.relation} SET {attribut} = '{value}' WHERE {cls.primary_key} = '{matricule}';"
             cls.lk.executerReq(req)

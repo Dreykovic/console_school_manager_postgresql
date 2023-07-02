@@ -19,8 +19,10 @@ class EleveController(Controller):
         contact = cls.read("contact", True)
         genre = cls.read("genre", False, ["M", "F"])
         adresse = cls.read("adresse")
-        tuteur = cls.assign(Tuteur)
-        classe = cls.assign(Classe)
+        tuteur = cls.assign(Tuteur)[0]
+        classeInfo = cls.assign(Classe)[0]
+        classe = classeInfo[0]
+        data = classeInfo[1]
         eff = next(element[2] for element in data if element[0] == classe)
         Classe.update("effectif", classe, eff + 1)
         print("Goal")
@@ -78,8 +80,6 @@ class EleveController(Controller):
                 printer()
                 choix = input("Choisissez une option (1-7)  :       ")
 
-    def validate_classe(id_classe):
-        pass
 
 
 if __name__ =="__main__":

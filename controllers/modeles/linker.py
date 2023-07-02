@@ -46,9 +46,9 @@ class Linker(object):
             self.conn.close()
 
 
-def main():
-    f = Linker()
-    f.createTables(Database.tables)
+# def main():
+#     f = Linker()
+#     f.createTables(Database.tables)
 
     # f.createTables({TableTuteur.table:TableTuteur.schema})
 

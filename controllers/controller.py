@@ -17,14 +17,14 @@ class Controller:
     @classmethod
     def destroy(cls):
         message = (
-            f"Etes vous sur de vouloir supprimer les donnée de {cls.model.relation}  :"
+            f"Etes vous sur de vouloir supprimer les donnée de {cls.model.relation}  :" # type: ignore
         )
         data = cls.show(cls.model)
         matricule = cls.write_number("matricule")
         choix = cls.action_confirm(message, matricule, data)
         while True:
             if choix == "1":
-                cls.model.delete(matricule)
+                cls.model.delete(matricule) # type: ignore
                 break
             elif choix == "2":
                 sys.exit(0)
@@ -56,38 +56,38 @@ class Controller:
 
     @classmethod
     def write_text(cls, name):
-        text = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        text = input(f"Ecrire {name} de {cls.model.relation} :       ") # type: ignore
         while not validate_text(text):
             print(cls.MSG_INVALID_TEXT)
-            text = input(f"Ecrire {name} de {cls.model.relation} :       ")
+            text = input(f"Ecrire {name} de {cls.model.relation} :       ") # type: ignore
         return text
 
     @classmethod
     def write_number(cls, name):
-        number = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        number = input(f"Ecrire {name} de {cls.model.relation} :       ") # type: ignore
         while not validate_number(number):
             print(cls.MSG_INVALID_NUMBER)
-            number = input(f"Ecrire {name} de {cls.model.relation} :       ")
+            number = input(f"Ecrire {name} de {cls.model.relation} :       ") # type: ignore
         return int(number)
 
     @classmethod
     def write_date(cls, name):
-        date = input(f"Ecrire {name} de {cls.model.relation} :  aaaa-mm-dd     ")
+        date = input(f"Ecrire {name} de {cls.model.relation} :  aaaa-mm-dd     ") # type: ignore
         while not validate_date(date):
             print(cls.MSG_INVALID_DATE)
-            date = input(f"Ecrire {name} de {cls.model.relation} :       ")
+            date = input(f"Ecrire {name} de {cls.model.relation} :       ") # type: ignore
         data = date.split("-")
         annee = int(data[0])
         mois = int(data[1])
         jour = int(data[2])
-        return datetime(annee, mois, jour).date()
+        return datetime(annee, mois, jour).date() # type: ignore
 
     @classmethod
     def write_phone_number(cls, name):
-        phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ")
+        phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ") # type: ignore
         while not validate_phone_number(phone_number):
             print(cls.MSG_INVALID_NUMBER)
-            phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ")
+            phone_number = input(f"Ecrire {name} de {cls.model.relation} :       ") # type: ignore
         return int(phone_number)
 
     @staticmethod
@@ -109,8 +109,8 @@ class Controller:
         for elt in data:
             tuplet = tuple()
             for value in elt:
-                if type(value) == type(datetime(2000, 1, 1).date()):
-                    value = datetime.strftime(value, datetime_string_format)
+                if type(value) == type(datetime(2000, 1, 1).date()): # type: ignore
+                    value = datetime.strftime(value, datetime_string_format) # type: ignore
                 tuplet += (value,)
             elt = tuplet
             uneListe.append(elt)
@@ -140,28 +140,28 @@ class Controller:
         return 1
 
     def print_head(columns, column_widths, table_name):
-        print("=" * (sum(column_widths) + 3 * len(columns) + 1))
-        print(f"{table_name:^{sum(column_widths) + 3 * len(columns) + 1}}")
-        print("=" * (sum(column_widths) + 3 * len(columns) + 1))
+        print("=" * (sum(column_widths) + 3 * len(columns) + 1)) # type: ignore
+        print(f"{table_name:^{sum(column_widths) + 3 * len(columns) + 1}}") # type: ignore
+        print("=" * (sum(column_widths) + 3 * len(columns) + 1)) # type: ignore
 
         header_format = " | ".join(
             ["{{:<{}}}".format(width) for width in column_widths]
         )
-        print(header_format.format(*columns))
+        print(header_format.format(*columns)) # type: ignore
 
-        separator = "-" * (sum(column_widths) + 3 * len(columns) + 1)
+        separator = "-" * (sum(column_widths) + 3 * len(columns) + 1) # type: ignore
         print(separator)
 
     @classmethod
     def update(cls,attribut, result):
         data = cls.show(cls.model)
-        matricule = cls.write_number(cls.model.primary_key)
-        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :"
+        matricule = cls.write_number(cls.model.primary_key) # type: ignore
+        message = f"Etes vous sur de vouloir mettre à jour les donnée de {cls.model.relation}  :" # type: ignore
 
         choix = cls.action_confirm(message, matricule, data)
         while True:
             if choix == "1":
-                cls.model.update(attribut, matricule, result)
+                cls.model.update(attribut, matricule, result) # type: ignore
                 break
             elif choix == "2":
                 return 0
@@ -178,10 +178,12 @@ class Controller:
         phone_attribut=False,
         values=None,
     ):
+        result =str()
+        position = int()
         invalid_message_type = cls.MSG_INVALID_OPTION
         if values is None:
             if not phone_attribut:
-                column_type = cls.model.get_colunm_type(attribut)
+                column_type = cls.model.get_colunm_type(attribut) # type: ignore
                 if column_type == "integer":
                     result = cls.write_number(attribut)
                     invalid_message_type = cls.MSG_INVALID_NUMBER
@@ -225,7 +227,7 @@ class Controller:
         while identifiant not in ids:
             print(f"l'id {identifiant} ne correspond a aucune {reference.relation}")
             identifiant = cls.write_number(f"id {reference.relation} ")
-        return identifiant
+        return identifiant, data
 
 
 if __name__ == "__main__":

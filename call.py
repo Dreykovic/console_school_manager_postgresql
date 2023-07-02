@@ -2,7 +2,7 @@ from .controllers import *
 
 def call_classe(choix):
     if choix == "1":
-        ClasseController.show()
+        ClasseController.show(Classe)
     elif choix == "2":
         ClasseController.create()
     elif choix == "3":
@@ -17,7 +17,7 @@ def call_classe(choix):
 
 def call_eleve(choix):
     if choix == "1":
-        EleveController.show()
+        EleveController.show(Eleve)
     elif choix == "2":
         EleveController.create()
     elif choix == "3":
@@ -32,7 +32,7 @@ def call_eleve(choix):
 
 def call_matiere(choix):
     if choix == "1":
-        MatiereController.show()
+        MatiereController.show(Eleve)
     elif choix == "2":
         MatiereController.create()
     elif choix == "3":
@@ -47,7 +47,7 @@ def call_matiere(choix):
 
 def call_programme(choix):
     if choix == "1":
-        ProgrammeController.show()
+        ProgrammeController.show(Programme)
     elif choix == "2":
         ProgrammeController.create()
     elif choix == "3":
@@ -63,7 +63,7 @@ def call_programme(choix):
 
 def call_enseignant(choix):
     if choix == "1":
-        EnseignantController.show()
+        EnseignantController.show(Enseignant)
     elif choix == "2":
         EnseignantController.create()
     elif choix == "3":
@@ -79,13 +79,13 @@ def call_enseignant(choix):
 
 def call_tuteur(choix):
     if choix == "1":
-        Tuteur.show()
+        TuteurController.show(Tuteur)
     elif choix == "2":
-        Tuteur.create()
+        TuteurController.create()
     elif choix == "3":
-        Tuteur.destroy()
+        TuteurController.destroy()
     elif choix == "4":
-        Tuteur.update()
+        TuteurController.update()
     elif choix == "5":
         print("Au revoir !")
     else:

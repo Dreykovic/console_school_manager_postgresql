@@ -4,19 +4,19 @@ from .controller import Controller
 
 class ClasseController(Controller):
     model = Classe
+    avalible_names = [
+        "2nde A4",
+        "2nde D",
+        "2nde C4",
+        "1ere A4",
+        "1ere D",
+        "1ere C4",
+        "Tle A4",
+        "Tle D",
+        "Tle C4",
+    ]
 
     def __init__(self):
-        self.avalible_names = [
-            "2nde A4",
-            "2nde D",
-            "2nde C4",
-            "1ere A4",
-            "1ere D",
-            "1ere C4",
-            "Tle A4",
-            "Tle D",
-            "Tle C4",
-        ]
         self.show(Classe)
 
     @classmethod
