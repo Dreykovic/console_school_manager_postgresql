@@ -1,5 +1,5 @@
 import pprint
-from vue import vue
+from .vue import vue
 
 
 def afficher_menu():
@@ -42,10 +42,8 @@ while True:
         vue("programme")
     elif choix == "7":
         print("Fonctionnalité indisponible")
-
     elif choix == "8":
         print("Fonctionnalité indisponible")
-
     elif choix == "9":
         print("Au revoir !")
         break
