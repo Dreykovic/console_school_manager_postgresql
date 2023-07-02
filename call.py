@@ -1,4 +1,4 @@
-from .controllers import *
+from controllers import *
 
 def call_classe(choix):
     if choix == "1":
@@ -32,7 +32,7 @@ def call_eleve(choix):
 
 def call_matiere(choix):
     if choix == "1":
-        MatiereController.show(Eleve)
+        MatiereController.show(Matiere)
     elif choix == "2":
         MatiereController.create()
     elif choix == "3":

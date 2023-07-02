@@ -2,6 +2,8 @@ from .table_personne import *
 
 
 class TableEnseignant(TablePersonne):
+    """Classe représentant une table d'enseignants dans la base de données."""
+
     relation = "enseignant"
     schema = [
         PrimaryKey('matricule').build(),
@@ -12,7 +14,6 @@ class TableEnseignant(TablePersonne):
         String('genre').not_null().build(),
         String('adresse').not_null().build(),
         String('statut').not_null().build(),
-
     ]
 
     def __init__(
@@ -25,9 +26,18 @@ class TableEnseignant(TablePersonne):
         adresse=None,
         statut=None,
     ):
+        """Initialise une instance de la classe TableEnseignant.
+
+        Args:
+            nom (str): Nom de l'enseignant.
+            prenom (str): Prénoms de l'enseignant.
+            date_naissance (str): Date de naissance de l'enseignant.
+            contact (str): Contact de l'enseignant.
+            genre (str): Genre de l'enseignant.
+            adresse (str): Adresse de l'enseignant.
+            statut (str): Statut de l'enseignant.
+        """
         TablePersonne.__init__(
             self, nom, prenom, date_naissance, contact, genre, adresse
         )
         self.statut = statut
-
-
