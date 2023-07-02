@@ -3,6 +3,8 @@ from .schema_builder import *
 
 
 class TableMatiere(Table):
+    """Classe représentant une table de matières dans la base de données."""
+
     relation = "matiere"
     schema = [
         PrimaryKey('id_matiere').build(),
@@ -15,8 +17,10 @@ class TableMatiere(Table):
         self,
         libelle=None,
     ):
+        """Initialise une instance de la classe TableMatiere.
+
+        Args:
+            libelle (str): Libellé de la matière.
+        """
         self.id_matiere = 0
         self.libelle = libelle
-
-
-

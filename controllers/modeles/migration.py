@@ -1,8 +1,14 @@
 from .linker import Linker
 from .database import tables
 
-
 def create_tables(relation, schema):
+    """Crée une table dans la base de données.
+
+    Args:
+        relation (str): Nom de la relation (table).
+        schema (list): Schéma de la table.
+
+    """
     req = ""
     primary_key_def = ""
     foreign = ""
@@ -41,14 +47,10 @@ def create_tables(relation, schema):
         f"»»»»» Relation {relation.capitalize()} created successfully !!! ✔️   «««««\n\n"
     )
 
-
 def main():
+    """Fonction principale pour la création des tables."""
     for relation in tables:
         create_tables(relation, tables[relation])
-        # print(relation)
-        # print(tables[relation])   ûîðæþç789~~~###ðæ±þß
-
 
 if __name__ == "__main__":
     main()
-    pass

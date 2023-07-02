@@ -1,7 +1,7 @@
 from call import *
 def vue(table):
     action = ""
-    while action is not "5":
+    while action != "5":
         print("==========================================================")
         print(f"                      {table.capitalize()}                     ")
         print("==========================================================")
