@@ -1,5 +1,12 @@
-# Application de gestion de note.
+# Application de gestion de note
 
+## Dépendences 
+Lancer les commandes suivantes pour satisfaire les dépendences
+```bash
+sudo apt update
+sudo apt install python3-pip
+pip3 install datetime
+```
 ## Initialisation
 Tout d'abord il faut réinitialisé votre base de donné. 
 Pour cela dans le dossier racine du projet exécuter la commande suivante:
@@ -27,3 +34,5 @@ python3 __main__.py
 ```
 
 **Bonne gestion d'ecole Monsieur**
+
+>AMONA Birewa Audrey
