@@ -1,9 +1,6 @@
 from .validators import *
 from datetime import datetime
 import sys
-from .validators import *
-from datetime import datetime
-import sys
 from .modeles.table import Table
 
 class Controller:
@@ -319,7 +316,7 @@ class Controller:
         else:
             for position, value in enumerate(values, start=1):
                 print(f"{position}. {value}")
-            choix = input(f"Choisissez une option (1-{position-1}) :        ")
+            choix = input(f"Choisissez une option (1-{position}) :        ")
             is_done = 0
             while not is_done:
                 for i in range(1, len(values) + 1):
