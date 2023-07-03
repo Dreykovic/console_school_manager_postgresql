@@ -1,0 +1,589 @@
+[
+    {
+        "label": "tables",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "psycopg2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psycopg2",
+        "description": "psycopg2",
+        "detail": "psycopg2",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "TableClasse",
+        "importPath": "modeles.table_classe",
+        "description": "modeles.table_classe",
+        "isExtraImport": true,
+        "detail": "modeles.table_classe",
+        "documentation": {}
+    },
+    {
+        "label": "TableEleve",
+        "importPath": "modeles.table_eleve",
+        "description": "modeles.table_eleve",
+        "isExtraImport": true,
+        "detail": "modeles.table_eleve",
+        "documentation": {}
+    },
+    {
+        "label": "TableEnseignant",
+        "importPath": "modeles.table_enseignant",
+        "description": "modeles.table_enseignant",
+        "isExtraImport": true,
+        "detail": "modeles.table_enseignant",
+        "documentation": {}
+    },
+    {
+        "label": "TableMatiere",
+        "importPath": "modeles.table_matiere",
+        "description": "modeles.table_matiere",
+        "isExtraImport": true,
+        "detail": "modeles.table_matiere",
+        "documentation": {}
+    },
+    {
+        "label": "TableProgramme",
+        "importPath": "modeles.table_programme",
+        "description": "modeles.table_programme",
+        "isExtraImport": true,
+        "detail": "modeles.table_programme",
+        "documentation": {}
+    },
+    {
+        "label": "TableTuteur",
+        "importPath": "modeles.table_tuteur",
+        "description": "modeles.table_tuteur",
+        "isExtraImport": true,
+        "detail": "modeles.table_tuteur",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "modeles.migration",
+        "description": "modeles.migration",
+        "isExtraImport": true,
+        "detail": "modeles.migration",
+        "documentation": {}
+    },
+    {
+        "label": "tables",
+        "importPath": "modeles.database",
+        "description": "modeles.database",
+        "isExtraImport": true,
+        "detail": "modeles.database",
+        "documentation": {}
+    },
+    {
+        "label": "Linker",
+        "importPath": "modeles.linker",
+        "description": "modeles.linker",
+        "isExtraImport": true,
+        "detail": "modeles.linker",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "controllers",
+        "description": "controllers",
+        "isExtraImport": true,
+        "detail": "controllers",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "call",
+        "description": "call",
+        "isExtraImport": true,
+        "detail": "call",
+        "documentation": {}
+    },
+    {
+        "label": "classe_schema",
+        "kind": 5,
+        "importPath": "controllers.modeles.database",
+        "description": "controllers.modeles.database",
+        "peekOfCode": "classe_schema = tables['classe']\n# Créer une instance de la table Classe\nclasse = TableClasse(nom='Classe A', effectif=25)\n# Insérer des données dans la table Classe\nclasse.insert()\nNote : Assurez-vous d'avoir correctement importé les fichiers des tables correspondantes pour que le dictionnaire \"tables\" soit correctement rempli.\n\"\"\"\ntables = {\n    TableClasse.relation: TableClasse.schema,\n    TableTuteur.relation: TableTuteur.schema,",
+        "detail": "controllers.modeles.database",
+        "documentation": {}
+    },
+    {
+        "label": "classe",
+        "kind": 5,
+        "importPath": "controllers.modeles.database",
+        "description": "controllers.modeles.database",
+        "peekOfCode": "classe = TableClasse(nom='Classe A', effectif=25)\n# Insérer des données dans la table Classe\nclasse.insert()\nNote : Assurez-vous d'avoir correctement importé les fichiers des tables correspondantes pour que le dictionnaire \"tables\" soit correctement rempli.\n\"\"\"\ntables = {\n    TableClasse.relation: TableClasse.schema,\n    TableTuteur.relation: TableTuteur.schema,\n    TableEleve.relation: TableEleve.schema,\n    TableEnseignant.relation: TableEnseignant.schema,",
+        "detail": "controllers.modeles.database",
+        "documentation": {}
+    },
+    {
+        "label": "tables",
+        "kind": 5,
+        "importPath": "controllers.modeles.database",
+        "description": "controllers.modeles.database",
+        "peekOfCode": "tables = {\n    TableClasse.relation: TableClasse.schema,\n    TableTuteur.relation: TableTuteur.schema,\n    TableEleve.relation: TableEleve.schema,\n    TableEnseignant.relation: TableEnseignant.schema,\n    TableMatiere.relation: TableMatiere.schema,\n    TableProgramme.relation: TableProgramme.schema\n}\n\"\"\"\nUn dictionnaire contenant les schémas des tables de la base de données.",
+        "detail": "controllers.modeles.database",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "kind": 5,
+        "importPath": "controllers.modeles.env",
+        "description": "controllers.modeles.env",
+        "peekOfCode": "database = \"gnote\"\n\"\"\"\nNom de la base de données à utiliser.\n\"\"\"\nusername = \"audrey\"\n\"\"\"\nNom d'utilisateur pour accéder à la base de données.\n\"\"\"\npasswd = \"1234\"\n\"\"\"",
+        "detail": "controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "username",
+        "kind": 5,
+        "importPath": "controllers.modeles.env",
+        "description": "controllers.modeles.env",
+        "peekOfCode": "username = \"audrey\"\n\"\"\"\nNom d'utilisateur pour accéder à la base de données.\n\"\"\"\npasswd = \"1234\"\n\"\"\"\nMot de passe pour accéder à la base de données.\n\"\"\"\nhost = \"127.0.0.1\"\n\"\"\"",
+        "detail": "controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "passwd",
+        "kind": 5,
+        "importPath": "controllers.modeles.env",
+        "description": "controllers.modeles.env",
+        "peekOfCode": "passwd = \"1234\"\n\"\"\"\nMot de passe pour accéder à la base de données.\n\"\"\"\nhost = \"127.0.0.1\"\n\"\"\"\nHôte de la base de données.\n\"\"\"\nport = 5432\n\"\"\"",
+        "detail": "controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "host",
+        "kind": 5,
+        "importPath": "controllers.modeles.env",
+        "description": "controllers.modeles.env",
+        "peekOfCode": "host = \"127.0.0.1\"\n\"\"\"\nHôte de la base de données.\n\"\"\"\nport = 5432\n\"\"\"\nNuméro de port pour la connexion à la base de données.\n\"\"\"",
+        "detail": "controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "port",
+        "kind": 5,
+        "importPath": "controllers.modeles.env",
+        "description": "controllers.modeles.env",
+        "peekOfCode": "port = 5432\n\"\"\"\nNuméro de port pour la connexion à la base de données.\n\"\"\"",
+        "detail": "controllers.modeles.env",
+        "documentation": {}
+    },
+    {
+        "label": "Linker",
+        "kind": 6,
+        "importPath": "controllers.modeles.linker",
+        "description": "controllers.modeles.linker",
+        "peekOfCode": "class Linker(object):\n    \"\"\"\n    Linker permet de faire un lien entre Python et une base de données SGBDR, notamment PostgreSQL.\n    \"\"\"\n    def __init__(self):\n        \"\"\"\n        Initialise une nouvelle instance du Linker et établit une connexion à la base de données.\n        \"\"\"\n        try:\n            self.conn = psycopg2.connect(",
+        "detail": "controllers.modeles.linker",
+        "documentation": {}
+    },
+    {
+        "label": "create_tables",
+        "kind": 2,
+        "importPath": "controllers.modeles.migration",
+        "description": "controllers.modeles.migration",
+        "peekOfCode": "def create_tables(relation, schema):\n    \"\"\"Crée une table dans la base de données.\n    Args:\n        relation (str): Nom de la relation (table).\n        schema (list): Schéma de la table.\n    \"\"\"\n    req = \"\"\n    primary_key_def = \"\"\n    foreign = \"\"\n    count = 1",
+        "detail": "controllers.modeles.migration",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "controllers.modeles.migration",
+        "description": "controllers.modeles.migration",
+        "peekOfCode": "def main():\n    \"\"\"Fonction principale pour la création des tables.\"\"\"\n    for relation in tables:\n        create_tables(relation, tables[relation])\nif __name__ == \"__main__\":\n    main()",
+        "detail": "controllers.modeles.migration",
+        "documentation": {}
+    },
+    {
+        "label": "SchemaBuilder",
+        "kind": 6,
+        "importPath": "controllers.modeles.schema_builder",
+        "description": "controllers.modeles.schema_builder",
+        "peekOfCode": "class SchemaBuilder:\n    \"\"\"Classe de construction du schéma de colonne pour une table.\"\"\"\n    col = dict()\n    def unique(self):\n        \"\"\"Spécifie que la colonne doit contenir des valeurs uniques.\"\"\"\n        self.col[\"unique\"] = 1\n        return self\n    def not_null(self):\n        \"\"\"Spécifie que la colonne ne peut pas contenir de valeurs nulles.\"\"\"\n        self.col[\"null\"] = 0",
+        "detail": "controllers.modeles.schema_builder",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "kind": 6,
+        "importPath": "controllers.modeles.schema_builder",
+        "description": "controllers.modeles.schema_builder",
+        "peekOfCode": "class String(SchemaBuilder):\n    \"\"\"Classe de construction du schéma d'une colonne de type chaîne de caractères.\"\"\"\n    def __init__(self, name):\n        \"\"\"Initialise une instance de la classe String.\n        Args:\n            name (str): Nom de la colonne.\n        \"\"\"\n        self.col = {\n            \"column_name\": name,\n            \"constraint\": \"\",",
+        "detail": "controllers.modeles.schema_builder",
+        "documentation": {}
+    },
+    {
+        "label": "PrimaryKey",
+        "kind": 6,
+        "importPath": "controllers.modeles.schema_builder",
+        "description": "controllers.modeles.schema_builder",
+        "peekOfCode": "class PrimaryKey(SchemaBuilder):\n    \"\"\"Classe de construction du schéma d'une colonne de clé primaire.\"\"\"\n    def __init__(self, name):\n        \"\"\"Initialise une instance de la classe PrimaryKey.\n        Args:\n            name (str): Nom de la colonne.\n        \"\"\"\n        self.col = {\n            \"column_name\": name,\n            \"constraint\": \"pk\",",
+        "detail": "controllers.modeles.schema_builder",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "kind": 6,
+        "importPath": "controllers.modeles.schema_builder",
+        "description": "controllers.modeles.schema_builder",
+        "peekOfCode": "class Integer(SchemaBuilder):\n    \"\"\"Classe de construction du schéma d'une colonne de type entier.\"\"\"\n    def __init__(self, name):\n        \"\"\"Initialise une instance de la classe Integer.\n        Args:\n            name (str): Nom de la colonne.\n        \"\"\"\n        self.col = {\n            \"column_name\": name,\n            \"constraint\": \"\",",
+        "detail": "controllers.modeles.schema_builder",
+        "documentation": {}
+    },
+    {
+        "label": "Date",
+        "kind": 6,
+        "importPath": "controllers.modeles.schema_builder",
+        "description": "controllers.modeles.schema_builder",
+        "peekOfCode": "class Date(SchemaBuilder):\n    \"\"\"Classe de construction du schéma d'une colonne de type date.\"\"\"\n    def __init__(self, name):\n        \"\"\"Initialise une instance de la classe Date.\n        Args:\n            name (str): Nom de la colonne.\n        \"\"\"\n        self.col = {\n            \"column_name\": name,\n            \"constraint\": \"\",",
+        "detail": "controllers.modeles.schema_builder",
+        "documentation": {}
+    },
+    {
+        "label": "__all__",
+        "kind": 5,
+        "importPath": "controllers.modeles.schema_builder",
+        "description": "controllers.modeles.schema_builder",
+        "peekOfCode": "__all__ = [\"PrimaryKey\", \"String\", \"Integer\", \"Date\"]\nclass SchemaBuilder:\n    \"\"\"Classe de construction du schéma de colonne pour une table.\"\"\"\n    col = dict()\n    def unique(self):\n        \"\"\"Spécifie que la colonne doit contenir des valeurs uniques.\"\"\"\n        self.col[\"unique\"] = 1\n        return self\n    def not_null(self):\n        \"\"\"Spécifie que la colonne ne peut pas contenir de valeurs nulles.\"\"\"",
+        "detail": "controllers.modeles.schema_builder",
+        "documentation": {}
+    },
+    {
+        "label": "Table",
+        "kind": 6,
+        "importPath": "controllers.modeles.table",
+        "description": "controllers.modeles.table",
+        "peekOfCode": "class Table(object):\n    \"\"\"\n    Classe Table pour interagir avec une table dans une base de données.\n    \"\"\"\n    relation = \"\"\n    \"\"\"\n    Nom de la relation (table) dans la base de données.\n    \"\"\"\n    schema = []\n    \"\"\"",
+        "detail": "controllers.modeles.table",
+        "documentation": {}
+    },
+    {
+        "label": "TableClasse",
+        "kind": 6,
+        "importPath": "controllers.modeles.table_classe",
+        "description": "controllers.modeles.table_classe",
+        "peekOfCode": "class TableClasse(Table):\n    \"\"\"Classe représentant une table de classes dans la base de données.\"\"\"\n    relation = \"classe\"\n    schema = [\n        PrimaryKey(\"id_classe\").build(),\n        String(\"nom\").not_null().build(),\n        Integer(\"effectif\").build(),\n    ]\n    primary_key = \"id_classe\"\n    def __init__(self, nom=None, effectif=0):",
+        "detail": "controllers.modeles.table_classe",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "controllers.modeles.table_classe",
+        "description": "controllers.modeles.table_classe",
+        "peekOfCode": "def main():\n    \"\"\"Fonction principale du module.\n    Imprime le schéma de la table TableClasse.\n    \"\"\"\n    print(TableClasse.schema)\nif __name__ == \"__main__\":\n    main()\n    print(dir())",
+        "detail": "controllers.modeles.table_classe",
+        "documentation": {}
+    },
+    {
+        "label": "TableEleve",
+        "kind": 6,
+        "importPath": "controllers.modeles.table_eleve",
+        "description": "controllers.modeles.table_eleve",
+        "peekOfCode": "class TableEleve(TablePersonne):\n    \"\"\"Classe représentant une table d'élèves dans la base de données.\"\"\"\n    relation = \"eleve\"\n    schema = [\n        PrimaryKey(\"matricule\").build(),\n        String(\"nom\").not_null().build(),\n        String(\"prenoms\").not_null().build(),\n        Date(\"date_naissance\").not_null().build(),\n        String(\"contact\").not_null().build(),\n        String(\"genre\").not_null().build(),",
+        "detail": "controllers.modeles.table_eleve",
+        "documentation": {}
+    },
+    {
+        "label": "TableEnseignant",
+        "kind": 6,
+        "importPath": "controllers.modeles.table_enseignant",
+        "description": "controllers.modeles.table_enseignant",
+        "peekOfCode": "class TableEnseignant(TablePersonne):\n    \"\"\"Classe représentant une table d'enseignants dans la base de données.\"\"\"\n    relation = \"enseignant\"\n    schema = [\n        PrimaryKey('matricule').build(),\n        String('nom').not_null().build(),\n        String('prenoms').not_null().build(),\n        Date('date_naissance').not_null().build(),\n        String('contact').not_null().build(),\n        String('genre').not_null().build(),",
+        "detail": "controllers.modeles.table_enseignant",
+        "documentation": {}
+    },
+    {
+        "label": "TableMatiere",
+        "kind": 6,
+        "importPath": "controllers.modeles.table_matiere",
+        "description": "controllers.modeles.table_matiere",
+        "peekOfCode": "class TableMatiere(Table):\n    \"\"\"Classe représentant une table de matières dans la base de données.\"\"\"\n    relation = \"matiere\"\n    schema = [\n        PrimaryKey('id_matiere').build(),\n        String('libelle').not_null().unique().build()\n    ]\n    primary_key = \"id_matiere\"\n    def __init__(\n        self,",
+        "detail": "controllers.modeles.table_matiere",
+        "documentation": {}
+    },
+    {
+        "label": "TablePersonne",
+        "kind": 6,
+        "importPath": "controllers.modeles.table_personne",
+        "description": "controllers.modeles.table_personne",
+        "peekOfCode": "class TablePersonne(Table):\n    \"\"\"Classe représentant une table de personnes dans la base de données.\"\"\"\n    primary_key = \"matricule\"\n    def __init__(\n        self,\n        nom=None,\n        prenom=None,\n        date_naissance=None,\n        contact=None,\n        genre=None,",
+        "detail": "controllers.modeles.table_personne",
+        "documentation": {}
+    },
+    {
+        "label": "TableProgramme",
+        "kind": 6,
+        "importPath": "controllers.modeles.table_programme",
+        "description": "controllers.modeles.table_programme",
+        "peekOfCode": "class TableProgramme(Table):\n    \"\"\"Classe représentant la table 'programme' dans la base de données.\"\"\"\n    relation = \"programme\"\n    schema = [\n        PrimaryKey(\"id_programme\").build(),\n        Integer(\"coeficient\").not_null().build(),\n        Integer(\"matiere\").foreign_key().references(\"matiere\", \"id_matiere\").build(),\n        Integer(\"prof\").foreign_key().references(\"enseignant\", \"matricule\").build(),\n        Integer(\"classe\").foreign_key().references(\"classe\", \"id_classe\").build(),\n    ]",
+        "detail": "controllers.modeles.table_programme",
+        "documentation": {}
+    },
+    {
+        "label": "TableQuelqueChose",
+        "kind": 6,
+        "importPath": "controllers.modeles.table_quelque_chose",
+        "description": "controllers.modeles.table_quelque_chose",
+        "peekOfCode": "class TableQuelqueChose(Table):\n    \"\"\"Classe représentant une table de quelque chose dans la base de données.\"\"\"\n    relation = \"quelque_chose\"\n    schema = [\n        PrimaryKey(\"id_quelque_chose\").build(),\n        String(\"nom\").not_null().build(),\n        Integer(\"attribut\").build(),\n    ]\n    primary_key = \"id_quelque_chose\"\n    def __init__(self, nom=None, attribut=0):",
+        "detail": "controllers.modeles.table_quelque_chose",
+        "documentation": {}
+    },
+    {
+        "label": "TableTuteur",
+        "kind": 6,
+        "importPath": "controllers.modeles.table_tuteur",
+        "description": "controllers.modeles.table_tuteur",
+        "peekOfCode": "class TableTuteur(TablePersonne):\n    \"\"\"Classe représentant la table 'tuteur' dans la base de données.\"\"\"\n    relation = \"tuteur\"\n    schema = [\n        PrimaryKey(\"matricule\").build(),\n        String(\"nom\").not_null().build(),\n        String(\"prenoms\").not_null().build(),\n        Date(\"date_naissance\").not_null().build(),\n        String(\"contact\").not_null().build(),\n        String(\"genre\").not_null().build(),",
+        "detail": "controllers.modeles.table_tuteur",
+        "documentation": {}
+    },
+    {
+        "label": "ClasseController",
+        "kind": 6,
+        "importPath": "controllers.classe_controller",
+        "description": "controllers.classe_controller",
+        "peekOfCode": "class ClasseController(Controller):\n    model = Classe\n    avalible_names = [\n        \"2nde A4\",\n        \"2nde D\",\n        \"2nde C4\",\n        \"1ere A4\",\n        \"1ere D\",\n        \"1ere C4\",\n        \"Tle A4\",",
+        "detail": "controllers.classe_controller",
+        "documentation": {}
+    },
+    {
+        "label": "Controller",
+        "kind": 6,
+        "importPath": "controllers.controller",
+        "description": "controllers.controller",
+        "peekOfCode": "class Controller:\n    \"\"\"\n    Classe de contrôleur pour la gestion des opérations de données.\n    Attributes:\n        model (Table): Le modèle de données utilisé pour les opérations.\n        MSG_INVALID_TEXT (str): Message d'erreur pour une saisie de texte invalide.\n        MSG_INVALID_NUMBER (str): Message d'erreur pour un nombre invalide.\n        MSG_INVALID_DATE (str): Message d'erreur pour une date invalide.\n        MSG_INVALID_OPTION (str): Message d'erreur pour une option invalide.\n    \"\"\"",
+        "detail": "controllers.controller",
+        "documentation": {}
+    },
+    {
+        "label": "Controller",
+        "kind": 6,
+        "importPath": "controllers.controller1",
+        "description": "controllers.controller1",
+        "peekOfCode": "class Controller:\n    model = object()\n    MSG_INVALID_TEXT = \"Saisie invalide. Veuillez saisir un text valide.\"\n    MSG_INVALID_NUMBER = \"Saisie invalide. Veuillez saisir un number valide.\"\n    MSG_INVALID_DATE = \"Saisie invalide. Veuillez saisir une date valide.\"\n    MSG_INVALID_OPTION = \"Choix invalide. Veuillez sélectionner une option valide.\"\n    def create(self):\n        raise NotImplementedError(\"Le controlleur doit implémenter la méthode\")\n    @classmethod\n    def destroy(cls):",
+        "detail": "controllers.controller1",
+        "documentation": {}
+    },
+    {
+        "label": "EleveController",
+        "kind": 6,
+        "importPath": "controllers.eleve_controller",
+        "description": "controllers.eleve_controller",
+        "peekOfCode": "class EleveController(Controller):\n    model = Eleve\n    def __init__(\n        self,\n    ):\n        self.create()\n    @classmethod\n    def create(cls):\n        nom = cls.read(\"nom\")\n        prenoms = cls.read(\"prenoms\")",
+        "detail": "controllers.eleve_controller",
+        "documentation": {}
+    },
+    {
+        "label": "EnseignantController",
+        "kind": 6,
+        "importPath": "controllers.enseignant_controller",
+        "description": "controllers.enseignant_controller",
+        "peekOfCode": "class EnseignantController(Controller):\n    model = Enseignant\n    def __init__(\n        self,\n    ):\n        self.afficher()\n        pass\n    @classmethod\n    def create(cls):\n        nom = cls.read(\"nom\")",
+        "detail": "controllers.enseignant_controller",
+        "documentation": {}
+    },
+    {
+        "label": "req",
+        "kind": 5,
+        "importPath": "controllers.make_migration",
+        "description": "controllers.make_migration",
+        "peekOfCode": "req = \"\"\"\n-- Création de la fonction PL/pgSQL\nCREATE OR REPLACE FUNCTION inserer_valeur_auto()\nRETURNS TRIGGER AS $$\nDECLARE\n    niveau VARCHAR;\n    lettre_actuelle CHAR;\n    dernier_numero INTEGER;\n    dernier_lettre CHAR;\n    nouveau_numero INTEGER;",
+        "detail": "controllers.make_migration",
+        "documentation": {}
+    },
+    {
+        "label": "lk",
+        "kind": 5,
+        "importPath": "controllers.make_migration",
+        "description": "controllers.make_migration",
+        "peekOfCode": "lk = Linker()\nlk.executerReq(req)\nTableClasse(\"2nde A4\").create()\nTableClasse(\"2nde D\").create()\nTableClasse(\"2nde C4\").create()\nTableClasse(\"2nde C4\").create()\nTableClasse(\"1ere D\").create()\nTableClasse(\"1ere A4\").create()\nTableClasse(\"1ere C4\").create()\nTableClasse(\"2nde A4\").create()",
+        "detail": "controllers.make_migration",
+        "documentation": {}
+    },
+    {
+        "label": "MatiereController",
+        "kind": 6,
+        "importPath": "controllers.matiere_controller",
+        "description": "controllers.matiere_controller",
+        "peekOfCode": "class MatiereController(Controller):\n    model = Matiere\n    def __init__(\n        self,\n    ):\n        self.create()\n        pass\n    @classmethod\n    def create(cls):\n        libelle = cls.read(\"libelle\")",
+        "detail": "controllers.matiere_controller",
+        "documentation": {}
+    },
+    {
+        "label": "ProgrammeController",
+        "kind": 6,
+        "importPath": "controllers.programme_controller",
+        "description": "controllers.programme_controller",
+        "peekOfCode": "class ProgrammeController(Controller):\n    model = Programme\n    def __init__(\n        self,\n    ):\n        self.update()\n    @classmethod\n    def create(cls):\n        matiere = cls.assign(Matiere)[0]\n        print(\"CHOISIR COEFICIENT\")",
+        "detail": "controllers.programme_controller",
+        "documentation": {}
+    },
+    {
+        "label": "TuteurController",
+        "kind": 6,
+        "importPath": "controllers.tuteur_controller",
+        "description": "controllers.tuteur_controller",
+        "peekOfCode": "class TuteurController(Controller):\n    model = Tuteur\n    def __init__(\n        self,\n    ):\n        self.update()\n    @classmethod\n    def create(cls):\n        nom = cls.read(\"nom\")\n        prenoms = cls.read(\"prenoms\")",
+        "detail": "controllers.tuteur_controller",
+        "documentation": {}
+    },
+    {
+        "label": "validate_text",
+        "kind": 2,
+        "importPath": "controllers.validators",
+        "description": "controllers.validators",
+        "peekOfCode": "def validate_text(text):\n    \"\"\"Valide si le texte ne contient que des lettres alphabétiques.\n    Args:\n        text (str): Texte à valider.\n    Returns:\n        int: Retourne 1 si le texte est valide, 0 sinon.\n    \"\"\"\n    if text.isalpha():\n        return 1\n    else:",
+        "detail": "controllers.validators",
+        "documentation": {}
+    },
+    {
+        "label": "validate_phone_number",
+        "kind": 2,
+        "importPath": "controllers.validators",
+        "description": "controllers.validators",
+        "peekOfCode": "def validate_phone_number(phone_number):\n    \"\"\"Valide si le numéro de téléphone est valide.\n    Args:\n        phone_number (int or str): Numéro de téléphone à valider.\n    Returns:\n        int: Retourne 1 si le numéro de téléphone est valide, 0 sinon.\n    \"\"\"\n    phone_number = str(phone_number)\n    if len(phone_number) == 8:\n        if phone_number.isdigit():",
+        "detail": "controllers.validators",
+        "documentation": {}
+    },
+    {
+        "label": "validate_number",
+        "kind": 2,
+        "importPath": "controllers.validators",
+        "description": "controllers.validators",
+        "peekOfCode": "def validate_number(number):\n    \"\"\"Valide si le nombre est un entier.\n    Args:\n        number (int or str): Nombre à valider.\n    Returns:\n        int: Retourne 1 si le nombre est valide, 0 sinon.\n    \"\"\"\n    number = str(number)\n    if number.isdigit():\n        return 1",
+        "detail": "controllers.validators",
+        "documentation": {}
+    },
+    {
+        "label": "validate_date",
+        "kind": 2,
+        "importPath": "controllers.validators",
+        "description": "controllers.validators",
+        "peekOfCode": "def validate_date(my_date):\n    \"\"\"Valide si la date est au format YYYY-MM-DD.\n    Args:\n        my_date (str): Date à valider.\n    Returns:\n        int: Retourne 1 si la date est valide, 0 sinon.\n    \"\"\"\n    date_format = \"%Y-%m-%d\"\n    try:\n        datetime.datetime.strptime(my_date, date_format)",
+        "detail": "controllers.validators",
+        "documentation": {}
+    },
+    {
+        "label": "call_classe",
+        "kind": 2,
+        "importPath": "call",
+        "description": "call",
+        "peekOfCode": "def call_classe(choix):\n    if choix == \"1\":\n        ClasseController.show(Classe)\n    elif choix == \"2\":\n        ClasseController.create()\n    elif choix == \"3\":\n        ClasseController.destroy()\n    elif choix == \"4\":\n        ClasseController.update()\n    elif choix == \"5\":",
+        "detail": "call",
+        "documentation": {}
+    },
+    {
+        "label": "call_eleve",
+        "kind": 2,
+        "importPath": "call",
+        "description": "call",
+        "peekOfCode": "def call_eleve(choix):\n    if choix == \"1\":\n        EleveController.show(Eleve)\n    elif choix == \"2\":\n        EleveController.create()\n    elif choix == \"3\":\n        EleveController.destroy()\n    elif choix == \"4\":\n        EleveController.update()\n    elif choix == \"5\":",
+        "detail": "call",
+        "documentation": {}
+    },
+    {
+        "label": "call_matiere",
+        "kind": 2,
+        "importPath": "call",
+        "description": "call",
+        "peekOfCode": "def call_matiere(choix):\n    if choix == \"1\":\n        MatiereController.show(Matiere)\n    elif choix == \"2\":\n        MatiereController.create()\n    elif choix == \"3\":\n        MatiereController.destroy()\n    elif choix == \"4\":\n        MatiereController.update()\n    elif choix == \"5\":",
+        "detail": "call",
+        "documentation": {}
+    },
+    {
+        "label": "call_programme",
+        "kind": 2,
+        "importPath": "call",
+        "description": "call",
+        "peekOfCode": "def call_programme(choix):\n    if choix == \"1\":\n        ProgrammeController.show(Programme)\n    elif choix == \"2\":\n        ProgrammeController.create()\n    elif choix == \"3\":\n        ProgrammeController.destroy()\n    elif choix == \"4\":\n        ProgrammeController.update()\n    elif choix == \"5\":",
+        "detail": "call",
+        "documentation": {}
+    },
+    {
+        "label": "call_enseignant",
+        "kind": 2,
+        "importPath": "call",
+        "description": "call",
+        "peekOfCode": "def call_enseignant(choix):\n    if choix == \"1\":\n        EnseignantController.show(Enseignant)\n    elif choix == \"2\":\n        EnseignantController.create()\n    elif choix == \"3\":\n        EnseignantController.destroy()\n    elif choix == \"4\":\n        EnseignantController.update()\n    elif choix == \"5\":",
+        "detail": "call",
+        "documentation": {}
+    },
+    {
+        "label": "call_tuteur",
+        "kind": 2,
+        "importPath": "call",
+        "description": "call",
+        "peekOfCode": "def call_tuteur(choix):\n    if choix == \"1\":\n        TuteurController.show(Tuteur)\n    elif choix == \"2\":\n        TuteurController.create()\n    elif choix == \"3\":\n        TuteurController.destroy()\n    elif choix == \"4\":\n        TuteurController.update()\n    elif choix == \"5\":",
+        "detail": "call",
+        "documentation": {}
+    },
+    {
+        "label": "vue",
+        "kind": 2,
+        "importPath": "vue",
+        "description": "vue",
+        "peekOfCode": "def vue(table):\n    action = \"\"\n    while action != \"5\":\n        print(\"==========================================================\")\n        print(f\"                      {table.capitalize()}                     \")\n        print(\"==========================================================\")\n        print(f\"1. Afficher les {table}s\")\n        print(f\"2. Ajouter un {table}\")\n        print(f\"3. Supprimer un {table}\")\n        print(f\"4. Éditer un {table}\")",
+        "detail": "vue",
+        "documentation": {}
+    }
+]
