@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS gesnotes;
+CREATE DATABASE gesnotes;

@@ -1,5 +1,8 @@
-from .modeles.table_tuteur import TableTuteur as Tuteur
-from .controller import Controller
+import os
+import sys
+sys.path.append(f'{os.getcwd}/modeles' )
+from modeles.table_tuteur import TableTuteur as Tuteur
+from controllers.controller import Controller
 
 
 class TuteurController(Controller):

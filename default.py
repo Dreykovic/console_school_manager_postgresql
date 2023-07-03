@@ -1,6 +1,3 @@
-import os
-import sys
-sys.path.append(f'{os.getcwd}/modeles' )
 from modeles.table_classe import TableClasse
 from modeles.table_eleve import TableEleve
 from modeles.table_enseignant import TableEnseignant
@@ -9,12 +6,7 @@ from modeles.table_programme import TableProgramme
 from modeles.table_tuteur import TableTuteur
 from datetime import datetime as dt
 from modeles.migration import *
-from modeles.database import tables
-from modeles.linker import Linker
 
-
-# for relation in tables:
-#     create_tables(relation, tables[relation])
 
 
 TableClasse("2nde A4").create()
@@ -57,6 +49,7 @@ TableTuteur(
     "H",
     "AKAMADE",
     "AAstronaute",
+    
 ).create()
 TableTuteur(
     "ATALAKPOU",
@@ -66,6 +59,7 @@ TableTuteur(
     "H",
     "AKAMADE",
     "AAstronaute",
+
 ).create()
 TableEnseignant(
     "ATALAKPOU",
@@ -75,6 +69,7 @@ TableEnseignant(
     "H",
     "AKAMADE",
     "AAstronaute",
+    "ddd"
 ).create()
 TableEnseignant(
     "ATALAKPOU",
@@ -84,6 +79,7 @@ TableEnseignant(
     "H",
     "AKAMADE",
     "AAstronaute",
+    "dddd"
 ).create()
 TableEnseignant(
     "ATALAKPOU",
@@ -93,6 +89,7 @@ TableEnseignant(
     "H",
     "AKAMADE",
     "AAstronaute",
+    "drotj"
 ).create()
 TableEleve(
     2, 2, "ATALAKPOU", "Ferdinand", dt(2001, 1, 1).date(), "90546875", "H", "AKAMADE"

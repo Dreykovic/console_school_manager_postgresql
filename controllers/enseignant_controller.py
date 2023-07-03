@@ -1,5 +1,8 @@
-from .modeles.table_enseignant import TableEnseignant as Enseignant
-from .controller import Controller
+import os
+import sys
+sys.path.append(f'{os.getcwd}/modeles' )
+from modeles.table_enseignant import TableEnseignant as Enseignant
+from controllers.controller import Controller
 
 
 class EnseignantController(Controller):

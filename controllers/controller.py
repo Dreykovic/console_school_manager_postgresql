@@ -1,7 +1,10 @@
+import os
+import sys
+sys.path.append(f'{os.getcwd}/modeles' )
 from .validators import *
 from datetime import datetime
 import sys
-from .modeles.table import Table
+from modeles.table import Table
 
 class Controller:
     """

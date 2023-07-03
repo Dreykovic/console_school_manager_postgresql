@@ -1,5 +1,8 @@
-from .modeles.table_classe import TableClasse as Classe
-from .controller import Controller
+import os
+import sys
+sys.path.append(f'{os.getcwd}/modeles' )
+from modeles.table_classe import TableClasse as Classe
+from controllers.controller import Controller
 
 
 class ClasseController(Controller):
