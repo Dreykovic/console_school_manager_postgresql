@@ -14,6 +14,7 @@ class TableEnseignant(TablePersonne):
         String('genre').not_null().build(),
         String('adresse').not_null().build(),
         String('statut').not_null().build(),
+        String('niveau').not_null().build(),
     ]
 
     def __init__(
@@ -25,6 +26,7 @@ class TableEnseignant(TablePersonne):
         genre=None,
         adresse=None,
         statut=None,
+        niveau= None
     ):
         """Initialise une instance de la classe TableEnseignant.
 
@@ -41,3 +43,4 @@ class TableEnseignant(TablePersonne):
             self, nom, prenom, date_naissance, contact, genre, adresse
         )
         self.statut = statut
+        self.niveau = niveau

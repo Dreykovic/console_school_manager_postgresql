@@ -1,5 +1,11 @@
-from controllers import *
-
+import os
+import sys
+from controllers.classe_controller import ClasseController
+from controllers.eleve_controller import EleveController
+from controllers.enseignant_controller import EnseignantController
+from controllers.tuteur_controller import TuteurController
+from controllers.programme_controller import ProgrammeController
+from controllers.matiere_controller import MatiereController
 def call_classe(choix):
     if choix == "1":
         ClasseController.show(Classe)

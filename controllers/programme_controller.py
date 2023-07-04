@@ -1,8 +1,11 @@
-from .modeles.table_enseignant import TableEnseignant as Enseignant
-from .modeles.table_classe import TableClasse as Classe
-from .modeles.table_matiere import TableMatiere as Matiere
-from .modeles.table_programme import TableProgramme as Programme
-from .controller import Controller
+import os
+import sys
+sys.path.append(f'{os.getcwd}/modeles' )
+from modeles.table_enseignant import TableEnseignant as Enseignant
+from modeles.table_classe import TableClasse as Classe
+from modeles.table_matiere import TableMatiere as Matiere
+from modeles.table_programme import TableProgramme as Programme
+from controllers.controller import Controller
 
 
 class ProgrammeController(Controller):

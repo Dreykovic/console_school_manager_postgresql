@@ -3,17 +3,17 @@ Fichier de configuration pour les paramètres de base de données.
 """
 
 # Paramètres de la base de données
-database = "gnote"
+database = "gesnotes"
 """
 Nom de la base de données à utiliser.
 """
 
-username = "audrey"
+username = "username"
 """
 Nom d'utilisateur pour accéder à la base de données.
 """
 
-passwd = "1234"
+passwd = "passwd"
 """
 Mot de passe pour accéder à la base de données.
 """

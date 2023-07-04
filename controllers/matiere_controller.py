@@ -1,5 +1,8 @@
-from .modeles.table_matiere import TableMatiere as Matiere
-from .controller import Controller
+import os
+import sys
+sys.path.append(f'{os.getcwd}/modeles' )
+from modeles.table_matiere import TableMatiere as Matiere
+from controllers.controller import Controller
 
 
 class MatiereController(Controller):
