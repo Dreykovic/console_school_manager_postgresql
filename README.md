@@ -17,7 +17,7 @@ pip install psycopg2-binary
 
 Créer un fichier _.env_ à la racine du projet à partir du _.env.ecemple_
 
-```
+```bash
 cp .env.exemple .env
 ```
 
