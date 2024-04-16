@@ -1,3 +1,5 @@
 .env
 .env.backup
 .env.production
+__pycache__/
+*.pyc
