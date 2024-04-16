@@ -1,11 +1,9 @@
-from modeles import *
 from controllers.classe_controller import ClasseController
 from controllers.eleve_controller import EleveController
 from controllers.enseignant_controller import EnseignantController
 from controllers.tuteur_controller import TuteurController
 from controllers.programme_controller import ProgrammeController
 from controllers.matiere_controller import MatiereController
-
 from modeles.table_eleve import TableEleve as Eleve
 from modeles.table_classe import TableClasse as Classe
 from modeles.table_tuteur import TableTuteur as Tuteur
