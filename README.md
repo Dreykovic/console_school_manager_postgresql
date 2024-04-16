@@ -58,4 +58,3 @@ Danss le dossier racine du projet exécuter la commande suivante:
 python3 __main__.py
 ```
 
-> AMONA Birewa Audrey
