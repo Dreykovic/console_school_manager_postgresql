@@ -4,10 +4,8 @@ Module contenant la classe Linker pour établir une liaison avec une base de don
 import os
 import sys
 sys.path.append(f'{os.getcwd}' )
-
-import sys
 import psycopg2
-import env
+import settings
 
 
 class Linker(object):
@@ -15,7 +13,7 @@ class Linker(object):
     Linker permet de faire un lien entre Python et une base de données SGBDR, notamment PostgreSQL.
     """
 
-    def __init__(self, dbname= env.database ):
+    def __init__(self, dbname= settings.database ):
         """
         Initialise une nouvelle instance du Linker et établit une connexion à la base de données.
         """
@@ -26,10 +24,10 @@ class Linker(object):
 
             self.conn = psycopg2.connect(
                 dbname=dbname,
-                # user=env.username,
-                # password=env.passwd,
-                # port=env.port,
-                # host=env.host,
+                user=settings.username,
+                password=settings.passwd,
+                host=settings.host,
+                port=settings.port
             )
         except Exception as err:
             print("La connexion avec la base de données a échoué :\nErreur détectée :\n{err}")

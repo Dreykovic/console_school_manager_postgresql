@@ -8,7 +8,7 @@ from controllers.programme_controller import ProgrammeController
 from controllers.matiere_controller import MatiereController
 def call_classe(choix):
     if choix == "1":
-        ClasseController.show(Classe)
+        ClasseController.show(Classe) 
     elif choix == "2":
         ClasseController.create()
     elif choix == "3":
