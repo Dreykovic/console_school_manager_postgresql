@@ -80,7 +80,7 @@ class EleveController(Controller):
                 break
             else:
                 print("Choix invalide. Veuillez sélectionner une option valide.")
-                printer()
+                print()
                 choix = input("Choisissez une option (1-7)  :       ")
 
 
