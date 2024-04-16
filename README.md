@@ -1,4 +1,4 @@
-# Application de gestion de note
+# Application console de gestion school avec MVC
 
 ## Dépendences
 
